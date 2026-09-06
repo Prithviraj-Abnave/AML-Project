@@ -5,7 +5,7 @@ A Flask-based topic modeling dashboard that evaluates and compares Latent Dirich
 ## Demo Video
 See the dashboard in action below! It demonstrates the topic analysis overview, comparing models, and testing custom datasets.
 
-<video src="assets/demo_video.mp4" controls="controls" muted="muted" playsinline="playsinline" style="max-width: 100%;"></video>
+https://github.com/Prithviraj-Abnave/AML-Project/raw/main/assets/demo_video.mp4
 
 ## Screenshots
 
