@@ -1,0 +1,343 @@
+{
+  "meta": {
+    "total_reviews": 5000,
+    "processed_reviews": 4880,
+    "sample_size": 5000,
+    "n_topics": 2,
+    "total_time": 143.27,
+    "vocabulary_size_bow": 2433,
+    "vocabulary_size_tfidf": 2433
+  },
+  "lda": {
+    "topics": [
+      {
+        "id": 0,
+        "top_words": [
+          {
+            "word": "echo",
+            "weight": 0.027428
+          },
+          {
+            "word": "alexa",
+            "weight": 0.019302
+          },
+          {
+            "word": "music",
+            "weight": 0.015946
+          },
+          {
+            "word": "show",
+            "weight": 0.015591
+          },
+          {
+            "word": "device",
+            "weight": 0.013062
+          },
+          {
+            "word": "sound",
+            "weight": 0.012674
+          },
+          {
+            "word": "work",
+            "weight": 0.012462
+          },
+          {
+            "word": "easy",
+            "weight": 0.011791
+          },
+          {
+            "word": "home",
+            "weight": 0.010529
+          },
+          {
+            "word": "video",
+            "weight": 0.009557
+          },
+          {
+            "word": "set",
+            "weight": 0.00906
+          },
+          {
+            "word": "speaker",
+            "weight": 0.008913
+          },
+          {
+            "word": "light",
+            "weight": 0.007614
+          },
+          {
+            "word": "screen",
+            "weight": 0.007244
+          },
+          {
+            "word": "family",
+            "weight": 0.007054
+          }
+        ]
+      },
+      {
+        "id": 1,
+        "top_words": [
+          {
+            "word": "tablet",
+            "weight": 0.035706
+          },
+          {
+            "word": "kindle",
+            "weight": 0.018125
+          },
+          {
+            "word": "easy",
+            "weight": 0.012386
+          },
+          {
+            "word": "love",
+            "weight": 0.011799
+          },
+          {
+            "word": "book",
+            "weight": 0.011765
+          },
+          {
+            "word": "kid",
+            "weight": 0.011519
+          },
+          {
+            "word": "price",
+            "weight": 0.01116
+          },
+          {
+            "word": "fire",
+            "weight": 0.011114
+          },
+          {
+            "word": "old",
+            "weight": 0.010369
+          },
+          {
+            "word": "year",
+            "weight": 0.010028
+          },
+          {
+            "word": "game",
+            "weight": 0.009689
+          },
+          {
+            "word": "apps",
+            "weight": 0.009152
+          },
+          {
+            "word": "read",
+            "weight": 0.00841
+          },
+          {
+            "word": "screen",
+            "weight": 0.007758
+          },
+          {
+            "word": "reading",
+            "weight": 0.00736
+          }
+        ]
+      }
+    ],
+    "prevalence": [
+      0.3615,
+      0.6385
+    ],
+    "representative_reviews": {
+      "0": [
+        "Alexa Show is really well put together. The main reason for my purchase was to create my own 'surveillance system' linking my Ring Doorbell, and Ring Floodlights to view on command by Alexa on the Show Screen. Yes, you can talk to it, and get results for almost any query, but with the show, you get ...",
+        "Alexa Show is really well put together. The main reason for my purchase was to create my own 'surveillance system' linking my Ring Doorbell, and Ring Floodlights to view on command by Alexa on the Show Screen. Yes, you can talk to it, and get results for almost any query, but with the show, you get ...",
+        "I have had the Echo Show for about a month now. So this review is from a new user whom has never had smart devices aside from cell phones. Alexa is great for listening to music, most of it free if you're an Amazon Prime member, pair your Echo device with a bluetooth speaker for awesome sound. Alexa ..."
+      ],
+      "1": [
+        "Even when I\u201a\u00c4\u00f4m outside in bright sunlight, the words of the book I\u201a\u00c4\u00f4m reading are still crystal clear. That alone makes the Kindle Oasis worth what it cost me.The Kindle Oasis wakes up in just seconds, and any book I choose instantly opens, ready to be read.It is the perfect size and isn\u201a\u00c4\u00f4t heavy...",
+        "Even when I\u201a\u00c4\u00f4m outside in bright sunlight, the words of the book I\u201a\u00c4\u00f4m reading are still crystal clear. That alone makes the Kindle Oasis worth what it cost me.The Kindle Oasis wakes up in just seconds, and any book I choose instantly opens, ready to be read.It is the perfect size and isn\u201a\u00c4\u00f4t heavy...",
+        "When they first announced the Kindle Oasis, I did not have much of a desire to upgrade from my 1st generation Kindle Paperwhite. Just as I felt when they announced the Voyage.I read a lot, so my Kindle travels with me throughout the day most of the time. I have never had an issue with battery life, ..."
+      ]
+    },
+    "metrics": {
+      "coherence": 0.5578,
+      "diversity": 0.95,
+      "perplexity": 949.34
+    },
+    "training_time": 42.12
+  },
+  "nmf": {
+    "topics": [
+      {
+        "id": 0,
+        "top_words": [
+          {
+            "word": "tablet",
+            "weight": 0.025743
+          },
+          {
+            "word": "love",
+            "weight": 0.013181
+          },
+          {
+            "word": "easy",
+            "weight": 0.01248
+          },
+          {
+            "word": "old",
+            "weight": 0.012448
+          },
+          {
+            "word": "year",
+            "weight": 0.011934
+          },
+          {
+            "word": "kid",
+            "weight": 0.011086
+          },
+          {
+            "word": "kindle",
+            "weight": 0.011013
+          },
+          {
+            "word": "year old",
+            "weight": 0.010232
+          },
+          {
+            "word": "price",
+            "weight": 0.009642
+          },
+          {
+            "word": "fire",
+            "weight": 0.009397
+          },
+          {
+            "word": "game",
+            "weight": 0.007786
+          },
+          {
+            "word": "book",
+            "weight": 0.006882
+          },
+          {
+            "word": "apps",
+            "weight": 0.006732
+          },
+          {
+            "word": "gift",
+            "weight": 0.006497
+          },
+          {
+            "word": "daughter",
+            "weight": 0.005944
+          }
+        ]
+      },
+      {
+        "id": 1,
+        "top_words": [
+          {
+            "word": "echo",
+            "weight": 0.03295
+          },
+          {
+            "word": "alexa",
+            "weight": 0.018976
+          },
+          {
+            "word": "show",
+            "weight": 0.01841
+          },
+          {
+            "word": "echo show",
+            "weight": 0.013346
+          },
+          {
+            "word": "music",
+            "weight": 0.012494
+          },
+          {
+            "word": "sound",
+            "weight": 0.011434
+          },
+          {
+            "word": "home",
+            "weight": 0.010238
+          },
+          {
+            "word": "device",
+            "weight": 0.00933
+          },
+          {
+            "word": "plus",
+            "weight": 0.009161
+          },
+          {
+            "word": "work",
+            "weight": 0.008402
+          },
+          {
+            "word": "video",
+            "weight": 0.008146
+          },
+          {
+            "word": "echo plus",
+            "weight": 0.008124
+          },
+          {
+            "word": "light",
+            "weight": 0.008015
+          },
+          {
+            "word": "smart",
+            "weight": 0.007878
+          },
+          {
+            "word": "dot",
+            "weight": 0.007607
+          }
+        ]
+      }
+    ],
+    "prevalence": [
+      0.6691,
+      0.3309
+    ],
+    "representative_reviews": {
+      "0": [
+        "Purchased this tablet for a gift..They love it. Easy to use.",
+        "My 5 year old loves his tablet. It's perfect for him.",
+        "Bought this tablet for my 84 year old grandpa and he loves it. Easy to use"
+      ],
+      "1": [
+        "When I first read about Amazon Echo Show, I thought the sound quality would be inferior to Echo because of the small size, which to me would be a deal breaker. I read that the sound is actually superior to Echo & it is compatible with most existing security cameras, so I decided to buy one. Then Bes...",
+        "The Echo was so good, I ended up getting the Echo Show as well. At first it was a device that I enjoyed using for various reasons, one being that I could ask Alexa to watch any YouTube videos I wanted to watch. Then one day, I asked Alexa to play a video and she responded by saying,\"Google is not su...",
+        "We love our echo show, It\u201a\u00c4\u00f4s fun to use and she can do a lot of things."
+      ]
+    },
+    "metrics": {
+      "coherence": 0.6103,
+      "diversity": 1.0,
+      "reconstruction_error": 68.82
+    },
+    "training_time": 0.06
+  },
+  "similarity": {
+    "matrix": [
+      [
+        0.257,
+        0.957
+      ],
+      [
+        0.957,
+        0.167
+      ]
+    ],
+    "lda_labels": [
+      "LDA Topic 0",
+      "LDA Topic 1"
+    ],
+    "nmf_labels": [
+      "NMF Topic 0",
+      "NMF Topic 1"
+    ]
+  }
+}

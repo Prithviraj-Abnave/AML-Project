@@ -1,0 +1,623 @@
+{
+  "meta": {
+    "total_reviews": 7043,
+    "processed_reviews": 3066,
+    "sample_size": 9500,
+    "n_topics": 6,
+    "total_time": 46.47,
+    "vocabulary_size_bow": 8,
+    "vocabulary_size_tfidf": 8
+  },
+  "lda": {
+    "topics": [
+      {
+        "id": 0,
+        "top_words": [
+          {
+            "word": "credit",
+            "weight": 0.126989
+          },
+          {
+            "word": "credit card",
+            "weight": 0.126932
+          },
+          {
+            "word": "card automatic",
+            "weight": 0.12687
+          },
+          {
+            "word": "card",
+            "weight": 0.126868
+          },
+          {
+            "word": "transfer automatic",
+            "weight": 0.123087
+          },
+          {
+            "word": "bank",
+            "weight": 0.123087
+          },
+          {
+            "word": "bank transfer",
+            "weight": 0.123084
+          },
+          {
+            "word": "transfer",
+            "weight": 0.123083
+          }
+        ]
+      },
+      {
+        "id": 1,
+        "top_words": [
+          {
+            "word": "credit",
+            "weight": 0.126377
+          },
+          {
+            "word": "card automatic",
+            "weight": 0.126094
+          },
+          {
+            "word": "credit card",
+            "weight": 0.12597
+          },
+          {
+            "word": "card",
+            "weight": 0.125832
+          },
+          {
+            "word": "bank",
+            "weight": 0.123933
+          },
+          {
+            "word": "transfer automatic",
+            "weight": 0.123933
+          },
+          {
+            "word": "transfer",
+            "weight": 0.123932
+          },
+          {
+            "word": "bank transfer",
+            "weight": 0.123929
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "top_words": [
+          {
+            "word": "transfer automatic",
+            "weight": 0.125067
+          },
+          {
+            "word": "bank transfer",
+            "weight": 0.12505
+          },
+          {
+            "word": "bank",
+            "weight": 0.125042
+          },
+          {
+            "word": "transfer",
+            "weight": 0.125028
+          },
+          {
+            "word": "credit",
+            "weight": 0.124987
+          },
+          {
+            "word": "card",
+            "weight": 0.124959
+          },
+          {
+            "word": "card automatic",
+            "weight": 0.124935
+          },
+          {
+            "word": "credit card",
+            "weight": 0.124932
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "top_words": [
+          {
+            "word": "bank",
+            "weight": 0.12615
+          },
+          {
+            "word": "transfer",
+            "weight": 0.126139
+          },
+          {
+            "word": "bank transfer",
+            "weight": 0.12613
+          },
+          {
+            "word": "transfer automatic",
+            "weight": 0.126111
+          },
+          {
+            "word": "credit card",
+            "weight": 0.123875
+          },
+          {
+            "word": "card",
+            "weight": 0.123866
+          },
+          {
+            "word": "card automatic",
+            "weight": 0.123865
+          },
+          {
+            "word": "credit",
+            "weight": 0.123863
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "top_words": [
+          {
+            "word": "card",
+            "weight": 0.249973
+          },
+          {
+            "word": "credit card",
+            "weight": 0.249973
+          },
+          {
+            "word": "card automatic",
+            "weight": 0.249973
+          },
+          {
+            "word": "credit",
+            "weight": 0.249973
+          },
+          {
+            "word": "bank transfer",
+            "weight": 2.7e-05
+          },
+          {
+            "word": "transfer automatic",
+            "weight": 2.7e-05
+          },
+          {
+            "word": "transfer",
+            "weight": 2.7e-05
+          },
+          {
+            "word": "bank",
+            "weight": 2.7e-05
+          }
+        ]
+      },
+      {
+        "id": 5,
+        "top_words": [
+          {
+            "word": "transfer",
+            "weight": 0.249973
+          },
+          {
+            "word": "bank transfer",
+            "weight": 0.249973
+          },
+          {
+            "word": "transfer automatic",
+            "weight": 0.249973
+          },
+          {
+            "word": "bank",
+            "weight": 0.249973
+          },
+          {
+            "word": "credit card",
+            "weight": 2.7e-05
+          },
+          {
+            "word": "card",
+            "weight": 2.7e-05
+          },
+          {
+            "word": "credit",
+            "weight": 2.7e-05
+          },
+          {
+            "word": "card automatic",
+            "weight": 2.7e-05
+          }
+        ]
+      }
+    ],
+    "prevalence": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.4964,
+      0.5036
+    ],
+    "representative_reviews": {
+      "0": [
+        "Credit card (automatic)",
+        "Credit card (automatic)",
+        "Credit card (automatic)"
+      ],
+      "1": [
+        "Credit card (automatic)",
+        "Credit card (automatic)",
+        "Credit card (automatic)"
+      ],
+      "2": [
+        "Bank transfer (automatic)",
+        "Bank transfer (automatic)",
+        "Bank transfer (automatic)"
+      ],
+      "3": [
+        "Bank transfer (automatic)",
+        "Bank transfer (automatic)",
+        "Bank transfer (automatic)"
+      ],
+      "4": [
+        "Credit card (automatic)",
+        "Credit card (automatic)",
+        "Credit card (automatic)"
+      ],
+      "5": [
+        "Bank transfer (automatic)",
+        "Bank transfer (automatic)",
+        "Bank transfer (automatic)"
+      ]
+    },
+    "metrics": {
+      "coherence": 0.0257,
+      "diversity": 0.1667,
+      "perplexity": 8.27
+    },
+    "training_time": 17.04
+  },
+  "nmf": {
+    "topics": [
+      {
+        "id": 0,
+        "top_words": [
+          {
+            "word": "transfer automatic",
+            "weight": 0.25
+          },
+          {
+            "word": "transfer",
+            "weight": 0.25
+          },
+          {
+            "word": "bank transfer",
+            "weight": 0.25
+          },
+          {
+            "word": "bank",
+            "weight": 0.25
+          },
+          {
+            "word": "credit",
+            "weight": 0.0
+          },
+          {
+            "word": "credit card",
+            "weight": 0.0
+          },
+          {
+            "word": "card",
+            "weight": 0.0
+          },
+          {
+            "word": "card automatic",
+            "weight": 0.0
+          }
+        ]
+      },
+      {
+        "id": 1,
+        "top_words": [
+          {
+            "word": "credit",
+            "weight": 0.25
+          },
+          {
+            "word": "credit card",
+            "weight": 0.25
+          },
+          {
+            "word": "card",
+            "weight": 0.25
+          },
+          {
+            "word": "card automatic",
+            "weight": 0.25
+          },
+          {
+            "word": "transfer automatic",
+            "weight": 0.0
+          },
+          {
+            "word": "transfer",
+            "weight": 0.0
+          },
+          {
+            "word": "bank transfer",
+            "weight": 0.0
+          },
+          {
+            "word": "bank",
+            "weight": 0.0
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "top_words": [
+          {
+            "word": "transfer automatic",
+            "weight": 0.0
+          },
+          {
+            "word": "transfer",
+            "weight": 0.0
+          },
+          {
+            "word": "credit card",
+            "weight": 0.0
+          },
+          {
+            "word": "credit",
+            "weight": 0.0
+          },
+          {
+            "word": "card automatic",
+            "weight": 0.0
+          },
+          {
+            "word": "card",
+            "weight": 0.0
+          },
+          {
+            "word": "bank transfer",
+            "weight": 0.0
+          },
+          {
+            "word": "bank",
+            "weight": 0.0
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "top_words": [
+          {
+            "word": "transfer automatic",
+            "weight": 0.0
+          },
+          {
+            "word": "transfer",
+            "weight": 0.0
+          },
+          {
+            "word": "credit card",
+            "weight": 0.0
+          },
+          {
+            "word": "credit",
+            "weight": 0.0
+          },
+          {
+            "word": "card automatic",
+            "weight": 0.0
+          },
+          {
+            "word": "card",
+            "weight": 0.0
+          },
+          {
+            "word": "bank transfer",
+            "weight": 0.0
+          },
+          {
+            "word": "bank",
+            "weight": 0.0
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "top_words": [
+          {
+            "word": "transfer automatic",
+            "weight": 0.0
+          },
+          {
+            "word": "transfer",
+            "weight": 0.0
+          },
+          {
+            "word": "credit card",
+            "weight": 0.0
+          },
+          {
+            "word": "credit",
+            "weight": 0.0
+          },
+          {
+            "word": "card automatic",
+            "weight": 0.0
+          },
+          {
+            "word": "card",
+            "weight": 0.0
+          },
+          {
+            "word": "bank transfer",
+            "weight": 0.0
+          },
+          {
+            "word": "bank",
+            "weight": 0.0
+          }
+        ]
+      },
+      {
+        "id": 5,
+        "top_words": [
+          {
+            "word": "transfer automatic",
+            "weight": 0.0
+          },
+          {
+            "word": "transfer",
+            "weight": 0.0
+          },
+          {
+            "word": "credit card",
+            "weight": 0.0
+          },
+          {
+            "word": "credit",
+            "weight": 0.0
+          },
+          {
+            "word": "card automatic",
+            "weight": 0.0
+          },
+          {
+            "word": "card",
+            "weight": 0.0
+          },
+          {
+            "word": "bank transfer",
+            "weight": 0.0
+          },
+          {
+            "word": "bank",
+            "weight": 0.0
+          }
+        ]
+      }
+    ],
+    "prevalence": [
+      0.5036,
+      0.4964,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "representative_reviews": {
+      "0": [
+        "Bank transfer (automatic)",
+        "Bank transfer (automatic)",
+        "Bank transfer (automatic)"
+      ],
+      "1": [
+        "Credit card (automatic)",
+        "Credit card (automatic)",
+        "Credit card (automatic)"
+      ],
+      "2": [
+        "Bank transfer (automatic)",
+        "Credit card (automatic)",
+        "Bank transfer (automatic)"
+      ],
+      "3": [
+        "Bank transfer (automatic)",
+        "Credit card (automatic)",
+        "Bank transfer (automatic)"
+      ],
+      "4": [
+        "Bank transfer (automatic)",
+        "Credit card (automatic)",
+        "Bank transfer (automatic)"
+      ],
+      "5": [
+        "Bank transfer (automatic)",
+        "Credit card (automatic)",
+        "Bank transfer (automatic)"
+      ]
+    },
+    "metrics": {
+      "coherence": 0.0257,
+      "diversity": 0.1667,
+      "reconstruction_error": 0.0
+    },
+    "training_time": 0.17
+  },
+  "similarity": {
+    "matrix": [
+      [
+        0.696,
+        0.718,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.701,
+        0.713,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.707,
+        0.707,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.713,
+        0.701,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    ],
+    "lda_labels": [
+      "LDA Topic 0",
+      "LDA Topic 1",
+      "LDA Topic 2",
+      "LDA Topic 3",
+      "LDA Topic 4",
+      "LDA Topic 5"
+    ],
+    "nmf_labels": [
+      "NMF Topic 0",
+      "NMF Topic 1",
+      "NMF Topic 2",
+      "NMF Topic 3",
+      "NMF Topic 4",
+      "NMF Topic 5"
+    ]
+  }
+}

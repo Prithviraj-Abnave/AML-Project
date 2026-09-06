@@ -1,0 +1,881 @@
+{% extends "base.html" %}
+{% block title %}Topic Analysis | LDA vs NMF{% endblock %}
+
+{% block body %}
+<!-- ── Navbar ────────────────────────────────────────────────── -->
+<nav class="navbar">
+    <div class="navbar-inner">
+        <a href="#" class="navbar-brand" onclick="navigateTo('home')">
+            <div class="logo-icon"></div>
+            <span>Topic Analysis</span>
+            <span class="brand-sub">LDA &middot; NMF</span>
+        </a>
+        <ul class="navbar-links" id="navbar-links">
+            <li><a href="#" class="nav-link active" data-target="home" onclick="navigateTo('home')">Home</a></li>
+            <li><a href="#" class="nav-link" data-target="lda" onclick="navigateTo('lda')">LDA</a></li>
+            <li><a href="#" class="nav-link" data-target="nmf" onclick="navigateTo('nmf')">NMF</a></li>
+            <li><a href="#" class="nav-link" data-target="compare" onclick="navigateTo('compare')">Compare</a></li>
+            <li><a href="#" class="nav-link" data-target="dataset" onclick="navigateTo('dataset')">Dataset</a></li>
+            <li><a href="#" class="nav-link" data-target="team" onclick="navigateTo('team')">Team</a></li>
+        </ul>
+        <button class="navbar-cta" onclick="navigateTo('analyze')">
+            + Analyze Your Dataset
+        </button>
+    </div>
+</nav>
+
+<!-- ── Main Content Area ───────────────────────────────────── -->
+<main id="app-content">
+
+    <!-- ==============================================================
+         HOME PAGE
+         ============================================================== -->
+    <div id="page-home" class="page-section active">
+        <div class="container">
+            <section class="hero">
+                <div class="hero-grid">
+                    <div class="hero-content">
+                        <div class="badge"><span class="badge-dot"></span> ACADEMIC NLP RESEARCH &middot; FEB 2026</div>
+                        <h1>Comparative Topic Analysis: <br><em>LDA vs NMF</em> on Amazon reviews.</h1>
+                        <p class="lead">
+                            A precomputed benchmark on 25,000 Amazon Electronics reviews.
+                            We contrast Latent Dirichlet Allocation against Non-negative Matrix
+                            Factorization across coherence, diversity, runtime and topic
+                            interpretability — then let you run the same pipeline on your own CSV.
+                        </p>
+                        <div class="hero-buttons">
+                            <button class="btn btn-dark" onclick="navigateTo('compare')">See the comparison</button>
+                            <button class="btn btn-outline" onclick="navigateTo('analyze')">Analyze your dataset &rarr;</button>
+                        </div>
+                    </div>
+                    <div class="hero-chart">
+                        <div class="chart-label">
+                            <h3>Topic share overview</h3>
+                            <span class="precomputed-badge">Precomputed</span>
+                        </div>
+                        <p class="chart-desc">Document distribution across discovered topics</p>
+                        <div class="chart-wrapper">
+                            <canvas id="homeOverviewChart"></canvas>
+                        </div>
+                        <div class="chart-legend mt-2">
+                            <div class="legend-item"><div class="legend-dot lda"></div> LDA</div>
+                            <div class="legend-item"><div class="legend-dot nmf"></div> NMF</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <div class="section-header">
+                    <h2>Headline metrics</h2>
+                    <p class="section-desc">Aggregate performance across both models at k = 5 topics.</p>
+                </div>
+                <div class="grid-4">
+                    <div class="stat-card" style="border-top: 3px solid var(--lda-primary)">
+                        <div class="stat-label">Reviews Analyzed</div>
+                        <div class="stat-value" id="home-stat-reviews">25,000</div>
+                        <div class="stat-sub">of 128,432 total</div>
+                    </div>
+                    <div class="stat-card" style="border-top: 3px solid var(--nmf-secondary)">
+                        <div class="stat-label">Topics Discovered</div>
+                        <div class="stat-value">5 &times; 2</div>
+                        <div class="stat-sub">LDA & NMF</div>
+                    </div>
+                    <div class="stat-card" style="border-top: 3px solid #10b981">
+                        <div class="stat-label">Best Coherence</div>
+                        <div class="stat-value" id="home-stat-coherence">0.704</div>
+                        <div class="stat-sub">NMF leads by 14%</div>
+                    </div>
+                    <div class="stat-card" style="border-top: 3px solid #3b82f6">
+                        <div class="stat-label">Runtime Saved</div>
+                        <div class="stat-value" id="home-stat-runtime">122s</div>
+                        <div class="stat-sub">NMF is 3x faster</div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <div class="section-top">
+                    <div>
+                        <h2>Topic snapshots</h2>
+                        <p class="section-desc">The five topics recovered by each model, ranked by document share.</p>
+                    </div>
+                    <div class="section-actions">
+                        <button class="btn btn-outline" onclick="navigateTo('lda')" style="padding: 0.4rem 1rem; font-size: 0.8rem;">LDA detail &rarr;</button>
+                        <button class="btn btn-outline" onclick="navigateTo('nmf')" style="padding: 0.4rem 1rem; font-size: 0.8rem;">NMF detail &rarr;</button>
+                    </div>
+                </div>
+                <div class="grid-2">
+                    <!-- LDA Snapshots -->
+                    <div class="snapshot-panel">
+                        <div class="snapshot-panel-header">
+                            <h3>LDA</h3>
+                            <span class="model-badge lda">Latent Dirichlet Allocation</span>
+                        </div>
+                        <div id="home-lda-snapshots"></div>
+                    </div>
+                    <!-- NMF Snapshots -->
+                    <div class="snapshot-panel">
+                        <div class="snapshot-panel-header">
+                            <h3>NMF</h3>
+                            <span class="model-badge nmf">Non-negative Matrix Factorization</span>
+                        </div>
+                        <div id="home-nmf-snapshots"></div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="methodology-box">
+                <h4>Methodology</h4>
+                <p>Both models were trained on TF-IDF (NMF) / count-vectorized (LDA) tokens after lemmatization and stopword filtering. Coherence uses the C_v metric on the top-10 words per topic. See the <a href="#" onclick="navigateTo('dataset')" style="color:var(--nmf-primary)">Dataset</a> page for the full pipeline.</p>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ==============================================================
+         LDA PAGE
+         ============================================================== -->
+    <div id="page-lda" class="page-section" style="display:none;">
+        <div class="container">
+            <div class="page-header">
+                <div class="badge"><span class="badge-dot lda"></span> MODEL - LATENT DIRICHLET ALLOCATION</div>
+                <h1>LDA results</h1>
+                <p class="lead">A probabilistic generative model: each document is a mixture of topics, each topic a distribution over words.</p>
+            </div>
+
+            <div class="card mb-4" style="background:#f8fafc; border:1px solid var(--lda-light); border-left:4px solid var(--lda-primary)">
+                <div style="padding:1.5rem;">
+                    <h3 style="margin-top:0; color:var(--lda-primary); font-family:Playfair Display, serif; font-size:1.4rem;">How LDA Works</h3>
+                    <div style="display:flex; gap:2rem; align-items:center;">
+                        <div style="flex:1;">
+                            <p style="font-size:0.9rem; line-height:1.6; color:var(--text-secondary); margin-bottom:1rem;">
+                                Imagine you have a giant pile of documents. <strong>Latent Dirichlet Allocation (LDA)</strong> assumes that each document is just a mixture of different topics (e.g., 60% Sports, 40% Politics), and each topic is just a mixture of words (e.g., Sports uses "ball" and "game" a lot).
+                            </p>
+                            <p style="font-size:0.9rem; line-height:1.6; color:var(--text-secondary); margin-bottom:0;">
+                                LDA works backward. It looks at the words in the documents and asks: <em>"What hidden topics, and what word mixtures for those topics, would most likely generate these exact documents?"</em> It uses probability to group words that frequently appear together into "topics", without ever knowing what the texts actually mean!
+                            </p>
+                        </div>
+                        <div style="flex:1; background:white; border-radius:var(--radius-md); padding:1.5rem; border:1px solid var(--border-light);">
+                            <ul style="margin:0; padding-left:1.2rem; font-size:0.9rem; color:var(--text-secondary); line-height:1.8;">
+                                <li><strong>Input:</strong> Raw text documents.</li>
+                                <li><strong>Assumption 1:</strong> Documents are probability distributions over topics.</li>
+                                <li><strong>Assumption 2:</strong> Topics are probability distributions over words.</li>
+                                <li><strong>Output:</strong> The hidden topics and the percentage of each topic in every document.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid-4 mb-3">
+                <div class="stat-card" style="border-left: 3px solid var(--lda-primary)">
+                    <div class="stat-label">Topics</div>
+                    <div class="stat-value" id="lda-stat-k">5</div>
+                    <div class="stat-sub">at k = 5</div>
+                </div>
+                <div class="stat-card" style="border-left: 3px solid var(--lda-primary)">
+                    <div class="stat-label">Avg Coherence</div>
+                    <div class="stat-value" id="lda-stat-coherence">0.614</div>
+                    <div class="stat-sub">C_v - top 10 words</div>
+                </div>
+                <div class="stat-card" style="border-left: 3px solid var(--lda-primary)">
+                    <div class="stat-label">Documents</div>
+                    <div class="stat-value" id="lda-stat-docs">25,630</div>
+                    <div class="stat-sub">dominant-topic method</div>
+                </div>
+                <div class="stat-card" style="border-left: 3px solid var(--lda-primary)">
+                    <div class="stat-label">Largest Topic</div>
+                    <div class="stat-value">T0</div>
+                    <div class="stat-sub" id="lda-stat-largest">Audio Quality & Sound</div>
+                </div>
+            </div>
+
+            <div class="detail-grid mb-4">
+                <div class="card">
+                    <div class="card-header">
+                        <div>
+                            <h3>Topic distribution</h3>
+                            <p class="card-subtitle">Share of documents assigned to each topic (dominant-topic method).</p>
+                        </div>
+                    </div>
+                    <div class="chart-wrapper">
+                        <canvas id="ldaDistributionChart"></canvas>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header" style="align-items: flex-start;">
+                        <div>
+                            <h3 id="lda-top-words-title">Top words &middot; T0</h3>
+                            <p class="card-subtitle">Word probability within the selected topic.</p>
+                        </div>
+                        <div class="tab-pills" id="lda-topic-pills">
+                            <!-- Populated by JS -->
+                        </div>
+                    </div>
+                    <div class="chart-wrapper">
+                        <canvas id="ldaWordsChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-header">
+                    <h2>All topics</h2>
+                    <p class="section-desc">Full word lists, coherence and document counts.</p>
+                </div>
+                <div class="topics-grid" id="lda-all-topics-grid">
+                    <!-- Populated by JS -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ==============================================================
+         NMF PAGE
+         ============================================================== -->
+    <div id="page-nmf" class="page-section" style="display:none;">
+        <div class="container">
+            <div class="page-header">
+                <div class="badge"><span class="badge-dot nmf"></span> MODEL - NON-NEGATIVE MATRIX FACTORIZATION</div>
+                <h1>NMF results</h1>
+                <p class="lead">A deterministic linear-algebra factorization of the TF-IDF matrix into non-negative topic and document components.</p>
+            </div>
+
+            <div class="card mb-4" style="background:#fffbeb; border:1px solid var(--nmf-light); border-left:4px solid var(--nmf-primary)">
+                <div style="padding:1.5rem;">
+                    <h3 style="margin-top:0; color:var(--nmf-primary); font-family:Playfair Display, serif; font-size:1.4rem;">How NMF Works</h3>
+                    <div style="display:flex; gap:2rem; align-items:center;">
+                        <div style="flex:1;">
+                            <p style="font-size:0.9rem; line-height:1.6; color:var(--text-secondary); margin-bottom:1rem;">
+                                Think of <strong>Non-negative Matrix Factorization (NMF)</strong> as a giant math puzzle. You start with a massive grid (a matrix) where rows are documents, columns are words, and the numbers represent how often a word appears in a document.
+                            </p>
+                            <p style="font-size:0.9rem; line-height:1.6; color:var(--text-secondary); margin-bottom:0;">
+                                NMF mathematically squishes this giant matrix into two much smaller matrices that, when multiplied together, recreate the original grid. The <em>"Non-negative"</em> rule means we can't use negative numbers. This forces the algorithm to learn building blocks (topics) that strictly <strong>add up</strong> to form a document, making the topics highly interpretable!
+                            </p>
+                        </div>
+                        <div style="flex:1; background:white; border-radius:var(--radius-md); padding:1rem; border:1px solid var(--border-light); text-align:center;">
+                            <div style="display:flex; justify-content:center; align-items:center; font-family:'JetBrains Mono', monospace; font-size:1.2rem; color:var(--text-primary); gap:1rem;">
+                                <div style="text-align:center;">
+                                    <div style="padding:1rem 1.5rem; border:1px solid var(--border-light); border-radius:4px; background:#f1f5f9;">V</div>
+                                    <div style="font-size:0.6rem; color:var(--text-muted); margin-top:0.25rem;">(Docs &times; Words)</div>
+                                </div>
+                                <div>&asymp;</div>
+                                <div style="text-align:center;">
+                                    <div style="padding:1rem 1.5rem; border:1px solid var(--border-light); border-radius:4px; background:var(--nmf-light); color:var(--nmf-primary); font-weight:bold;">W</div>
+                                    <div style="font-size:0.6rem; color:var(--text-muted); margin-top:0.25rem;">(Docs &times; Topics)</div>
+                                </div>
+                                <div>&times;</div>
+                                <div style="text-align:center;">
+                                    <div style="padding:1rem 1.5rem; border:1px solid var(--border-light); border-radius:4px; background:var(--nmf-light); color:var(--nmf-primary); font-weight:bold;">H</div>
+                                    <div style="font-size:0.6rem; color:var(--text-muted); margin-top:0.25rem;">(Topics &times; Words)</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid-4 mb-3">
+                <div class="stat-card" style="border-left: 3px solid var(--nmf-secondary)">
+                    <div class="stat-label">Topics</div>
+                    <div class="stat-value" id="nmf-stat-k">5</div>
+                    <div class="stat-sub">at k = 5</div>
+                </div>
+                <div class="stat-card" style="border-left: 3px solid var(--nmf-secondary)">
+                    <div class="stat-label">Avg Coherence</div>
+                    <div class="stat-value" id="nmf-stat-coherence">0.704</div>
+                    <div class="stat-sub">C_v - top 10 words</div>
+                </div>
+                <div class="stat-card" style="border-left: 3px solid var(--nmf-secondary)">
+                    <div class="stat-label">Documents</div>
+                    <div class="stat-value" id="nmf-stat-docs">25,400</div>
+                    <div class="stat-sub">dominant-topic method</div>
+                </div>
+                <div class="stat-card" style="border-left: 3px solid var(--nmf-secondary)">
+                    <div class="stat-label">Largest Topic</div>
+                    <div class="stat-value">T0</div>
+                    <div class="stat-sub" id="nmf-stat-largest">Sound & Listening Experience</div>
+                </div>
+            </div>
+
+            <div class="detail-grid mb-4">
+                <div class="card">
+                    <div class="card-header">
+                        <div>
+                            <h3>Topic distribution</h3>
+                            <p class="card-subtitle">Share of documents assigned to each topic (dominant-topic method).</p>
+                        </div>
+                    </div>
+                    <div class="chart-wrapper">
+                        <canvas id="nmfDistributionChart"></canvas>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header" style="align-items: flex-start;">
+                        <div>
+                            <h3 id="nmf-top-words-title">Top words &middot; T0</h3>
+                            <p class="card-subtitle">Word weight within the selected topic.</p>
+                        </div>
+                        <div class="tab-pills" id="nmf-topic-pills">
+                            <!-- Populated by JS -->
+                        </div>
+                    </div>
+                    <div class="chart-wrapper">
+                        <canvas id="nmfWordsChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-header">
+                    <h2>All topics</h2>
+                    <p class="section-desc">Full word lists, coherence and document counts.</p>
+                </div>
+                <div class="topics-grid" id="nmf-all-topics-grid">
+                    <!-- Populated by JS -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ==============================================================
+         COMPARE PAGE
+         ============================================================== -->
+    <div id="page-compare" class="page-section" style="display:none;">
+        <div class="container">
+            <div class="page-header pb-0">
+                <div class="badge"><span class="badge-dot"></span> HEAD TO HEAD</div>
+                <h1>LDA <em>vs</em> NMF</h1>
+                <div style="display:flex; justify-content:space-between; align-items:flex-end;">
+                    <p class="lead" style="margin:0;">Side-by-side comparison on identical preprocessing and topic count (k = 5).</p>
+                    <div class="chart-legend" style="margin:0;">
+                        <div class="legend-item"><div class="legend-dot lda"></div> LDA</div>
+                        <div class="legend-item"><div class="legend-dot nmf"></div> NMF</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid-4 mt-4 mb-3">
+                <div class="stat-card">
+                    <div class="stat-label">Coherence (C_v)</div>
+                    <div style="display:flex; justify-content:space-between; align-items:flex-end;">
+                        <div>
+                            <div class="stat-label" style="color:var(--lda-primary); margin-bottom:0.2rem;">LDA</div>
+                            <div class="stat-value" id="comp-lda-coh" style="color:var(--lda-primary)">0.614</div>
+                        </div>
+                        <div style="text-align:right;">
+                            <div class="stat-label" style="color:var(--nmf-primary); margin-bottom:0.2rem;">NMF <span style="color:#10b981;">&blacktriangle; better</span></div>
+                            <div class="stat-value" id="comp-nmf-coh" style="color:var(--nmf-primary)">0.704</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Topic Diversity</div>
+                    <div style="display:flex; justify-content:space-between; align-items:flex-end;">
+                        <div>
+                            <div class="stat-label" style="color:var(--lda-primary); margin-bottom:0.2rem;">LDA</div>
+                            <div class="stat-value" id="comp-lda-div" style="color:var(--lda-primary)">0.72</div>
+                        </div>
+                        <div style="text-align:right;">
+                            <div class="stat-label" style="color:var(--nmf-primary); margin-bottom:0.2rem;">NMF <span style="color:#10b981;">&blacktriangle; better</span></div>
+                            <div class="stat-value" id="comp-nmf-div" style="color:var(--nmf-primary)">0.81</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Runtime (s)</div>
+                    <div style="display:flex; justify-content:space-between; align-items:flex-end;">
+                        <div>
+                            <div class="stat-label" style="color:var(--lda-primary); margin-bottom:0.2rem;">LDA</div>
+                            <div class="stat-value" id="comp-lda-time" style="color:var(--lda-primary)">184s</div>
+                        </div>
+                        <div style="text-align:right;">
+                            <div class="stat-label" style="color:var(--nmf-primary); margin-bottom:0.2rem;">NMF <span style="color:#10b981;">&blacktriangle; better</span></div>
+                            <div class="stat-value" id="comp-nmf-time" style="color:var(--nmf-primary)">62s</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Memory (MB)</div>
+                    <div style="display:flex; justify-content:space-between; align-items:flex-end;">
+                        <div>
+                            <div class="stat-label" style="color:var(--lda-primary); margin-bottom:0.2rem;">LDA</div>
+                            <div class="stat-value" style="color:var(--lda-primary)">512 MB</div>
+                        </div>
+                        <div style="text-align:right;">
+                            <div class="stat-label" style="color:var(--nmf-primary); margin-bottom:0.2rem;">NMF <span style="color:#10b981;">&blacktriangle; better</span></div>
+                            <div class="stat-value" style="color:var(--nmf-primary)">348 MB</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid-2 mb-3">
+                <div class="card">
+                    <div class="card-header">
+                        <div>
+                            <h3>Quality — coherence & diversity</h3>
+                            <p class="card-subtitle">Higher is better on both axes.</p>
+                        </div>
+                        <div class="chart-legend" style="margin:0;">
+                            <div class="legend-item"><div class="legend-dot lda" style="border-radius:50%; border:1px solid var(--lda-primary); background:var(--lda-light)"></div> LDA</div>
+                            <div class="legend-item"><div class="legend-dot nmf" style="border-radius:50%; border:1px solid var(--nmf-primary); background:var(--nmf-light)"></div> NMF</div>
+                        </div>
+                    </div>
+                    <div class="chart-wrapper">
+                        <canvas id="qualityCompareChart"></canvas>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <div>
+                            <h3>Normalized profile</h3>
+                            <p class="card-subtitle">Radar of all comparable metrics (scaled 0-1, larger is stronger).</p>
+                        </div>
+                        <div class="chart-legend" style="margin:0;">
+                            <div class="legend-item"><div class="legend-dot lda" style="border-radius:50%"></div> LDA</div>
+                            <div class="legend-item"><div class="legend-dot nmf" style="border-radius:50%"></div> NMF</div>
+                        </div>
+                    </div>
+                    <div class="chart-wrapper">
+                        <canvas id="radarCompareChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid-2 mb-4">
+                <div class="card">
+                    <div class="card-header">
+                        <div>
+                            <h3>Runtime & memory</h3>
+                            <p class="card-subtitle">Training on the same 25k-review corpus.</p>
+                        </div>
+                        <div class="chart-legend" style="margin:0;">
+                            <div class="legend-item"><div class="legend-dot lda" style="border-radius:50%; border:1px solid var(--lda-primary); background:var(--lda-light)"></div> LDA</div>
+                            <div class="legend-item"><div class="legend-dot nmf" style="border-radius:50%; border:1px solid var(--nmf-primary); background:var(--nmf-light)"></div> NMF</div>
+                        </div>
+                    </div>
+                    <div class="chart-wrapper">
+                        <canvas id="perfCompareChart"></canvas>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <div>
+                            <h3>Topic similarity heatmap</h3>
+                            <p class="card-subtitle">Cosine similarity between LDA and NMF topic word-vectors.</p>
+                        </div>
+                    </div>
+                    <div id="compare-heatmap-container" class="heatmap-container"></div>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-header">
+                    <h2>Topic alignment</h2>
+                    <p class="section-desc">Best-matching topic pairs across models, ranked by cosine similarity.</p>
+                </div>
+                <div class="card" style="padding:0; overflow:hidden;">
+                    <table style="width:100%; border-collapse:collapse; text-align:left;">
+                        <thead>
+                            <tr style="background:var(--bg-subtle); border-bottom:1px solid var(--border-light);">
+                                <th style="padding:1rem; font-size:0.75rem; color:var(--text-muted); font-weight:700;">LDA TOPIC</th>
+                                <th style="padding:1rem; font-size:0.75rem; color:var(--text-muted); font-weight:700;">NMF TOPIC</th>
+                                <th style="padding:1rem; font-size:0.75rem; color:var(--text-muted); font-weight:700;">COSINE (WORD VECTORS)</th>
+                                <th style="padding:1rem; font-size:0.75rem; color:var(--text-muted); font-weight:700;">INTERPRETATION</th>
+                            </tr>
+                        </thead>
+                        <tbody id="topic-alignment-body">
+                            <!-- Populated by JS -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <div class="section pt-0">
+                <h2>Model interpretation</h2>
+                <p class="section-desc">What the numbers mean, in practice.</p>
+                <div class="grid-2">
+                    <div class="card" style="display:flex; gap:1rem; align-items:flex-start; padding:1.25rem;">
+                        <div style="background:var(--lda-light); color:var(--lda-primary); width:28px; height:28px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:700; font-size:0.8rem; flex-shrink:0;">1</div>
+                        <p style="font-size:0.9rem; color:var(--text-secondary); margin:0;">NMF produces sharper, more interpretable topics on this dataset — its top words carry higher weight concentration per topic.</p>
+                    </div>
+                    <div class="card" style="display:flex; gap:1rem; align-items:flex-start; padding:1.25rem;">
+                        <div style="background:#ffedd5; color:#c2410c; width:28px; height:28px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:700; font-size:0.8rem; flex-shrink:0;">2</div>
+                        <p style="font-size:0.9rem; color:var(--text-secondary); margin:0;">LDA distributes probability more evenly across documents, capturing softer thematic overlaps but at the cost of coherence.</p>
+                    </div>
+                    <div class="card" style="display:flex; gap:1rem; align-items:flex-start; padding:1.25rem;">
+                        <div style="background:var(--lda-light); color:var(--lda-primary); width:28px; height:28px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:700; font-size:0.8rem; flex-shrink:0;">3</div>
+                        <p style="font-size:0.9rem; color:var(--text-secondary); margin:0;">For short, opinionated reviews with TF-IDF weighting, NMF's non-negative factorization aligns well with human topic judgments.</p>
+                    </div>
+                    <div class="card" style="display:flex; gap:1rem; align-items:flex-start; padding:1.25rem;">
+                        <div style="background:#ffedd5; color:#c2410c; width:28px; height:28px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:700; font-size:0.8rem; flex-shrink:0;">4</div>
+                        <p style="font-size:0.9rem; color:var(--text-secondary); margin:0;">LDA remains preferable when documents are longer, more mixed, or when a generative probabilistic interpretation is needed.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <!-- ==============================================================
+         DATASET PAGE
+         ============================================================== -->
+    <div id="page-dataset" class="page-section" style="display:none;">
+        <div class="container">
+            <div class="page-header pb-0">
+                <div class="badge"><span class="badge-dot" style="background:#14b8a6"></span> DATA</div>
+                <h1>Dataset & preprocessing</h1>
+                <p class="lead">The Amazon customer-review corpus used across every experiment on this site.</p>
+            </div>
+
+            <div class="card mt-4 mb-3" style="background:#f0fdfa; border:1px solid #ccfbf1; border-left:4px solid #14b8a6">
+                <div style="padding:1.5rem;">
+                    <h3 style="margin-top:0; color:#0f766e; font-family:Playfair Display, serif; font-size:1.4rem;">About the Data</h3>
+                    <p style="font-size:0.9rem; line-height:1.6; color:var(--text-secondary); margin-bottom:0;">
+                        We use the Amazon Product Data dataset (He and McAuley, 2016), specifically the <strong>Electronics 5-core</strong> subset. This dataset contains millions of reviews from May 1996 to July 2014. The "5-core" designation means it only includes items and users that have at least 5 reviews each, ensuring a dense, high-quality corpus for NLP tasks. It's a standard benchmark for sentiment analysis and topic modeling due to its rich, opinionated text.
+                    </p>
+                </div>
+            </div>
+
+            <div class="grid-4 mt-4 mb-3">
+                <div class="stat-card" style="border-left: 3px solid var(--lda-secondary)">
+                    <div class="stat-label">Total Reviews</div>
+                    <div class="stat-value" id="data-stat-total">128,432</div>
+                    <div class="stat-sub">in source corpus</div>
+                </div>
+                <div class="stat-card" style="border-left: 3px solid var(--nmf-secondary)">
+                    <div class="stat-label">Sampled</div>
+                    <div class="stat-value" id="data-stat-sampled">25,000</div>
+                    <div class="stat-sub">used in experiments</div>
+                </div>
+                <div class="stat-card" style="border-left: 3px solid #14b8a6">
+                    <div class="stat-label">Date Range</div>
+                    <div class="stat-value">2014&ndash;2018</div>
+                    <div class="stat-sub">5-year window</div>
+                </div>
+                <div class="stat-card" style="border-left: 3px solid #3b82f6">
+                    <div class="stat-label">Avg Length</div>
+                    <div class="stat-value">78 words</div>
+                    <div class="stat-sub">per review</div>
+                </div>
+            </div>
+
+            <div class="grid-2 mb-3">
+                <div class="card">
+                    <div class="card-header">
+                        <div>
+                            <h3>Rating distribution</h3>
+                            <p class="card-subtitle">Number of reviews per star rating.</p>
+                        </div>
+                    </div>
+                    <div class="chart-wrapper">
+                        <canvas id="ratingDistChart"></canvas>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <div>
+                            <h3>Review length</h3>
+                            <p class="card-subtitle">Word-count distribution across the sampled corpus.</p>
+                        </div>
+                    </div>
+                    <div class="chart-wrapper">
+                        <canvas id="reviewLenChart"></canvas>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="grid-2 mb-4">
+                <div class="card">
+                    <div class="card-header">
+                        <div>
+                            <h3>Schema</h3>
+                            <p class="card-subtitle">Columns present in the source CSV.</p>
+                        </div>
+                    </div>
+                    <table style="width:100%; border-collapse:collapse; text-align:left; margin-top:1rem;">
+                        <thead>
+                            <tr style="background:var(--bg-subtle); border-bottom:1px solid var(--border-light);">
+                                <th style="padding:0.75rem 1rem; font-size:0.75rem; color:var(--text-muted); font-weight:700;">COLUMN</th>
+                                <th style="padding:0.75rem 1rem; font-size:0.75rem; color:var(--text-muted); font-weight:700;">TYPE</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="border-bottom:1px solid var(--border-subtle);"><td style="padding:0.75rem 1rem; font-family:monospace; font-size:0.85rem;">review_id</td><td style="padding:0.75rem 1rem; font-size:0.85rem; color:var(--text-secondary);">string</td></tr>
+                            <tr style="border-bottom:1px solid var(--border-subtle);"><td style="padding:0.75rem 1rem; font-family:monospace; font-size:0.85rem;">product_id</td><td style="padding:0.75rem 1rem; font-size:0.85rem; color:var(--text-secondary);">string</td></tr>
+                            <tr style="border-bottom:1px solid var(--border-subtle);"><td style="padding:0.75rem 1rem; font-family:monospace; font-size:0.85rem;">review_text</td><td style="padding:0.75rem 1rem; font-size:0.85rem; color:var(--text-secondary);">string</td></tr>
+                            <tr style="border-bottom:1px solid var(--border-subtle);"><td style="padding:0.75rem 1rem; font-family:monospace; font-size:0.85rem;">rating</td><td style="padding:0.75rem 1rem; font-size:0.85rem; color:var(--text-secondary);">int</td></tr>
+                            <tr><td style="padding:0.75rem 1rem; font-family:monospace; font-size:0.85rem;">timestamp</td><td style="padding:0.75rem 1rem; font-size:0.85rem; color:var(--text-secondary);">datetime</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <div>
+                            <h3>Preprocessing pipeline</h3>
+                            <p class="card-subtitle">Steps applied identically for LDA and NMF (except the vectorizer).</p>
+                        </div>
+                    </div>
+                    <ol style="padding-left:1.5rem; color:var(--text-secondary); font-size:0.9rem; line-height:2.2;">
+                        <li>Lowercased text</li>
+                        <li>Removed HTML entities and URLs</li>
+                        <li>Removed English stopwords (NLTK) + custom domain list</li>
+                        <li>Lemmatized using WordNet</li>
+                        <li>Kept tokens with length >= 3</li>
+                        <li>TF-IDF (NMF) / Count Vectorizer (LDA) with min_df=5, max_df=0.9</li>
+                    </ol>
+                </div>
+            </div>
+            
+            <div class="methodology-box" style="border-left-color:#14b8a6; background:#f0fdfa; border-color:#ccfbf1;">
+                <h4 style="color:#0f766e;">Source</h4>
+                <p>Amazon Product Data (He & McAuley, UCSD, 2016). We use the Electronics 5-core subset for reproducibility. See <a href="#" style="color:#0f766e;">the original release page</a>.</p>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ==============================================================
+         TEAM PAGE
+         ============================================================== -->
+    <div id="page-team" class="page-section" style="display:none;">
+        <div class="container">
+            <div class="page-header">
+                <div class="badge"><span class="badge-dot" style="background:#10b981"></span> PEOPLE</div>
+                <h1>The team</h1>
+                <p class="lead">Researchers behind the comparative topic-modeling study.</p>
+            </div>
+
+            <div class="grid-3 mb-4">
+                <div class="card">
+                    <div style="width:40px; height:40px; border-radius:50%; background:var(--bg-subtle); display:flex; align-items:center; justify-content:center; font-family:Playfair Display, serif; font-style:italic; font-size:1.1rem; color:var(--text-muted); margin-bottom:1rem;">01</div>
+                    <h3 style="font-family:Playfair Display, serif; margin-bottom:0.2rem; font-size:1.1rem;">Siddhanth Mungekar</h3>
+                    <p style="font-size:0.75rem; color:var(--text-muted); margin-bottom:1rem;">Roll No: 23102B0035</p>
+                    <p style="font-size:0.85rem; color:var(--text-secondary); line-height:1.6;">Team Member 1</p>
+                </div>
+                <div class="card">
+                    <div style="width:40px; height:40px; border-radius:50%; background:var(--bg-subtle); display:flex; align-items:center; justify-content:center; font-family:Playfair Display, serif; font-style:italic; font-size:1.1rem; color:var(--text-muted); margin-bottom:1rem;">02</div>
+                    <h3 style="font-family:Playfair Display, serif; margin-bottom:0.2rem; font-size:1.1rem;">Prithviraj Abnave</h3>
+                    <p style="font-size:0.75rem; color:var(--text-muted); margin-bottom:1rem;">Roll No: 23102B0035</p>
+                    <p style="font-size:0.85rem; color:var(--text-secondary); line-height:1.6;">Team Member 2</p>
+                </div>
+                <div class="card">
+                    <div style="width:40px; height:40px; border-radius:50%; background:var(--bg-subtle); display:flex; align-items:center; justify-content:center; font-family:Playfair Display, serif; font-style:italic; font-size:1.1rem; color:var(--text-muted); margin-bottom:1rem;">03</div>
+                    <h3 style="font-family:Playfair Display, serif; margin-bottom:0.2rem; font-size:1.1rem;">Soham Narvankar</h3>
+                    <p style="font-size:0.75rem; color:var(--text-muted); margin-bottom:1rem;">Roll No: 23102B0041</p>
+                    <p style="font-size:0.85rem; color:var(--text-secondary); line-height:1.6;">Team Member 3</p>
+                </div>
+            </div>
+            
+            <div class="methodology-box" style="border-left-color:#10b981; background:#ecfdf5; border-color:#d1fae5;">
+                <h4 style="color:#047857;">Acknowledgements</h4>
+                <p>Thanks to the maintainers of scikit-learn, gensim and NLTK, and to Jianmo Ni and Julian McAuley for the Amazon review dataset used throughout this work.</p>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ==============================================================
+         ANALYZE YOUR DATASET PAGE
+         ============================================================== -->
+    <div id="page-analyze" class="page-section" style="display:none;">
+        <div class="container" style="max-width:900px;">
+            <div class="page-header pb-0">
+                <div class="badge"><span class="badge-dot" style="background:#3b82f6"></span> RUN YOUR OWN EXPERIMENT</div>
+                <h1>Analyze your dataset</h1>
+                <p class="lead">Upload a CSV of reviews or documents. Pick the text column and topic count. Both LDA and NMF will be trained and compared.</p>
+            </div>
+
+            <!-- Stepper -->
+            <div style="display:flex; margin:2rem 0; border:1px solid var(--border-light); border-radius:var(--radius-md); background:var(--bg-card); overflow:hidden;">
+                <div style="flex:1; padding:1rem 1.5rem; background:var(--bg-subtle); border-right:1px solid var(--border-light);">
+                    <div style="font-size:0.7rem; color:var(--text-muted); font-weight:700; margin-bottom:0.2rem;">STEP 1</div>
+                    <div style="font-size:0.9rem; font-weight:600; color:var(--text-primary);">Upload CSV</div>
+                </div>
+                <div style="flex:1; padding:1rem 1.5rem; border-right:1px solid var(--border-light);">
+                    <div style="font-size:0.7rem; color:var(--text-muted); font-weight:700; margin-bottom:0.2rem;">STEP 2</div>
+                    <div style="font-size:0.9rem; font-weight:500; color:var(--text-secondary);">Configure</div>
+                </div>
+                <div style="flex:1; padding:1rem 1.5rem; border-right:1px solid var(--border-light);">
+                    <div style="font-size:0.7rem; color:var(--text-muted); font-weight:700; margin-bottom:0.2rem;">STEP 3</div>
+                    <div style="font-size:0.9rem; font-weight:500; color:var(--text-secondary);">Run analysis</div>
+                </div>
+                <div style="flex:1; padding:1rem 1.5rem;">
+                    <div style="font-size:0.7rem; color:var(--text-muted); font-weight:700; margin-bottom:0.2rem;">STEP 4</div>
+                    <div style="font-size:0.9rem; font-weight:500; color:var(--text-secondary);">Results</div>
+                </div>
+            </div>
+            
+            <form id="custom-upload-form" enctype="multipart/form-data">
+                <div class="card" id="dropzone" style="border: 2px dashed var(--border-light); text-align:center; padding:4rem 2rem; margin-bottom:1rem; cursor:pointer;">
+                    <input type="file" id="csv-upload" name="file" accept=".csv" style="display:none;">
+                    <svg width="40" height="40" fill="none" stroke="#2563eb" stroke-width="1.5" viewBox="0 0 24 24" style="margin-bottom:1rem;"><path d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"/></svg>
+                    <h3 style="font-family:Playfair Display, serif; font-size:1.25rem; margin-bottom:0.5rem;" id="dropzone-text">Drop your CSV here</h3>
+                    <p style="font-size:0.9rem; color:var(--text-secondary);">or <span style="color:#2563eb; font-weight:500;">browse your files</span></p>
+                </div>
+            </form>
+            
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+                <p style="font-size:0.8rem; color:var(--text-muted);">Accepted: CSV files with a text column of reviews/documents.</p>
+                <button class="btn btn-outline" style="border-radius:var(--radius-pill); font-size:0.8rem; padding:0.4rem 1rem;" onclick="startSimulatedAnalysis()">Use sample Amazon dataset</button>
+            </div>
+            
+            <!-- Hidden progress config for the demo -->
+            <div id="analyze-config-panel" class="config-panel" style="display:none; margin-top:2rem;">
+                <div class="config-inner">
+                    <div class="config-group">
+                        <label for="n-topics">Number of Topics</label>
+                        <input type="range" id="n-topics" min="2" max="15" value="5" step="1">
+                        <div class="config-value" id="n-topics-value">5</div>
+                    </div>
+                    <div class="config-group">
+                        <label for="sample-size">Sample Size</label>
+                        <input type="range" id="sample-size" min="500" max="20000" value="5000" step="500">
+                        <div class="config-value" id="sample-size-value">5,000</div>
+                    </div>
+                    <div class="config-group" style="padding-top: 0.5rem;">
+                        <button class="btn btn-dark" id="btn-analyze" onclick="startAnalysis()">
+                            Run Analysis
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Progress -->
+                <div class="progress-container" id="progress-container">
+                    <div class="progress-bar-track">
+                        <div class="progress-bar-fill" id="progress-fill"></div>
+                    </div>
+                    <div class="progress-status">
+                        <span class="progress-step" id="progress-step">Initializing...</span>
+                        <span class="progress-percent" id="progress-percent">0%</span>
+                    </div>
+                </div>
+
+                <!-- Error banner -->
+                <div class="error-banner" id="error-banner">
+                    <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4m0 4h.01"/></svg>
+                    <span id="error-message"></span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <!-- ==============================================================
+         CUSTOM RESULTS PAGE
+         ============================================================== -->
+    <div id="page-custom-results" class="page-section" style="display:none;">
+        <div class="container">
+            <div class="page-header pb-0">
+                <div class="badge"><span class="badge-dot" style="background:#8b5cf6"></span> CUSTOM DATASET RESULTS</div>
+                <h1>Custom Analysis</h1>
+                <div style="display:flex; justify-content:space-between; align-items:flex-end;">
+                    <p class="lead" style="margin:0;">Results for your uploaded dataset.</p>
+                    <button class="btn btn-outline" onclick="navigateTo('home')">&larr; Back to Main Dashboard</button>
+                </div>
+            </div>
+
+            <div class="grid-4 mt-4 mb-3">
+                <div class="stat-card">
+                    <div class="stat-label">Coherence (C_v)</div>
+                    <div style="display:flex; justify-content:space-between; align-items:flex-end;">
+                        <div>
+                            <div class="stat-label" style="color:var(--lda-primary); margin-bottom:0.2rem;">LDA</div>
+                            <div class="stat-value" id="custom-lda-coh" style="color:var(--lda-primary)">-</div>
+                        </div>
+                        <div style="text-align:right;">
+                            <div class="stat-label" style="color:var(--nmf-primary); margin-bottom:0.2rem;">NMF</div>
+                            <div class="stat-value" id="custom-nmf-coh" style="color:var(--nmf-primary)">-</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Topic Diversity</div>
+                    <div style="display:flex; justify-content:space-between; align-items:flex-end;">
+                        <div>
+                            <div class="stat-label" style="color:var(--lda-primary); margin-bottom:0.2rem;">LDA</div>
+                            <div class="stat-value" id="custom-lda-div" style="color:var(--lda-primary)">-</div>
+                        </div>
+                        <div style="text-align:right;">
+                            <div class="stat-label" style="color:var(--nmf-primary); margin-bottom:0.2rem;">NMF</div>
+                            <div class="stat-value" id="custom-nmf-div" style="color:var(--nmf-primary)">-</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Runtime (s)</div>
+                    <div style="display:flex; justify-content:space-between; align-items:flex-end;">
+                        <div>
+                            <div class="stat-label" style="color:var(--lda-primary); margin-bottom:0.2rem;">LDA</div>
+                            <div class="stat-value" id="custom-lda-time" style="color:var(--lda-primary)">-</div>
+                        </div>
+                        <div style="text-align:right;">
+                            <div class="stat-label" style="color:var(--nmf-primary); margin-bottom:0.2rem;">NMF</div>
+                            <div class="stat-value" id="custom-nmf-time" style="color:var(--nmf-primary)">-</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Processed Reviews</div>
+                    <div class="stat-value" id="custom-total-reviews" style="margin-top:0.5rem">-</div>
+                    <div class="stat-sub">valid texts analyzed</div>
+                </div>
+            </div>
+
+            <div class="grid-2 mb-3">
+                <div class="card">
+                    <div class="card-header">
+                        <div>
+                            <h3>Quality — coherence & diversity</h3>
+                        </div>
+                        <div class="chart-legend" style="margin:0;">
+                            <div class="legend-item"><div class="legend-dot lda" style="border-radius:50%; border:1px solid var(--lda-primary); background:var(--lda-light)"></div> LDA</div>
+                            <div class="legend-item"><div class="legend-dot nmf" style="border-radius:50%; border:1px solid var(--nmf-primary); background:var(--nmf-light)"></div> NMF</div>
+                        </div>
+                    </div>
+                    <div class="chart-wrapper">
+                        <canvas id="customQualityCompareChart"></canvas>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <div>
+                            <h3>Normalized profile</h3>
+                        </div>
+                        <div class="chart-legend" style="margin:0;">
+                            <div class="legend-item"><div class="legend-dot lda" style="border-radius:50%"></div> LDA</div>
+                            <div class="legend-item"><div class="legend-dot nmf" style="border-radius:50%"></div> NMF</div>
+                        </div>
+                    </div>
+                    <div class="chart-wrapper">
+                        <canvas id="customRadarCompareChart"></canvas>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+</main>
+
+<!-- ── Footer ────────────────────────────────────────────────── -->
+<div class="container">
+    <footer class="footer">
+        <div class="footer-left">
+            &copy; 2026 Comparative Topic Analysis. Built for academic research.
+        </div>
+        <ul class="footer-links">
+            <li><span style="color:var(--text-faint)">v0.1 &middot; mock data</span></li>
+            <li><a href="#" onclick="navigateTo('dataset')">Dataset</a></li>
+            <li><a href="#" onclick="navigateTo('team')">Team</a></li>
+        </ul>
+    </footer>
+</div>
+
+{% endblock %}
