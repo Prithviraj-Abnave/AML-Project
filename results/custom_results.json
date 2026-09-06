@@ -1,12 +1,12 @@
 {
   "meta": {
-    "total_reviews": 7043,
-    "processed_reviews": 3066,
-    "sample_size": 9500,
-    "n_topics": 6,
-    "total_time": 46.47,
-    "vocabulary_size_bow": 8,
-    "vocabulary_size_tfidf": 8
+    "total_reviews": 100,
+    "processed_reviews": 100,
+    "sample_size": 5000,
+    "n_topics": 5,
+    "total_time": 16.23,
+    "vocabulary_size_bow": 105,
+    "vocabulary_size_tfidf": 105
   },
   "lda": {
     "topics": [
@@ -14,36 +14,64 @@
         "id": 0,
         "top_words": [
           {
-            "word": "credit",
-            "weight": 0.126989
+            "word": "battery life",
+            "weight": 0.063753
           },
           {
-            "word": "credit card",
-            "weight": 0.126932
+            "word": "clear",
+            "weight": 0.063729
           },
           {
-            "word": "card automatic",
-            "weight": 0.12687
+            "word": "screen quality",
+            "weight": 0.063716
           },
           {
-            "word": "card",
-            "weight": 0.126868
+            "word": "screen",
+            "weight": 0.063583
           },
           {
-            "word": "transfer automatic",
-            "weight": 0.123087
+            "word": "quality",
+            "weight": 0.063449
           },
           {
-            "word": "bank",
-            "weight": 0.123087
+            "word": "battery",
+            "weight": 0.063429
           },
           {
-            "word": "bank transfer",
-            "weight": 0.123084
+            "word": "life screen",
+            "weight": 0.063429
           },
           {
-            "word": "transfer",
-            "weight": 0.123083
+            "word": "quality crisp",
+            "weight": 0.063405
+          },
+          {
+            "word": "crisp",
+            "weight": 0.063393
+          },
+          {
+            "word": "crisp clear",
+            "weight": 0.063335
+          },
+          {
+            "word": "life",
+            "weight": 0.063316
+          },
+          {
+            "word": "right box",
+            "weight": 0.003726
+          },
+          {
+            "word": "single day",
+            "weight": 0.003679
+          },
+          {
+            "word": "box",
+            "weight": 0.003649
+          },
+          {
+            "word": "issue",
+            "weight": 0.003639
           }
         ]
       },
@@ -51,36 +79,64 @@
         "id": 1,
         "top_words": [
           {
-            "word": "credit",
-            "weight": 0.126377
+            "word": "stellar",
+            "weight": 0.038615
           },
           {
-            "word": "card automatic",
-            "weight": 0.126094
+            "word": "unhelpful",
+            "weight": 0.038265
           },
           {
-            "word": "credit card",
-            "weight": 0.12597
+            "word": "customer service",
+            "weight": 0.03825
           },
           {
-            "word": "card",
-            "weight": 0.125832
+            "word": "service",
+            "weight": 0.038239
           },
           {
-            "word": "bank",
-            "weight": 0.123933
+            "word": "customer",
+            "weight": 0.038189
           },
           {
-            "word": "transfer automatic",
-            "weight": 0.123933
+            "word": "disappointed",
+            "weight": 0.019902
           },
           {
-            "word": "transfer",
-            "weight": 0.123932
+            "word": "speaker",
+            "weight": 0.0199
           },
           {
-            "word": "bank transfer",
-            "weight": 0.123929
+            "word": "performance",
+            "weight": 0.019867
+          },
+          {
+            "word": "quality speaker",
+            "weight": 0.019865
+          },
+          {
+            "word": "performance stellar",
+            "weight": 0.019856
+          },
+          {
+            "word": "speaker volume",
+            "weight": 0.019837
+          },
+          {
+            "word": "far",
+            "weight": 0.019834
+          },
+          {
+            "word": "money",
+            "weight": 0.019821
+          },
+          {
+            "word": "single day",
+            "weight": 0.019766
+          },
+          {
+            "word": "stellar performance",
+            "weight": 0.019765
           }
         ]
       },
@@ -88,36 +144,64 @@
         "id": 2,
         "top_words": [
           {
-            "word": "transfer automatic",
-            "weight": 0.125067
+            "word": "price",
+            "weight": 0.050613
           },
           {
-            "word": "bank transfer",
-            "weight": 0.12505
+            "word": "highly recommended",
+            "weight": 0.026289
           },
           {
-            "word": "bank",
-            "weight": 0.125042
+            "word": "cheap",
+            "weight": 0.026208
           },
           {
-            "word": "transfer",
-            "weight": 0.125028
+            "word": "looking value",
+            "weight": 0.02616
           },
           {
-            "word": "credit",
-            "weight": 0.124987
+            "word": "high cheap",
+            "weight": 0.026155
           },
           {
-            "word": "card",
-            "weight": 0.124959
+            "word": "drain",
+            "weight": 0.026137
           },
           {
-            "word": "card automatic",
-            "weight": 0.124935
+            "word": "high",
+            "weight": 0.026131
           },
           {
-            "word": "credit card",
-            "weight": 0.124932
+            "word": "highly",
+            "weight": 0.026126
+          },
+          {
+            "word": "recommended",
+            "weight": 0.026099
+          },
+          {
+            "word": "value",
+            "weight": 0.026089
+          },
+          {
+            "word": "looking",
+            "weight": 0.026084
+          },
+          {
+            "word": "fast",
+            "weight": 0.026076
+          },
+          {
+            "word": "value reliability",
+            "weight": 0.026072
+          },
+          {
+            "word": "battery",
+            "weight": 0.026039
+          },
+          {
+            "word": "fast price",
+            "weight": 0.026036
           }
         ]
       },
@@ -125,36 +209,64 @@
         "id": 3,
         "top_words": [
           {
-            "word": "bank",
-            "weight": 0.12615
+            "word": "recommended daily",
+            "weight": 0.057271
           },
           {
-            "word": "transfer",
-            "weight": 0.126139
+            "word": "highly recommended",
+            "weight": 0.057173
           },
           {
-            "word": "bank transfer",
-            "weight": 0.12613
+            "word": "highly",
+            "weight": 0.056901
           },
           {
-            "word": "transfer automatic",
-            "weight": 0.126111
+            "word": "box",
+            "weight": 0.05689
           },
           {
-            "word": "credit card",
-            "weight": 0.123875
+            "word": "work",
+            "weight": 0.056842
           },
           {
-            "word": "card",
-            "weight": 0.123866
+            "word": "right",
+            "weight": 0.056782
           },
           {
-            "word": "card automatic",
-            "weight": 0.123865
+            "word": "recommended",
+            "weight": 0.056782
           },
           {
-            "word": "credit",
-            "weight": 0.123863
+            "word": "perfectly",
+            "weight": 0.056761
+          },
+          {
+            "word": "box highly",
+            "weight": 0.056753
+          },
+          {
+            "word": "perfectly right",
+            "weight": 0.056716
+          },
+          {
+            "word": "right box",
+            "weight": 0.056696
+          },
+          {
+            "word": "work perfectly",
+            "weight": 0.056509
+          },
+          {
+            "word": "daily",
+            "weight": 0.056459
+          },
+          {
+            "word": "service",
+            "weight": 0.003393
+          },
+          {
+            "word": "disappointed",
+            "weight": 0.003372
           }
         ]
       },
@@ -162,123 +274,108 @@
         "id": 4,
         "top_words": [
           {
-            "word": "card",
-            "weight": 0.249973
+            "word": "decent",
+            "weight": 0.056733
           },
           {
-            "word": "credit card",
-            "weight": 0.249973
+            "word": "improvement",
+            "weight": 0.056502
           },
           {
-            "word": "card automatic",
-            "weight": 0.249973
+            "word": "build",
+            "weight": 0.056489
           },
           {
-            "word": "credit",
-            "weight": 0.249973
+            "word": "hardware decent",
+            "weight": 0.056462
           },
           {
-            "word": "bank transfer",
-            "weight": 2.7e-05
+            "word": "though build",
+            "weight": 0.056435
           },
           {
-            "word": "transfer automatic",
-            "weight": 2.7e-05
+            "word": "hardware",
+            "weight": 0.056422
           },
           {
-            "word": "transfer",
-            "weight": 2.7e-05
+            "word": "software need",
+            "weight": 0.056374
           },
           {
-            "word": "bank",
-            "weight": 2.7e-05
-          }
-        ]
-      },
-      {
-        "id": 5,
-        "top_words": [
-          {
-            "word": "transfer",
-            "weight": 0.249973
+            "word": "software",
+            "weight": 0.056366
           },
           {
-            "word": "bank transfer",
-            "weight": 0.249973
+            "word": "need improvement",
+            "weight": 0.056363
           },
           {
-            "word": "transfer automatic",
-            "weight": 0.249973
+            "word": "need",
+            "weight": 0.05635
           },
           {
-            "word": "bank",
-            "weight": 0.249973
+            "word": "decent though",
+            "weight": 0.056337
           },
           {
-            "word": "credit card",
-            "weight": 2.7e-05
+            "word": "improvement hardware",
+            "weight": 0.056309
           },
           {
-            "word": "card",
-            "weight": 2.7e-05
+            "word": "though",
+            "weight": 0.056228
           },
           {
-            "word": "credit",
-            "weight": 2.7e-05
+            "word": "unhelpful",
+            "weight": 0.003674
           },
           {
-            "word": "card automatic",
-            "weight": 2.7e-05
+            "word": "defective",
+            "weight": 0.003542
           }
         ]
       }
     ],
     "prevalence": [
-      0.0,
-      0.0,
-      0.0,
-      0.0,
-      0.4964,
-      0.5036
+      0.1,
+      0.4,
+      0.3,
+      0.1,
+      0.1
     ],
     "representative_reviews": {
       "0": [
-        "Credit card (automatic)",
-        "Credit card (automatic)",
-        "Credit card (automatic)"
+        "The battery life is amazing and screen quality is crisp and clear.",
+        "The battery life is amazing and screen quality is crisp and clear.",
+        "The battery life is amazing and screen quality is crisp and clear."
       ],
       "1": [
-        "Credit card (automatic)",
-        "Credit card (automatic)",
-        "Credit card (automatic)"
+        "Value for money! Without any issue so far, using every single day.",
+        "Value for money! Without any issue so far, using every single day.",
+        "Value for money! Without any issue so far, using every single day."
       ],
       "2": [
-        "Bank transfer (automatic)",
-        "Bank transfer (automatic)",
-        "Bank transfer (automatic)"
+        "Battery drains fast and price is too high for this cheap quality.",
+        "Battery drains fast and price is too high for this cheap quality.",
+        "Battery drains fast and price is too high for this cheap quality."
       ],
       "3": [
-        "Bank transfer (automatic)",
-        "Bank transfer (automatic)",
-        "Bank transfer (automatic)"
+        "Works perfectly right out of the box. Highly recommended for daily use!",
+        "Works perfectly right out of the box. Highly recommended for daily use!",
+        "Works perfectly right out of the box. Highly recommended for daily use!"
       ],
       "4": [
-        "Credit card (automatic)",
-        "Credit card (automatic)",
-        "Credit card (automatic)"
-      ],
-      "5": [
-        "Bank transfer (automatic)",
-        "Bank transfer (automatic)",
-        "Bank transfer (automatic)"
+        "Software needs improvement. Hardware is decent though, good build.",
+        "Software needs improvement. Hardware is decent though, good build.",
+        "Software needs improvement. Hardware is decent though, good build."
       ]
     },
     "metrics": {
-      "coherence": 0.0257,
-      "diversity": 0.1667,
-      "perplexity": 8.27
+      "coherence": 0.653,
+      "diversity": 0.94,
+      "perplexity": 59.27
     },
-    "training_time": 17.04
+    "training_time": 3.26
   },
   "nmf": {
     "topics": [
@@ -286,36 +383,64 @@
         "id": 0,
         "top_words": [
           {
-            "word": "transfer automatic",
-            "weight": 0.25
+            "word": "unhelpful",
+            "weight": 0.087444
           },
           {
-            "word": "transfer",
-            "weight": 0.25
+            "word": "service",
+            "weight": 0.087444
           },
           {
-            "word": "bank transfer",
-            "weight": 0.25
+            "word": "customer",
+            "weight": 0.087444
           },
           {
-            "word": "bank",
-            "weight": 0.25
+            "word": "customer service",
+            "weight": 0.087444
           },
           {
-            "word": "credit",
-            "weight": 0.0
+            "word": "service disappointed",
+            "weight": 0.05793
           },
           {
-            "word": "credit card",
-            "weight": 0.0
+            "word": "overpriced unhelpful",
+            "weight": 0.05793
           },
           {
-            "word": "card",
-            "weight": 0.0
+            "word": "overpriced",
+            "weight": 0.05793
           },
           {
-            "word": "card automatic",
-            "weight": 0.0
+            "word": "unhelpful customer",
+            "weight": 0.05793
+          },
+          {
+            "word": "disappointed",
+            "weight": 0.05793
+          },
+          {
+            "word": "reported",
+            "weight": 0.051511
+          },
+          {
+            "word": "defective",
+            "weight": 0.051511
+          },
+          {
+            "word": "defective unit",
+            "weight": 0.051511
+          },
+          {
+            "word": "reported defective",
+            "weight": 0.051511
+          },
+          {
+            "word": "service unhelpful",
+            "weight": 0.051511
+          },
+          {
+            "word": "unhelpful reported",
+            "weight": 0.051511
           }
         ]
       },
@@ -323,36 +448,64 @@
         "id": 1,
         "top_words": [
           {
-            "word": "credit",
-            "weight": 0.25
+            "word": "recommended",
+            "weight": 0.071108
           },
           {
-            "word": "credit card",
-            "weight": 0.25
+            "word": "highly",
+            "weight": 0.071108
           },
           {
-            "word": "card",
-            "weight": 0.25
+            "word": "highly recommended",
+            "weight": 0.071108
           },
           {
-            "word": "card automatic",
-            "weight": 0.25
+            "word": "reliability",
+            "weight": 0.046953
           },
           {
-            "word": "transfer automatic",
-            "weight": 0.0
+            "word": "recommended anyone",
+            "weight": 0.046953
           },
           {
-            "word": "transfer",
-            "weight": 0.0
+            "word": "looking value",
+            "weight": 0.046953
           },
           {
-            "word": "bank transfer",
-            "weight": 0.0
+            "word": "looking",
+            "weight": 0.046953
           },
           {
-            "word": "bank",
-            "weight": 0.0
+            "word": "value reliability",
+            "weight": 0.046953
+          },
+          {
+            "word": "anyone",
+            "weight": 0.046953
+          },
+          {
+            "word": "anyone looking",
+            "weight": 0.046953
+          },
+          {
+            "word": "perfectly",
+            "weight": 0.042043
+          },
+          {
+            "word": "perfectly right",
+            "weight": 0.042043
+          },
+          {
+            "word": "work perfectly",
+            "weight": 0.042043
+          },
+          {
+            "word": "right box",
+            "weight": 0.042043
+          },
+          {
+            "word": "box highly",
+            "weight": 0.042043
           }
         ]
       },
@@ -360,36 +513,64 @@
         "id": 2,
         "top_words": [
           {
-            "word": "transfer automatic",
-            "weight": 0.0
+            "word": "quality",
+            "weight": 0.057897
           },
           {
-            "word": "transfer",
-            "weight": 0.0
+            "word": "battery",
+            "weight": 0.053792
           },
           {
-            "word": "credit card",
-            "weight": 0.0
+            "word": "stellar",
+            "weight": 0.036154
           },
           {
-            "word": "credit",
-            "weight": 0.0
+            "word": "screen",
+            "weight": 0.03487
           },
           {
-            "word": "card automatic",
-            "weight": 0.0
+            "word": "screen quality",
+            "weight": 0.03487
           },
           {
-            "word": "card",
-            "weight": 0.0
+            "word": "quality crisp",
+            "weight": 0.03487
           },
           {
-            "word": "bank transfer",
-            "weight": 0.0
+            "word": "life",
+            "weight": 0.03487
           },
           {
-            "word": "bank",
-            "weight": 0.0
+            "word": "crisp clear",
+            "weight": 0.03487
+          },
+          {
+            "word": "clear",
+            "weight": 0.03487
+          },
+          {
+            "word": "life screen",
+            "weight": 0.03487
+          },
+          {
+            "word": "crisp",
+            "weight": 0.03487
+          },
+          {
+            "word": "battery life",
+            "weight": 0.03487
+          },
+          {
+            "word": "high",
+            "weight": 0.032452
+          },
+          {
+            "word": "drain",
+            "weight": 0.032452
+          },
+          {
+            "word": "fast",
+            "weight": 0.032452
           }
         ]
       },
@@ -397,36 +578,64 @@
         "id": 3,
         "top_words": [
           {
-            "word": "transfer automatic",
-            "weight": 0.0
+            "word": "decent",
+            "weight": 0.069006
           },
           {
-            "word": "transfer",
-            "weight": 0.0
+            "word": "quick",
+            "weight": 0.043274
           },
           {
-            "word": "credit card",
-            "weight": 0.0
+            "word": "setup breeze",
+            "weight": 0.043274
           },
           {
-            "word": "credit",
-            "weight": 0.0
+            "word": "breeze",
+            "weight": 0.043274
           },
           {
-            "word": "card automatic",
-            "weight": 0.0
+            "word": "breeze quick",
+            "weight": 0.043274
           },
           {
-            "word": "card",
-            "weight": 0.0
+            "word": "performance price",
+            "weight": 0.043274
           },
           {
-            "word": "bank transfer",
-            "weight": 0.0
+            "word": "decent performance",
+            "weight": 0.043274
           },
           {
-            "word": "bank",
-            "weight": 0.0
+            "word": "price setup",
+            "weight": 0.043274
+          },
+          {
+            "word": "setup",
+            "weight": 0.043274
+          },
+          {
+            "word": "need",
+            "weight": 0.043055
+          },
+          {
+            "word": "need improvement",
+            "weight": 0.043055
+          },
+          {
+            "word": "improvement hardware",
+            "weight": 0.043055
+          },
+          {
+            "word": "hardware",
+            "weight": 0.043055
+          },
+          {
+            "word": "decent though",
+            "weight": 0.043055
+          },
+          {
+            "word": "build",
+            "weight": 0.043055
           }
         ]
       },
@@ -434,173 +643,145 @@
         "id": 4,
         "top_words": [
           {
-            "word": "transfer automatic",
-            "weight": 0.0
+            "word": "without issue",
+            "weight": 0.067576
           },
           {
-            "word": "transfer",
-            "weight": 0.0
+            "word": "value money",
+            "weight": 0.067576
           },
           {
-            "word": "credit card",
-            "weight": 0.0
+            "word": "without",
+            "weight": 0.067576
           },
           {
-            "word": "credit",
-            "weight": 0.0
+            "word": "single day",
+            "weight": 0.067576
           },
           {
-            "word": "card automatic",
-            "weight": 0.0
+            "word": "single",
+            "weight": 0.067576
           },
           {
-            "word": "card",
-            "weight": 0.0
+            "word": "money",
+            "weight": 0.067576
           },
           {
-            "word": "bank transfer",
-            "weight": 0.0
+            "word": "issue far",
+            "weight": 0.067576
           },
           {
-            "word": "bank",
-            "weight": 0.0
-          }
-        ]
-      },
-      {
-        "id": 5,
-        "top_words": [
-          {
-            "word": "transfer automatic",
-            "weight": 0.0
+            "word": "issue",
+            "weight": 0.067576
           },
           {
-            "word": "transfer",
-            "weight": 0.0
+            "word": "money without",
+            "weight": 0.067576
           },
           {
-            "word": "credit card",
-            "weight": 0.0
+            "word": "far every",
+            "weight": 0.067576
           },
           {
-            "word": "credit",
-            "weight": 0.0
+            "word": "far",
+            "weight": 0.067576
           },
           {
-            "word": "card automatic",
-            "weight": 0.0
+            "word": "every single",
+            "weight": 0.067576
           },
           {
-            "word": "card",
-            "weight": 0.0
+            "word": "every",
+            "weight": 0.067576
           },
           {
-            "word": "bank transfer",
-            "weight": 0.0
+            "word": "day",
+            "weight": 0.067576
           },
           {
-            "word": "bank",
-            "weight": 0.0
+            "word": "value",
+            "weight": 0.053936
           }
         ]
       }
     ],
     "prevalence": [
-      0.5036,
-      0.4964,
-      0.0,
-      0.0,
-      0.0,
-      0.0
+      0.2,
+      0.2,
+      0.3,
+      0.2,
+      0.1
     ],
     "representative_reviews": {
       "0": [
-        "Bank transfer (automatic)",
-        "Bank transfer (automatic)",
-        "Bank transfer (automatic)"
+        "Customer service was unhelpful when I reported the defective unit.",
+        "Customer service was unhelpful when I reported the defective unit.",
+        "Customer service was unhelpful when I reported the defective unit."
       ],
       "1": [
-        "Credit card (automatic)",
-        "Credit card (automatic)",
-        "Credit card (automatic)"
+        "Works perfectly right out of the box. Highly recommended for daily use!",
+        "Works perfectly right out of the box. Highly recommended for daily use!",
+        "Works perfectly right out of the box. Highly recommended for daily use!"
       ],
       "2": [
-        "Bank transfer (automatic)",
-        "Credit card (automatic)",
-        "Bank transfer (automatic)"
+        "Battery drains fast and price is too high for this cheap quality.",
+        "Battery drains fast and price is too high for this cheap quality.",
+        "Battery drains fast and price is too high for this cheap quality."
       ],
       "3": [
-        "Bank transfer (automatic)",
-        "Credit card (automatic)",
-        "Bank transfer (automatic)"
+        "Software needs improvement. Hardware is decent though, good build.",
+        "Software needs improvement. Hardware is decent though, good build.",
+        "Software needs improvement. Hardware is decent though, good build."
       ],
       "4": [
-        "Bank transfer (automatic)",
-        "Credit card (automatic)",
-        "Bank transfer (automatic)"
-      ],
-      "5": [
-        "Bank transfer (automatic)",
-        "Credit card (automatic)",
-        "Bank transfer (automatic)"
+        "Value for money! Without any issue so far, using every single day.",
+        "Value for money! Without any issue so far, using every single day.",
+        "Value for money! Without any issue so far, using every single day."
       ]
     },
     "metrics": {
-      "coherence": 0.0257,
-      "diversity": 0.1667,
-      "reconstruction_error": 0.0
+      "coherence": 0.8175,
+      "diversity": 1.0,
+      "reconstruction_error": 6.59
     },
-    "training_time": 0.17
+    "training_time": 0.0
   },
   "similarity": {
     "matrix": [
       [
-        0.696,
-        0.718,
-        0.0,
-        0.0,
-        0.0,
-        0.0
+        0.057,
+        0.071,
+        0.746,
+        0.069,
+        0.062
       ],
       [
-        0.701,
-        0.713,
-        0.0,
-        0.0,
-        0.0,
-        0.0
+        0.684,
+        0.05,
+        0.25,
+        0.052,
+        0.512
       ],
       [
-        0.707,
-        0.707,
-        0.0,
-        0.0,
-        0.0,
-        0.0
+        0.031,
+        0.445,
+        0.487,
+        0.421,
+        0.064
       ],
       [
-        0.713,
-        0.701,
-        0.0,
-        0.0,
-        0.0,
-        0.0
+        0.057,
+        0.804,
+        0.075,
+        0.064,
+        0.053
       ],
       [
-        0.0,
-        1.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0
-      ],
-      [
-        1.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0
+        0.061,
+        0.06,
+        0.075,
+        0.795,
+        0.053
       ]
     ],
     "lda_labels": [
@@ -608,16 +789,14 @@
       "LDA Topic 1",
       "LDA Topic 2",
       "LDA Topic 3",
-      "LDA Topic 4",
-      "LDA Topic 5"
+      "LDA Topic 4"
     ],
     "nmf_labels": [
       "NMF Topic 0",
       "NMF Topic 1",
       "NMF Topic 2",
       "NMF Topic 3",
-      "NMF Topic 4",
-      "NMF Topic 5"
+      "NMF Topic 4"
     ]
   }
 }
