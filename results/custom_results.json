@@ -4,9 +4,9 @@
     "processed_reviews": 200,
     "sample_size": 5000,
     "n_topics": 5,
-    "total_time": 17.23,
-    "vocabulary_size_bow": 99,
-    "vocabulary_size_tfidf": 99
+    "total_time": 12.86,
+    "vocabulary_size_bow": 80,
+    "vocabulary_size_tfidf": 80
   },
   "lda": {
     "topics": [
@@ -14,64 +14,64 @@
         "id": 0,
         "top_words": [
           {
+            "word": "fast",
+            "weight": 0.060819
+          },
+          {
             "word": "battery",
-            "weight": 0.075117
+            "weight": 0.060812
           },
           {
-            "word": "recommended battery",
-            "weight": 0.037707
+            "word": "charging",
+            "weight": 0.06081
           },
           {
-            "word": "charger",
-            "weight": 0.037698
+            "word": "speed charger",
+            "weight": 0.060809
           },
           {
-            "word": "life",
-            "weight": 0.037694
-          },
-          {
-            "word": "speed",
-            "weight": 0.037692
-          },
-          {
-            "word": "battery life",
-            "weight": 0.037692
-          },
-          {
-            "word": "speed portable",
-            "weight": 0.03769
-          },
-          {
-            "word": "portable charger",
-            "weight": 0.037689
+            "word": "work",
+            "weight": 0.060809
           },
           {
             "word": "life fast",
-            "weight": 0.037689
+            "weight": 0.060801
           },
           {
-            "word": "traveling",
-            "weight": 0.037688
+            "word": "speed",
+            "weight": 0.0608
           },
           {
-            "word": "performance",
-            "weight": 0.037688
+            "word": "battery life",
+            "weight": 0.0608
           },
           {
-            "word": "performance number",
-            "weight": 0.037688
+            "word": "charger work",
+            "weight": 0.060794
+          },
+          {
+            "word": "device number",
+            "weight": 0.060793
           },
           {
             "word": "charging speed",
-            "weight": 0.037687
+            "weight": 0.060788
           },
           {
-            "word": "highly",
-            "weight": 0.037687
+            "word": "life",
+            "weight": 0.060787
           },
           {
-            "word": "recommended",
-            "weight": 0.037687
+            "word": "fast charging",
+            "weight": 0.060786
+          },
+          {
+            "word": "charger",
+            "weight": 0.060777
+          },
+          {
+            "word": "device",
+            "weight": 0.060773
           }
         ]
       },
@@ -79,64 +79,64 @@
         "id": 1,
         "top_words": [
           {
-            "word": "sound",
-            "weight": 0.081215
+            "word": "perfectly",
+            "weight": 0.014052
           },
           {
-            "word": "bluetooth speaker",
-            "weight": 0.040768
+            "word": "picture quality",
+            "weight": 0.013761
           },
           {
-            "word": "speaker",
-            "weight": 0.040766
-          },
-          {
-            "word": "loud number",
-            "weight": 0.040766
-          },
-          {
-            "word": "connect",
-            "weight": 0.040764
-          },
-          {
-            "word": "loud",
-            "weight": 0.040764
+            "word": "low light",
+            "weight": 0.013264
           },
           {
             "word": "sound quality",
-            "weight": 0.040763
+            "weight": 0.013239
           },
           {
-            "word": "sound crisp",
-            "weight": 0.040762
+            "word": "comfortable",
+            "weight": 0.01313
           },
           {
-            "word": "quality deep",
-            "weight": 0.040759
+            "word": "camera picture",
+            "weight": 0.01312
           },
           {
-            "word": "connect instantly",
-            "weight": 0.040759
+            "word": "photography",
+            "weight": 0.013018
           },
           {
-            "word": "crisp loud",
-            "weight": 0.040758
+            "word": "audio output",
+            "weight": 0.012999
           },
           {
-            "word": "bass",
-            "weight": 0.040758
+            "word": "recommended",
+            "weight": 0.012997
           },
           {
-            "word": "crisp",
-            "weight": 0.040757
+            "word": "fast charging",
+            "weight": 0.01296
           },
           {
-            "word": "wireless",
-            "weight": 0.040754
+            "word": "speed charger",
+            "weight": 0.012882
           },
           {
-            "word": "speaker connect",
-            "weight": 0.040754
+            "word": "highly",
+            "weight": 0.012857
+          },
+          {
+            "word": "quality durable",
+            "weight": 0.012837
+          },
+          {
+            "word": "material",
+            "weight": 0.012823
+          },
+          {
+            "word": "light",
+            "weight": 0.012816
           }
         ]
       },
@@ -144,64 +144,64 @@
         "id": 2,
         "top_words": [
           {
-            "word": "configure",
-            "weight": 0.048669
-          },
-          {
-            "word": "installation",
-            "weight": 0.048662
-          },
-          {
-            "word": "smooth simple",
-            "weight": 0.04866
-          },
-          {
-            "word": "easy",
-            "weight": 0.048659
-          },
-          {
-            "word": "quality software",
-            "weight": 0.048655
-          },
-          {
             "word": "quality",
-            "weight": 0.048652
+            "weight": 0.060774
           },
           {
-            "word": "software",
-            "weight": 0.048651
+            "word": "recommended photography",
+            "weight": 0.060551
           },
           {
-            "word": "comfortable build",
-            "weight": 0.048651
+            "word": "highly",
+            "weight": 0.060549
           },
           {
-            "word": "software installation",
-            "weight": 0.048649
+            "word": "camera",
+            "weight": 0.060538
           },
           {
-            "word": "setup comfortable",
-            "weight": 0.048648
+            "word": "highly recommended",
+            "weight": 0.060536
           },
           {
-            "word": "build",
-            "weight": 0.048647
+            "word": "photography number",
+            "weight": 0.060524
           },
           {
-            "word": "installation smooth",
-            "weight": 0.048646
+            "word": "recommended",
+            "weight": 0.060523
           },
           {
-            "word": "comfortable",
-            "weight": 0.048646
+            "word": "low",
+            "weight": 0.060523
           },
           {
-            "word": "easy setup",
-            "weight": 0.048645
+            "word": "quality low",
+            "weight": 0.060518
           },
           {
-            "word": "build quality",
-            "weight": 0.048644
+            "word": "photography",
+            "weight": 0.060511
+          },
+          {
+            "word": "picture quality",
+            "weight": 0.060509
+          },
+          {
+            "word": "light highly",
+            "weight": 0.060508
+          },
+          {
+            "word": "light",
+            "weight": 0.060507
+          },
+          {
+            "word": "picture",
+            "weight": 0.060503
+          },
+          {
+            "word": "low light",
+            "weight": 0.060493
           }
         ]
       },
@@ -209,64 +209,64 @@
         "id": 3,
         "top_words": [
           {
-            "word": "durable build",
-            "weight": 0.060334
+            "word": "quality",
+            "weight": 0.054282
           },
           {
-            "word": "work expected",
-            "weight": 0.060329
+            "word": "headphone number",
+            "weight": 0.054202
           },
           {
-            "word": "condition",
-            "weight": 0.060328
+            "word": "output comfortable",
+            "weight": 0.054189
           },
           {
-            "word": "expected number",
-            "weight": 0.060326
+            "word": "comfortable",
+            "weight": 0.054187
           },
           {
-            "word": "fast",
-            "weight": 0.060324
+            "word": "audio output",
+            "weight": 0.054182
           },
           {
-            "word": "work",
-            "weight": 0.060321
+            "word": "bass clear",
+            "weight": 0.05418
           },
           {
-            "word": "build arrived",
-            "weight": 0.06032
+            "word": "clear audio",
+            "weight": 0.054173
           },
           {
-            "word": "condition work",
-            "weight": 0.060319
+            "word": "sound quality",
+            "weight": 0.05417
           },
           {
-            "word": "arrived",
-            "weight": 0.060317
+            "word": "deep bass",
+            "weight": 0.054166
           },
           {
-            "word": "build",
-            "weight": 0.060315
+            "word": "clear",
+            "weight": 0.054163
           },
           {
-            "word": "durable",
-            "weight": 0.060309
+            "word": "bass",
+            "weight": 0.054161
           },
           {
-            "word": "shipping durable",
-            "weight": 0.060306
+            "word": "sound",
+            "weight": 0.054158
           },
           {
-            "word": "fast shipping",
-            "weight": 0.060303
+            "word": "audio",
+            "weight": 0.054151
           },
           {
-            "word": "arrived condition",
-            "weight": 0.060302
+            "word": "headphone",
+            "weight": 0.054149
           },
           {
-            "word": "shipping",
-            "weight": 0.060293
+            "word": "output",
+            "weight": 0.054148
           }
         ]
       },
@@ -274,108 +274,108 @@
         "id": 4,
         "top_words": [
           {
-            "word": "clear screen",
-            "weight": 0.048647
+            "word": "shipping build",
+            "weight": 0.029387
           },
           {
-            "word": "screen",
-            "weight": 0.048644
+            "word": "design number",
+            "weight": 0.029385
           },
           {
-            "word": "resolution",
-            "weight": 0.048642
+            "word": "design",
+            "weight": 0.029373
           },
           {
-            "word": "crisp resolution",
-            "weight": 0.04864
+            "word": "build",
+            "weight": 0.029372
           },
           {
-            "word": "quality color",
-            "weight": 0.048636
+            "word": "durable",
+            "weight": 0.02937
           },
           {
-            "word": "monitor picture",
-            "weight": 0.048635
+            "word": "material sleek",
+            "weight": 0.02937
           },
           {
-            "word": "display crisp",
-            "weight": 0.048634
+            "word": "sleek design",
+            "weight": 0.029369
           },
           {
-            "word": "vivid",
-            "weight": 0.048634
+            "word": "quality durable",
+            "weight": 0.029369
           },
           {
-            "word": "picture",
-            "weight": 0.048633
+            "word": "sleek",
+            "weight": 0.029369
           },
           {
-            "word": "color vivid",
-            "weight": 0.048633
+            "word": "material",
+            "weight": 0.029369
           },
           {
-            "word": "monitor",
-            "weight": 0.048633
+            "word": "fast shipping",
+            "weight": 0.029368
           },
           {
-            "word": "crisp",
-            "weight": 0.048633
+            "word": "build quality",
+            "weight": 0.029367
           },
           {
-            "word": "picture quality",
-            "weight": 0.048631
+            "word": "durable material",
+            "weight": 0.029367
           },
           {
-            "word": "screen display",
-            "weight": 0.048631
+            "word": "shipping",
+            "weight": 0.029363
           },
           {
-            "word": "quality",
-            "weight": 0.048631
+            "word": "fast",
+            "weight": 0.029362
           }
         ]
       }
     ],
     "prevalence": [
       0.2,
+      0.0,
       0.2,
       0.2,
-      0.2,
-      0.2
+      0.4
     ],
     "representative_reviews": {
       "0": [
-        "Great battery life and fast charging speed. Excellent portable charger for traveling and daily use. Highly recommended battery performance. Review number 195",
-        "Great battery life and fast charging speed. Excellent portable charger for traveling and daily use. Highly recommended battery performance. Review number 170",
-        "Great battery life and fast charging speed. Excellent portable charger for traveling and daily use. Highly recommended battery performance. Review number 160"
+        "Great battery life and fast charging speed. Charger works fantastic for all my devices. Review number 200",
+        "Great battery life and fast charging speed. Charger works fantastic for all my devices. Review number 195",
+        "Great battery life and fast charging speed. Charger works fantastic for all my devices. Review number 165"
       ],
       "1": [
-        "Awesome sound quality with deep bass. Wireless bluetooth speakers connect instantly and sound crisp and loud. Review number 197",
-        "Awesome sound quality with deep bass. Wireless bluetooth speakers connect instantly and sound crisp and loud. Review number 192",
-        "Awesome sound quality with deep bass. Wireless bluetooth speakers connect instantly and sound crisp and loud. Review number 162"
+        "Fast shipping and good build quality. Durable materials and sleek design. Review number 199",
+        "Fast shipping and good build quality. Durable materials and sleek design. Review number 194",
+        "Fast shipping and good build quality. Durable materials and sleek design. Review number 164"
       ],
       "2": [
-        "Easy setup and comfortable build quality. Software installation was smooth and simple to configure. Review number 198",
-        "Easy setup and comfortable build quality. Software installation was smooth and simple to configure. Review number 193",
-        "Easy setup and comfortable build quality. Software installation was smooth and simple to configure. Review number 163"
+        "Camera picture quality is excellent even in low light. Highly recommended for photography. Review number 198",
+        "Camera picture quality is excellent even in low light. Highly recommended for photography. Review number 193",
+        "Camera picture quality is excellent even in low light. Highly recommended for photography. Review number 163"
       ],
       "3": [
-        "Fast shipping and durable build. Product arrived in great condition and works as expected. Review number 199",
-        "Fast shipping and durable build. Product arrived in great condition and works as expected. Review number 194",
-        "Fast shipping and durable build. Product arrived in great condition and works as expected. Review number 164"
+        "Sound quality is amazing with deep bass and clear audio output. Very comfortable headphones. Review number 197",
+        "Sound quality is amazing with deep bass and clear audio output. Very comfortable headphones. Review number 172",
+        "Sound quality is amazing with deep bass and clear audio output. Very comfortable headphones. Review number 162"
       ],
       "4": [
-        "Clear screen display and crisp resolution. The monitor picture quality is amazing and colors are vivid. Review number 196",
-        "Clear screen display and crisp resolution. The monitor picture quality is amazing and colors are vivid. Review number 171",
-        "Clear screen display and crisp resolution. The monitor picture quality is amazing and colors are vivid. Review number 161"
+        "Smooth software installation and simple user interface. Works perfectly on my laptop. Review number 196",
+        "Smooth software installation and simple user interface. Works perfectly on my laptop. Review number 171",
+        "Smooth software installation and simple user interface. Works perfectly on my laptop. Review number 161"
       ]
     },
     "metrics": {
-      "coherence": 0.9793,
-      "diversity": 1.0,
-      "perplexity": 29.47
+      "coherence": 0.8246,
+      "diversity": 0.88,
+      "perplexity": 32.04
     },
-    "training_time": 3.93
+    "training_time": 0.66
   },
   "nmf": {
     "topics": [
@@ -383,64 +383,64 @@
         "id": 0,
         "top_words": [
           {
-            "word": "smooth simple",
-            "weight": 0.051608
+            "word": "work device",
+            "weight": 0.064409
           },
           {
-            "word": "software",
-            "weight": 0.051608
+            "word": "speed charger",
+            "weight": 0.064409
           },
           {
-            "word": "software installation",
-            "weight": 0.051608
+            "word": "speed",
+            "weight": 0.064409
           },
           {
-            "word": "quality software",
-            "weight": 0.051608
+            "word": "battery life",
+            "weight": 0.064409
           },
           {
-            "word": "setup",
-            "weight": 0.051608
+            "word": "charger work",
+            "weight": 0.064409
           },
           {
-            "word": "simple",
-            "weight": 0.051608
+            "word": "fast charging",
+            "weight": 0.064409
           },
           {
-            "word": "smooth",
-            "weight": 0.051608
+            "word": "charging speed",
+            "weight": 0.064409
           },
           {
-            "word": "setup comfortable",
-            "weight": 0.051608
+            "word": "charging",
+            "weight": 0.064409
           },
           {
-            "word": "simple configure",
-            "weight": 0.051608
+            "word": "battery",
+            "weight": 0.064409
           },
           {
-            "word": "installation smooth",
-            "weight": 0.051608
+            "word": "device number",
+            "weight": 0.064409
           },
           {
-            "word": "build quality",
-            "weight": 0.051608
+            "word": "device",
+            "weight": 0.064409
           },
           {
-            "word": "configure number",
-            "weight": 0.051608
+            "word": "life",
+            "weight": 0.064409
           },
           {
-            "word": "configure",
-            "weight": 0.051608
+            "word": "life fast",
+            "weight": 0.064409
           },
           {
-            "word": "comfortable build",
-            "weight": 0.051608
+            "word": "charger",
+            "weight": 0.064409
           },
           {
-            "word": "comfortable",
-            "weight": 0.051608
+            "word": "fast",
+            "weight": 0.049272
           }
         ]
       },
@@ -448,64 +448,64 @@
         "id": 1,
         "top_words": [
           {
-            "word": "work expected",
-            "weight": 0.064606
+            "word": "work perfectly",
+            "weight": 0.05637
           },
           {
-            "word": "work",
-            "weight": 0.064606
+            "word": "user interface",
+            "weight": 0.05637
           },
           {
-            "word": "shipping durable",
-            "weight": 0.064606
+            "word": "user",
+            "weight": 0.05637
           },
           {
-            "word": "shipping",
-            "weight": 0.064606
+            "word": "simple user",
+            "weight": 0.05637
           },
           {
-            "word": "condition work",
-            "weight": 0.064606
+            "word": "smooth",
+            "weight": 0.05637
           },
           {
-            "word": "arrived condition",
-            "weight": 0.064606
+            "word": "smooth software",
+            "weight": 0.05637
           },
           {
-            "word": "fast shipping",
-            "weight": 0.064606
+            "word": "software",
+            "weight": 0.05637
           },
           {
-            "word": "durable",
-            "weight": 0.064606
+            "word": "software installation",
+            "weight": 0.05637
           },
           {
-            "word": "expected number",
-            "weight": 0.064606
+            "word": "interface",
+            "weight": 0.05637
           },
           {
-            "word": "arrived",
-            "weight": 0.064606
+            "word": "interface work",
+            "weight": 0.05637
           },
           {
-            "word": "build arrived",
-            "weight": 0.064606
+            "word": "installation simple",
+            "weight": 0.05637
           },
           {
-            "word": "condition",
-            "weight": 0.064606
+            "word": "installation",
+            "weight": 0.05637
           },
           {
-            "word": "durable build",
-            "weight": 0.064606
+            "word": "laptop",
+            "weight": 0.05637
           },
           {
-            "word": "expected",
-            "weight": 0.064606
+            "word": "perfectly laptop",
+            "weight": 0.05637
           },
           {
-            "word": "build",
-            "weight": 0.04762
+            "word": "perfectly",
+            "weight": 0.05637
           }
         ]
       },
@@ -513,64 +513,64 @@
         "id": 2,
         "top_words": [
           {
-            "word": "battery",
-            "weight": 0.077713
+            "word": "sound quality",
+            "weight": 0.056874
           },
           {
-            "word": "speed",
-            "weight": 0.038856
+            "word": "sound",
+            "weight": 0.056874
           },
           {
-            "word": "speed portable",
-            "weight": 0.038856
+            "word": "comfortable headphone",
+            "weight": 0.056874
           },
           {
-            "word": "recommended",
-            "weight": 0.038856
+            "word": "comfortable",
+            "weight": 0.056874
           },
           {
-            "word": "recommended battery",
-            "weight": 0.038856
+            "word": "headphone number",
+            "weight": 0.056874
           },
           {
-            "word": "traveling",
-            "weight": 0.038856
+            "word": "deep",
+            "weight": 0.056874
           },
           {
-            "word": "charger",
-            "weight": 0.038856
+            "word": "clear",
+            "weight": 0.056874
           },
           {
-            "word": "charging",
-            "weight": 0.038856
+            "word": "clear audio",
+            "weight": 0.056874
           },
           {
-            "word": "charger traveling",
-            "weight": 0.038856
+            "word": "audio",
+            "weight": 0.056874
           },
           {
-            "word": "fast charging",
-            "weight": 0.038856
+            "word": "audio output",
+            "weight": 0.056874
           },
           {
-            "word": "daily highly",
-            "weight": 0.038856
+            "word": "bass",
+            "weight": 0.056874
           },
           {
-            "word": "performance number",
-            "weight": 0.038856
+            "word": "bass clear",
+            "weight": 0.056874
           },
           {
-            "word": "highly",
-            "weight": 0.038856
+            "word": "deep bass",
+            "weight": 0.056874
           },
           {
-            "word": "life",
-            "weight": 0.038856
+            "word": "output",
+            "weight": 0.056874
           },
           {
-            "word": "life fast",
-            "weight": 0.038856
+            "word": "output comfortable",
+            "weight": 0.056874
           }
         ]
       },
@@ -578,64 +578,64 @@
         "id": 3,
         "top_words": [
           {
-            "word": "sound",
-            "weight": 0.090909
+            "word": "low light",
+            "weight": 0.064178
           },
           {
-            "word": "wireless",
-            "weight": 0.045455
+            "word": "highly",
+            "weight": 0.064178
           },
           {
-            "word": "wireless bluetooth",
-            "weight": 0.045455
+            "word": "camera",
+            "weight": 0.064178
           },
           {
-            "word": "sound crisp",
-            "weight": 0.045455
+            "word": "camera picture",
+            "weight": 0.064178
           },
           {
-            "word": "sound quality",
-            "weight": 0.045455
+            "word": "highly recommended",
+            "weight": 0.064178
           },
           {
-            "word": "speaker",
-            "weight": 0.045455
+            "word": "light",
+            "weight": 0.064178
           },
           {
-            "word": "speaker connect",
-            "weight": 0.045455
+            "word": "light highly",
+            "weight": 0.064178
           },
           {
-            "word": "quality deep",
-            "weight": 0.045455
+            "word": "low",
+            "weight": 0.064178
           },
           {
-            "word": "bass wireless",
-            "weight": 0.045455
+            "word": "picture quality",
+            "weight": 0.064178
           },
           {
-            "word": "bass",
-            "weight": 0.045455
+            "word": "picture",
+            "weight": 0.064178
           },
           {
-            "word": "bluetooth speaker",
-            "weight": 0.045455
+            "word": "photography number",
+            "weight": 0.064178
           },
           {
-            "word": "crisp loud",
-            "weight": 0.045455
+            "word": "photography",
+            "weight": 0.064178
           },
           {
-            "word": "connect instantly",
-            "weight": 0.045455
+            "word": "recommended",
+            "weight": 0.064178
           },
           {
-            "word": "deep bass",
-            "weight": 0.045455
+            "word": "quality low",
+            "weight": 0.064178
           },
           {
-            "word": "deep",
-            "weight": 0.045455
+            "word": "recommended photography",
+            "weight": 0.064178
           }
         ]
       },
@@ -643,64 +643,64 @@
         "id": 4,
         "top_words": [
           {
-            "word": "screen",
-            "weight": 0.053371
+            "word": "sleek design",
+            "weight": 0.068577
           },
           {
-            "word": "vivid",
-            "weight": 0.053371
+            "word": "sleek",
+            "weight": 0.068577
           },
           {
-            "word": "vivid number",
-            "weight": 0.053371
+            "word": "durable material",
+            "weight": 0.068577
           },
           {
-            "word": "resolution monitor",
-            "weight": 0.053371
+            "word": "material",
+            "weight": 0.068577
           },
           {
-            "word": "resolution",
-            "weight": 0.053371
+            "word": "design number",
+            "weight": 0.068577
           },
           {
-            "word": "screen display",
-            "weight": 0.053371
+            "word": "build",
+            "weight": 0.068577
           },
           {
-            "word": "quality color",
-            "weight": 0.053371
+            "word": "build quality",
+            "weight": 0.068577
           },
           {
-            "word": "monitor",
-            "weight": 0.053371
+            "word": "design",
+            "weight": 0.068577
           },
           {
-            "word": "color vivid",
-            "weight": 0.053371
+            "word": "fast shipping",
+            "weight": 0.068577
           },
           {
-            "word": "clear screen",
-            "weight": 0.053371
+            "word": "durable",
+            "weight": 0.068577
           },
           {
-            "word": "clear",
-            "weight": 0.053371
+            "word": "shipping",
+            "weight": 0.068577
           },
           {
-            "word": "crisp resolution",
-            "weight": 0.053371
+            "word": "shipping build",
+            "weight": 0.068577
           },
           {
-            "word": "color",
-            "weight": 0.053371
+            "word": "material sleek",
+            "weight": 0.068577
           },
           {
-            "word": "display",
-            "weight": 0.053371
+            "word": "quality durable",
+            "weight": 0.068577
           },
           {
-            "word": "display crisp",
-            "weight": 0.053371
+            "word": "quality",
+            "weight": 0.039919
           }
         ]
       }
@@ -714,74 +714,74 @@
     ],
     "representative_reviews": {
       "0": [
-        "Easy setup and comfortable build quality. Software installation was smooth and simple to configure. Review number 198",
-        "Easy setup and comfortable build quality. Software installation was smooth and simple to configure. Review number 193",
-        "Easy setup and comfortable build quality. Software installation was smooth and simple to configure. Review number 163"
+        "Great battery life and fast charging speed. Charger works fantastic for all my devices. Review number 200",
+        "Great battery life and fast charging speed. Charger works fantastic for all my devices. Review number 195",
+        "Great battery life and fast charging speed. Charger works fantastic for all my devices. Review number 165"
       ],
       "1": [
-        "Fast shipping and durable build. Product arrived in great condition and works as expected. Review number 199",
-        "Fast shipping and durable build. Product arrived in great condition and works as expected. Review number 194",
-        "Fast shipping and durable build. Product arrived in great condition and works as expected. Review number 164"
+        "Smooth software installation and simple user interface. Works perfectly on my laptop. Review number 196",
+        "Smooth software installation and simple user interface. Works perfectly on my laptop. Review number 171",
+        "Smooth software installation and simple user interface. Works perfectly on my laptop. Review number 161"
       ],
       "2": [
-        "Great battery life and fast charging speed. Excellent portable charger for traveling and daily use. Highly recommended battery performance. Review number 195",
-        "Great battery life and fast charging speed. Excellent portable charger for traveling and daily use. Highly recommended battery performance. Review number 170",
-        "Great battery life and fast charging speed. Excellent portable charger for traveling and daily use. Highly recommended battery performance. Review number 160"
+        "Sound quality is amazing with deep bass and clear audio output. Very comfortable headphones. Review number 197",
+        "Sound quality is amazing with deep bass and clear audio output. Very comfortable headphones. Review number 172",
+        "Sound quality is amazing with deep bass and clear audio output. Very comfortable headphones. Review number 162"
       ],
       "3": [
-        "Awesome sound quality with deep bass. Wireless bluetooth speakers connect instantly and sound crisp and loud. Review number 197",
-        "Awesome sound quality with deep bass. Wireless bluetooth speakers connect instantly and sound crisp and loud. Review number 192",
-        "Awesome sound quality with deep bass. Wireless bluetooth speakers connect instantly and sound crisp and loud. Review number 162"
+        "Camera picture quality is excellent even in low light. Highly recommended for photography. Review number 198",
+        "Camera picture quality is excellent even in low light. Highly recommended for photography. Review number 193",
+        "Camera picture quality is excellent even in low light. Highly recommended for photography. Review number 163"
       ],
       "4": [
-        "Clear screen display and crisp resolution. The monitor picture quality is amazing and colors are vivid. Review number 196",
-        "Clear screen display and crisp resolution. The monitor picture quality is amazing and colors are vivid. Review number 171",
-        "Clear screen display and crisp resolution. The monitor picture quality is amazing and colors are vivid. Review number 161"
+        "Fast shipping and good build quality. Durable materials and sleek design. Review number 199",
+        "Fast shipping and good build quality. Durable materials and sleek design. Review number 194",
+        "Fast shipping and good build quality. Durable materials and sleek design. Review number 164"
       ]
     },
     "metrics": {
       "coherence": 1.0,
       "diversity": 1.0,
-      "reconstruction_error": 1.45
+      "reconstruction_error": 1.19
     },
     "training_time": 0.0
   },
   "similarity": {
     "matrix": [
       [
-        0.006,
-        0.041,
-        0.999,
+        0.996,
+        0.051,
         0.007,
-        0.006
-      ],
-      [
-        0.034,
-        0.006,
-        0.007,
-        0.961,
-        0.039
-      ],
-      [
-        0.994,
-        0.049,
-        0.008,
         0.007,
         0.007
       ],
       [
-        0.05,
-        0.996,
-        0.043,
-        0.008,
-        0.008
+        0.441,
+        0.471,
+        0.47,
+        0.455,
+        0.428
       ],
       [
-        0.039,
-        0.006,
-        0.008,
         0.007,
-        0.973
+        0.008,
+        0.045,
+        0.994,
+        0.046
+      ],
+      [
+        0.007,
+        0.007,
+        0.995,
+        0.043,
+        0.043
+      ],
+      [
+        0.072,
+        0.721,
+        0.029,
+        0.03,
+        0.666
       ]
     ],
     "lda_labels": [
