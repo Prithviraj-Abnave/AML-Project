@@ -1,12 +1,12 @@
 {
   "meta": {
-    "total_reviews": 100,
-    "processed_reviews": 100,
+    "total_reviews": 200,
+    "processed_reviews": 200,
     "sample_size": 5000,
     "n_topics": 5,
-    "total_time": 16.23,
-    "vocabulary_size_bow": 105,
-    "vocabulary_size_tfidf": 105
+    "total_time": 17.23,
+    "vocabulary_size_bow": 99,
+    "vocabulary_size_tfidf": 99
   },
   "lda": {
     "topics": [
@@ -14,64 +14,64 @@
         "id": 0,
         "top_words": [
           {
-            "word": "battery life",
-            "weight": 0.063753
-          },
-          {
-            "word": "clear",
-            "weight": 0.063729
-          },
-          {
-            "word": "screen quality",
-            "weight": 0.063716
-          },
-          {
-            "word": "screen",
-            "weight": 0.063583
-          },
-          {
-            "word": "quality",
-            "weight": 0.063449
-          },
-          {
             "word": "battery",
-            "weight": 0.063429
+            "weight": 0.075117
           },
           {
-            "word": "life screen",
-            "weight": 0.063429
+            "word": "recommended battery",
+            "weight": 0.037707
           },
           {
-            "word": "quality crisp",
-            "weight": 0.063405
-          },
-          {
-            "word": "crisp",
-            "weight": 0.063393
-          },
-          {
-            "word": "crisp clear",
-            "weight": 0.063335
+            "word": "charger",
+            "weight": 0.037698
           },
           {
             "word": "life",
-            "weight": 0.063316
+            "weight": 0.037694
           },
           {
-            "word": "right box",
-            "weight": 0.003726
+            "word": "speed",
+            "weight": 0.037692
           },
           {
-            "word": "single day",
-            "weight": 0.003679
+            "word": "battery life",
+            "weight": 0.037692
           },
           {
-            "word": "box",
-            "weight": 0.003649
+            "word": "speed portable",
+            "weight": 0.03769
           },
           {
-            "word": "issue",
-            "weight": 0.003639
+            "word": "portable charger",
+            "weight": 0.037689
+          },
+          {
+            "word": "life fast",
+            "weight": 0.037689
+          },
+          {
+            "word": "traveling",
+            "weight": 0.037688
+          },
+          {
+            "word": "performance",
+            "weight": 0.037688
+          },
+          {
+            "word": "performance number",
+            "weight": 0.037688
+          },
+          {
+            "word": "charging speed",
+            "weight": 0.037687
+          },
+          {
+            "word": "highly",
+            "weight": 0.037687
+          },
+          {
+            "word": "recommended",
+            "weight": 0.037687
           }
         ]
       },
@@ -79,64 +79,64 @@
         "id": 1,
         "top_words": [
           {
-            "word": "stellar",
-            "weight": 0.038615
+            "word": "sound",
+            "weight": 0.081215
           },
           {
-            "word": "unhelpful",
-            "weight": 0.038265
-          },
-          {
-            "word": "customer service",
-            "weight": 0.03825
-          },
-          {
-            "word": "service",
-            "weight": 0.038239
-          },
-          {
-            "word": "customer",
-            "weight": 0.038189
-          },
-          {
-            "word": "disappointed",
-            "weight": 0.019902
+            "word": "bluetooth speaker",
+            "weight": 0.040768
           },
           {
             "word": "speaker",
-            "weight": 0.0199
+            "weight": 0.040766
           },
           {
-            "word": "performance",
-            "weight": 0.019867
+            "word": "loud number",
+            "weight": 0.040766
           },
           {
-            "word": "quality speaker",
-            "weight": 0.019865
+            "word": "connect",
+            "weight": 0.040764
           },
           {
-            "word": "performance stellar",
-            "weight": 0.019856
+            "word": "loud",
+            "weight": 0.040764
           },
           {
-            "word": "speaker volume",
-            "weight": 0.019837
+            "word": "sound quality",
+            "weight": 0.040763
           },
           {
-            "word": "far",
-            "weight": 0.019834
+            "word": "sound crisp",
+            "weight": 0.040762
           },
           {
-            "word": "money",
-            "weight": 0.019821
+            "word": "quality deep",
+            "weight": 0.040759
           },
           {
-            "word": "single day",
-            "weight": 0.019766
+            "word": "connect instantly",
+            "weight": 0.040759
           },
           {
-            "word": "stellar performance",
-            "weight": 0.019765
+            "word": "crisp loud",
+            "weight": 0.040758
+          },
+          {
+            "word": "bass",
+            "weight": 0.040758
+          },
+          {
+            "word": "crisp",
+            "weight": 0.040757
+          },
+          {
+            "word": "wireless",
+            "weight": 0.040754
+          },
+          {
+            "word": "speaker connect",
+            "weight": 0.040754
           }
         ]
       },
@@ -144,64 +144,64 @@
         "id": 2,
         "top_words": [
           {
-            "word": "price",
-            "weight": 0.050613
+            "word": "configure",
+            "weight": 0.048669
           },
           {
-            "word": "highly recommended",
-            "weight": 0.026289
+            "word": "installation",
+            "weight": 0.048662
           },
           {
-            "word": "cheap",
-            "weight": 0.026208
+            "word": "smooth simple",
+            "weight": 0.04866
           },
           {
-            "word": "looking value",
-            "weight": 0.02616
+            "word": "easy",
+            "weight": 0.048659
           },
           {
-            "word": "high cheap",
-            "weight": 0.026155
+            "word": "quality software",
+            "weight": 0.048655
           },
           {
-            "word": "drain",
-            "weight": 0.026137
+            "word": "quality",
+            "weight": 0.048652
           },
           {
-            "word": "high",
-            "weight": 0.026131
+            "word": "software",
+            "weight": 0.048651
           },
           {
-            "word": "highly",
-            "weight": 0.026126
+            "word": "comfortable build",
+            "weight": 0.048651
           },
           {
-            "word": "recommended",
-            "weight": 0.026099
+            "word": "software installation",
+            "weight": 0.048649
           },
           {
-            "word": "value",
-            "weight": 0.026089
+            "word": "setup comfortable",
+            "weight": 0.048648
           },
           {
-            "word": "looking",
-            "weight": 0.026084
+            "word": "build",
+            "weight": 0.048647
           },
           {
-            "word": "fast",
-            "weight": 0.026076
+            "word": "installation smooth",
+            "weight": 0.048646
           },
           {
-            "word": "value reliability",
-            "weight": 0.026072
+            "word": "comfortable",
+            "weight": 0.048646
           },
           {
-            "word": "battery",
-            "weight": 0.026039
+            "word": "easy setup",
+            "weight": 0.048645
           },
           {
-            "word": "fast price",
-            "weight": 0.026036
+            "word": "build quality",
+            "weight": 0.048644
           }
         ]
       },
@@ -209,64 +209,64 @@
         "id": 3,
         "top_words": [
           {
-            "word": "recommended daily",
-            "weight": 0.057271
+            "word": "durable build",
+            "weight": 0.060334
           },
           {
-            "word": "highly recommended",
-            "weight": 0.057173
+            "word": "work expected",
+            "weight": 0.060329
           },
           {
-            "word": "highly",
-            "weight": 0.056901
+            "word": "condition",
+            "weight": 0.060328
           },
           {
-            "word": "box",
-            "weight": 0.05689
+            "word": "expected number",
+            "weight": 0.060326
+          },
+          {
+            "word": "fast",
+            "weight": 0.060324
           },
           {
             "word": "work",
-            "weight": 0.056842
+            "weight": 0.060321
           },
           {
-            "word": "right",
-            "weight": 0.056782
+            "word": "build arrived",
+            "weight": 0.06032
           },
           {
-            "word": "recommended",
-            "weight": 0.056782
+            "word": "condition work",
+            "weight": 0.060319
           },
           {
-            "word": "perfectly",
-            "weight": 0.056761
+            "word": "arrived",
+            "weight": 0.060317
           },
           {
-            "word": "box highly",
-            "weight": 0.056753
+            "word": "build",
+            "weight": 0.060315
           },
           {
-            "word": "perfectly right",
-            "weight": 0.056716
+            "word": "durable",
+            "weight": 0.060309
           },
           {
-            "word": "right box",
-            "weight": 0.056696
+            "word": "shipping durable",
+            "weight": 0.060306
           },
           {
-            "word": "work perfectly",
-            "weight": 0.056509
+            "word": "fast shipping",
+            "weight": 0.060303
           },
           {
-            "word": "daily",
-            "weight": 0.056459
+            "word": "arrived condition",
+            "weight": 0.060302
           },
           {
-            "word": "service",
-            "weight": 0.003393
-          },
-          {
-            "word": "disappointed",
-            "weight": 0.003372
+            "word": "shipping",
+            "weight": 0.060293
           }
         ]
       },
@@ -274,108 +274,108 @@
         "id": 4,
         "top_words": [
           {
-            "word": "decent",
-            "weight": 0.056733
+            "word": "clear screen",
+            "weight": 0.048647
           },
           {
-            "word": "improvement",
-            "weight": 0.056502
+            "word": "screen",
+            "weight": 0.048644
           },
           {
-            "word": "build",
-            "weight": 0.056489
+            "word": "resolution",
+            "weight": 0.048642
           },
           {
-            "word": "hardware decent",
-            "weight": 0.056462
+            "word": "crisp resolution",
+            "weight": 0.04864
           },
           {
-            "word": "though build",
-            "weight": 0.056435
+            "word": "quality color",
+            "weight": 0.048636
           },
           {
-            "word": "hardware",
-            "weight": 0.056422
+            "word": "monitor picture",
+            "weight": 0.048635
           },
           {
-            "word": "software need",
-            "weight": 0.056374
+            "word": "display crisp",
+            "weight": 0.048634
           },
           {
-            "word": "software",
-            "weight": 0.056366
+            "word": "vivid",
+            "weight": 0.048634
           },
           {
-            "word": "need improvement",
-            "weight": 0.056363
+            "word": "picture",
+            "weight": 0.048633
           },
           {
-            "word": "need",
-            "weight": 0.05635
+            "word": "color vivid",
+            "weight": 0.048633
           },
           {
-            "word": "decent though",
-            "weight": 0.056337
+            "word": "monitor",
+            "weight": 0.048633
           },
           {
-            "word": "improvement hardware",
-            "weight": 0.056309
+            "word": "crisp",
+            "weight": 0.048633
           },
           {
-            "word": "though",
-            "weight": 0.056228
+            "word": "picture quality",
+            "weight": 0.048631
           },
           {
-            "word": "unhelpful",
-            "weight": 0.003674
+            "word": "screen display",
+            "weight": 0.048631
           },
           {
-            "word": "defective",
-            "weight": 0.003542
+            "word": "quality",
+            "weight": 0.048631
           }
         ]
       }
     ],
     "prevalence": [
-      0.1,
-      0.4,
-      0.3,
-      0.1,
-      0.1
+      0.2,
+      0.2,
+      0.2,
+      0.2,
+      0.2
     ],
     "representative_reviews": {
       "0": [
-        "The battery life is amazing and screen quality is crisp and clear.",
-        "The battery life is amazing and screen quality is crisp and clear.",
-        "The battery life is amazing and screen quality is crisp and clear."
+        "Great battery life and fast charging speed. Excellent portable charger for traveling and daily use. Highly recommended battery performance. Review number 195",
+        "Great battery life and fast charging speed. Excellent portable charger for traveling and daily use. Highly recommended battery performance. Review number 170",
+        "Great battery life and fast charging speed. Excellent portable charger for traveling and daily use. Highly recommended battery performance. Review number 160"
       ],
       "1": [
-        "Value for money! Without any issue so far, using every single day.",
-        "Value for money! Without any issue so far, using every single day.",
-        "Value for money! Without any issue so far, using every single day."
+        "Awesome sound quality with deep bass. Wireless bluetooth speakers connect instantly and sound crisp and loud. Review number 197",
+        "Awesome sound quality with deep bass. Wireless bluetooth speakers connect instantly and sound crisp and loud. Review number 192",
+        "Awesome sound quality with deep bass. Wireless bluetooth speakers connect instantly and sound crisp and loud. Review number 162"
       ],
       "2": [
-        "Battery drains fast and price is too high for this cheap quality.",
-        "Battery drains fast and price is too high for this cheap quality.",
-        "Battery drains fast and price is too high for this cheap quality."
+        "Easy setup and comfortable build quality. Software installation was smooth and simple to configure. Review number 198",
+        "Easy setup and comfortable build quality. Software installation was smooth and simple to configure. Review number 193",
+        "Easy setup and comfortable build quality. Software installation was smooth and simple to configure. Review number 163"
       ],
       "3": [
-        "Works perfectly right out of the box. Highly recommended for daily use!",
-        "Works perfectly right out of the box. Highly recommended for daily use!",
-        "Works perfectly right out of the box. Highly recommended for daily use!"
+        "Fast shipping and durable build. Product arrived in great condition and works as expected. Review number 199",
+        "Fast shipping and durable build. Product arrived in great condition and works as expected. Review number 194",
+        "Fast shipping and durable build. Product arrived in great condition and works as expected. Review number 164"
       ],
       "4": [
-        "Software needs improvement. Hardware is decent though, good build.",
-        "Software needs improvement. Hardware is decent though, good build.",
-        "Software needs improvement. Hardware is decent though, good build."
+        "Clear screen display and crisp resolution. The monitor picture quality is amazing and colors are vivid. Review number 196",
+        "Clear screen display and crisp resolution. The monitor picture quality is amazing and colors are vivid. Review number 171",
+        "Clear screen display and crisp resolution. The monitor picture quality is amazing and colors are vivid. Review number 161"
       ]
     },
     "metrics": {
-      "coherence": 0.653,
-      "diversity": 0.94,
-      "perplexity": 59.27
+      "coherence": 0.9793,
+      "diversity": 1.0,
+      "perplexity": 29.47
     },
-    "training_time": 3.26
+    "training_time": 3.93
   },
   "nmf": {
     "topics": [
@@ -383,64 +383,64 @@
         "id": 0,
         "top_words": [
           {
-            "word": "unhelpful",
-            "weight": 0.087444
+            "word": "smooth simple",
+            "weight": 0.051608
           },
           {
-            "word": "service",
-            "weight": 0.087444
+            "word": "software",
+            "weight": 0.051608
           },
           {
-            "word": "customer",
-            "weight": 0.087444
+            "word": "software installation",
+            "weight": 0.051608
           },
           {
-            "word": "customer service",
-            "weight": 0.087444
+            "word": "quality software",
+            "weight": 0.051608
           },
           {
-            "word": "service disappointed",
-            "weight": 0.05793
+            "word": "setup",
+            "weight": 0.051608
           },
           {
-            "word": "overpriced unhelpful",
-            "weight": 0.05793
+            "word": "simple",
+            "weight": 0.051608
           },
           {
-            "word": "overpriced",
-            "weight": 0.05793
+            "word": "smooth",
+            "weight": 0.051608
           },
           {
-            "word": "unhelpful customer",
-            "weight": 0.05793
+            "word": "setup comfortable",
+            "weight": 0.051608
           },
           {
-            "word": "disappointed",
-            "weight": 0.05793
+            "word": "simple configure",
+            "weight": 0.051608
           },
           {
-            "word": "reported",
-            "weight": 0.051511
+            "word": "installation smooth",
+            "weight": 0.051608
           },
           {
-            "word": "defective",
-            "weight": 0.051511
+            "word": "build quality",
+            "weight": 0.051608
           },
           {
-            "word": "defective unit",
-            "weight": 0.051511
+            "word": "configure number",
+            "weight": 0.051608
           },
           {
-            "word": "reported defective",
-            "weight": 0.051511
+            "word": "configure",
+            "weight": 0.051608
           },
           {
-            "word": "service unhelpful",
-            "weight": 0.051511
+            "word": "comfortable build",
+            "weight": 0.051608
           },
           {
-            "word": "unhelpful reported",
-            "weight": 0.051511
+            "word": "comfortable",
+            "weight": 0.051608
           }
         ]
       },
@@ -448,64 +448,64 @@
         "id": 1,
         "top_words": [
           {
-            "word": "recommended",
-            "weight": 0.071108
+            "word": "work expected",
+            "weight": 0.064606
           },
           {
-            "word": "highly",
-            "weight": 0.071108
+            "word": "work",
+            "weight": 0.064606
           },
           {
-            "word": "highly recommended",
-            "weight": 0.071108
+            "word": "shipping durable",
+            "weight": 0.064606
           },
           {
-            "word": "reliability",
-            "weight": 0.046953
+            "word": "shipping",
+            "weight": 0.064606
           },
           {
-            "word": "recommended anyone",
-            "weight": 0.046953
+            "word": "condition work",
+            "weight": 0.064606
           },
           {
-            "word": "looking value",
-            "weight": 0.046953
+            "word": "arrived condition",
+            "weight": 0.064606
           },
           {
-            "word": "looking",
-            "weight": 0.046953
+            "word": "fast shipping",
+            "weight": 0.064606
           },
           {
-            "word": "value reliability",
-            "weight": 0.046953
+            "word": "durable",
+            "weight": 0.064606
           },
           {
-            "word": "anyone",
-            "weight": 0.046953
+            "word": "expected number",
+            "weight": 0.064606
           },
           {
-            "word": "anyone looking",
-            "weight": 0.046953
+            "word": "arrived",
+            "weight": 0.064606
           },
           {
-            "word": "perfectly",
-            "weight": 0.042043
+            "word": "build arrived",
+            "weight": 0.064606
           },
           {
-            "word": "perfectly right",
-            "weight": 0.042043
+            "word": "condition",
+            "weight": 0.064606
           },
           {
-            "word": "work perfectly",
-            "weight": 0.042043
+            "word": "durable build",
+            "weight": 0.064606
           },
           {
-            "word": "right box",
-            "weight": 0.042043
+            "word": "expected",
+            "weight": 0.064606
           },
           {
-            "word": "box highly",
-            "weight": 0.042043
+            "word": "build",
+            "weight": 0.04762
           }
         ]
       },
@@ -513,64 +513,64 @@
         "id": 2,
         "top_words": [
           {
-            "word": "quality",
-            "weight": 0.057897
-          },
-          {
             "word": "battery",
-            "weight": 0.053792
+            "weight": 0.077713
           },
           {
-            "word": "stellar",
-            "weight": 0.036154
+            "word": "speed",
+            "weight": 0.038856
           },
           {
-            "word": "screen",
-            "weight": 0.03487
+            "word": "speed portable",
+            "weight": 0.038856
           },
           {
-            "word": "screen quality",
-            "weight": 0.03487
+            "word": "recommended",
+            "weight": 0.038856
           },
           {
-            "word": "quality crisp",
-            "weight": 0.03487
+            "word": "recommended battery",
+            "weight": 0.038856
+          },
+          {
+            "word": "traveling",
+            "weight": 0.038856
+          },
+          {
+            "word": "charger",
+            "weight": 0.038856
+          },
+          {
+            "word": "charging",
+            "weight": 0.038856
+          },
+          {
+            "word": "charger traveling",
+            "weight": 0.038856
+          },
+          {
+            "word": "fast charging",
+            "weight": 0.038856
+          },
+          {
+            "word": "daily highly",
+            "weight": 0.038856
+          },
+          {
+            "word": "performance number",
+            "weight": 0.038856
+          },
+          {
+            "word": "highly",
+            "weight": 0.038856
           },
           {
             "word": "life",
-            "weight": 0.03487
+            "weight": 0.038856
           },
           {
-            "word": "crisp clear",
-            "weight": 0.03487
-          },
-          {
-            "word": "clear",
-            "weight": 0.03487
-          },
-          {
-            "word": "life screen",
-            "weight": 0.03487
-          },
-          {
-            "word": "crisp",
-            "weight": 0.03487
-          },
-          {
-            "word": "battery life",
-            "weight": 0.03487
-          },
-          {
-            "word": "high",
-            "weight": 0.032452
-          },
-          {
-            "word": "drain",
-            "weight": 0.032452
-          },
-          {
-            "word": "fast",
-            "weight": 0.032452
+            "word": "life fast",
+            "weight": 0.038856
           }
         ]
       },
@@ -578,64 +578,64 @@
         "id": 3,
         "top_words": [
           {
-            "word": "decent",
-            "weight": 0.069006
+            "word": "sound",
+            "weight": 0.090909
           },
           {
-            "word": "quick",
-            "weight": 0.043274
+            "word": "wireless",
+            "weight": 0.045455
           },
           {
-            "word": "setup breeze",
-            "weight": 0.043274
+            "word": "wireless bluetooth",
+            "weight": 0.045455
           },
           {
-            "word": "breeze",
-            "weight": 0.043274
+            "word": "sound crisp",
+            "weight": 0.045455
           },
           {
-            "word": "breeze quick",
-            "weight": 0.043274
+            "word": "sound quality",
+            "weight": 0.045455
           },
           {
-            "word": "performance price",
-            "weight": 0.043274
+            "word": "speaker",
+            "weight": 0.045455
           },
           {
-            "word": "decent performance",
-            "weight": 0.043274
+            "word": "speaker connect",
+            "weight": 0.045455
           },
           {
-            "word": "price setup",
-            "weight": 0.043274
+            "word": "quality deep",
+            "weight": 0.045455
           },
           {
-            "word": "setup",
-            "weight": 0.043274
+            "word": "bass wireless",
+            "weight": 0.045455
           },
           {
-            "word": "need",
-            "weight": 0.043055
+            "word": "bass",
+            "weight": 0.045455
           },
           {
-            "word": "need improvement",
-            "weight": 0.043055
+            "word": "bluetooth speaker",
+            "weight": 0.045455
           },
           {
-            "word": "improvement hardware",
-            "weight": 0.043055
+            "word": "crisp loud",
+            "weight": 0.045455
           },
           {
-            "word": "hardware",
-            "weight": 0.043055
+            "word": "connect instantly",
+            "weight": 0.045455
           },
           {
-            "word": "decent though",
-            "weight": 0.043055
+            "word": "deep bass",
+            "weight": 0.045455
           },
           {
-            "word": "build",
-            "weight": 0.043055
+            "word": "deep",
+            "weight": 0.045455
           }
         ]
       },
@@ -643,64 +643,64 @@
         "id": 4,
         "top_words": [
           {
-            "word": "without issue",
-            "weight": 0.067576
+            "word": "screen",
+            "weight": 0.053371
           },
           {
-            "word": "value money",
-            "weight": 0.067576
+            "word": "vivid",
+            "weight": 0.053371
           },
           {
-            "word": "without",
-            "weight": 0.067576
+            "word": "vivid number",
+            "weight": 0.053371
           },
           {
-            "word": "single day",
-            "weight": 0.067576
+            "word": "resolution monitor",
+            "weight": 0.053371
           },
           {
-            "word": "single",
-            "weight": 0.067576
+            "word": "resolution",
+            "weight": 0.053371
           },
           {
-            "word": "money",
-            "weight": 0.067576
+            "word": "screen display",
+            "weight": 0.053371
           },
           {
-            "word": "issue far",
-            "weight": 0.067576
+            "word": "quality color",
+            "weight": 0.053371
           },
           {
-            "word": "issue",
-            "weight": 0.067576
+            "word": "monitor",
+            "weight": 0.053371
           },
           {
-            "word": "money without",
-            "weight": 0.067576
+            "word": "color vivid",
+            "weight": 0.053371
           },
           {
-            "word": "far every",
-            "weight": 0.067576
+            "word": "clear screen",
+            "weight": 0.053371
           },
           {
-            "word": "far",
-            "weight": 0.067576
+            "word": "clear",
+            "weight": 0.053371
           },
           {
-            "word": "every single",
-            "weight": 0.067576
+            "word": "crisp resolution",
+            "weight": 0.053371
           },
           {
-            "word": "every",
-            "weight": 0.067576
+            "word": "color",
+            "weight": 0.053371
           },
           {
-            "word": "day",
-            "weight": 0.067576
+            "word": "display",
+            "weight": 0.053371
           },
           {
-            "word": "value",
-            "weight": 0.053936
+            "word": "display crisp",
+            "weight": 0.053371
           }
         ]
       }
@@ -708,80 +708,80 @@
     "prevalence": [
       0.2,
       0.2,
-      0.3,
       0.2,
-      0.1
+      0.2,
+      0.2
     ],
     "representative_reviews": {
       "0": [
-        "Customer service was unhelpful when I reported the defective unit.",
-        "Customer service was unhelpful when I reported the defective unit.",
-        "Customer service was unhelpful when I reported the defective unit."
+        "Easy setup and comfortable build quality. Software installation was smooth and simple to configure. Review number 198",
+        "Easy setup and comfortable build quality. Software installation was smooth and simple to configure. Review number 193",
+        "Easy setup and comfortable build quality. Software installation was smooth and simple to configure. Review number 163"
       ],
       "1": [
-        "Works perfectly right out of the box. Highly recommended for daily use!",
-        "Works perfectly right out of the box. Highly recommended for daily use!",
-        "Works perfectly right out of the box. Highly recommended for daily use!"
+        "Fast shipping and durable build. Product arrived in great condition and works as expected. Review number 199",
+        "Fast shipping and durable build. Product arrived in great condition and works as expected. Review number 194",
+        "Fast shipping and durable build. Product arrived in great condition and works as expected. Review number 164"
       ],
       "2": [
-        "Battery drains fast and price is too high for this cheap quality.",
-        "Battery drains fast and price is too high for this cheap quality.",
-        "Battery drains fast and price is too high for this cheap quality."
+        "Great battery life and fast charging speed. Excellent portable charger for traveling and daily use. Highly recommended battery performance. Review number 195",
+        "Great battery life and fast charging speed. Excellent portable charger for traveling and daily use. Highly recommended battery performance. Review number 170",
+        "Great battery life and fast charging speed. Excellent portable charger for traveling and daily use. Highly recommended battery performance. Review number 160"
       ],
       "3": [
-        "Software needs improvement. Hardware is decent though, good build.",
-        "Software needs improvement. Hardware is decent though, good build.",
-        "Software needs improvement. Hardware is decent though, good build."
+        "Awesome sound quality with deep bass. Wireless bluetooth speakers connect instantly and sound crisp and loud. Review number 197",
+        "Awesome sound quality with deep bass. Wireless bluetooth speakers connect instantly and sound crisp and loud. Review number 192",
+        "Awesome sound quality with deep bass. Wireless bluetooth speakers connect instantly and sound crisp and loud. Review number 162"
       ],
       "4": [
-        "Value for money! Without any issue so far, using every single day.",
-        "Value for money! Without any issue so far, using every single day.",
-        "Value for money! Without any issue so far, using every single day."
+        "Clear screen display and crisp resolution. The monitor picture quality is amazing and colors are vivid. Review number 196",
+        "Clear screen display and crisp resolution. The monitor picture quality is amazing and colors are vivid. Review number 171",
+        "Clear screen display and crisp resolution. The monitor picture quality is amazing and colors are vivid. Review number 161"
       ]
     },
     "metrics": {
-      "coherence": 0.8175,
+      "coherence": 1.0,
       "diversity": 1.0,
-      "reconstruction_error": 6.59
+      "reconstruction_error": 1.45
     },
     "training_time": 0.0
   },
   "similarity": {
     "matrix": [
       [
-        0.057,
-        0.071,
-        0.746,
-        0.069,
-        0.062
+        0.006,
+        0.041,
+        0.999,
+        0.007,
+        0.006
       ],
       [
-        0.684,
+        0.034,
+        0.006,
+        0.007,
+        0.961,
+        0.039
+      ],
+      [
+        0.994,
+        0.049,
+        0.008,
+        0.007,
+        0.007
+      ],
+      [
         0.05,
-        0.25,
-        0.052,
-        0.512
+        0.996,
+        0.043,
+        0.008,
+        0.008
       ],
       [
-        0.031,
-        0.445,
-        0.487,
-        0.421,
-        0.064
-      ],
-      [
-        0.057,
-        0.804,
-        0.075,
-        0.064,
-        0.053
-      ],
-      [
-        0.061,
-        0.06,
-        0.075,
-        0.795,
-        0.053
+        0.039,
+        0.006,
+        0.008,
+        0.007,
+        0.973
       ]
     ],
     "lda_labels": [
