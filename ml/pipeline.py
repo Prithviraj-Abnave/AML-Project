@@ -163,6 +163,9 @@ def _run_pipeline_worker(n_topics, sample_size, data_path, is_custom):
         )
         _update_state(progress=30, step=f'Preprocessed {len(processed_texts)} valid reviews')
 
+        if len(processed_texts) < n_topics:
+            raise ValueError(f"Not enough valid reviews ({len(processed_texts)}) to extract {n_topics} topics. Try reducing the number of topics or scraping more data.")
+
         # ── Step 3: Create Matrices ─────────────────────────────────────
         _update_state(progress=35, step='Creating document-term matrices...')
         bow_matrix, bow_vectorizer, bow_features = create_bow_matrix(processed_texts)

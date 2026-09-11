@@ -19,7 +19,7 @@
             <li><a href="#" class="nav-link" data-target="team" onclick="navigateTo('team')">Team</a></li>
         </ul>
         <button class="navbar-cta" onclick="navigateTo('analyze')">
-            + Analyze Your Dataset
+            + Analyze Your Product
         </button>
     </div>
 </nav>
@@ -45,7 +45,7 @@
                         </p>
                         <div class="hero-buttons">
                             <button class="btn btn-dark" onclick="navigateTo('compare')">See the comparison</button>
-                            <button class="btn btn-outline" onclick="navigateTo('analyze')">Analyze your dataset &rarr;</button>
+                            <button class="btn btn-outline" onclick="navigateTo('analyze')">Analyze your product &rarr;</button>
                         </div>
                     </div>
                     <div class="hero-chart">
@@ -681,88 +681,166 @@
 
 
     <!-- ==============================================================
-         ANALYZE YOUR DATASET PAGE
+         ANALYZE YOUR PRODUCT PAGE  (URL-based scraper)
          ============================================================== -->
     <div id="page-analyze" class="page-section" style="display:none;">
-        <div class="container" style="max-width:900px;">
+        <div class="container" style="max-width:860px;">
             <div class="page-header pb-0">
                 <div class="badge"><span class="badge-dot" style="background:#3b82f6"></span> RUN YOUR OWN EXPERIMENT</div>
-                <h1>Analyze your dataset</h1>
-                <p class="lead">Upload a CSV of reviews or documents. Pick the text column and topic count. Both LDA and NMF will be trained and compared.</p>
+                <h1>Analyze a product</h1>
+                <p class="lead">Paste links to the <strong>same product</strong> from 2–4 different e-commerce sites. We'll scrape the reviews, merge them, and run both LDA and NMF — no CSV needed.</p>
             </div>
 
             <!-- Stepper -->
-            <div style="display:flex; margin:2rem 0; border:1px solid var(--border-light); border-radius:var(--radius-md); background:var(--bg-card); overflow:hidden;">
-                <div style="flex:1; padding:1rem 1.5rem; background:var(--bg-subtle); border-right:1px solid var(--border-light);">
-                    <div style="font-size:0.7rem; color:var(--text-muted); font-weight:700; margin-bottom:0.2rem;">STEP 1</div>
-                    <div style="font-size:0.9rem; font-weight:600; color:var(--text-primary);">Upload CSV</div>
+            <div style="display:flex; margin:2rem 0; border:1px solid var(--border-light); border-radius:var(--radius-md); background:var(--bg-card); overflow:hidden;" id="analyze-stepper">
+                <div class="stepper-step active" id="step-ind-1">
+                    <div class="stepper-num">1</div>
+                    <div class="stepper-label">Paste URLs</div>
                 </div>
-                <div style="flex:1; padding:1rem 1.5rem; border-right:1px solid var(--border-light);">
-                    <div style="font-size:0.7rem; color:var(--text-muted); font-weight:700; margin-bottom:0.2rem;">STEP 2</div>
-                    <div style="font-size:0.9rem; font-weight:500; color:var(--text-secondary);">Configure</div>
+                <div class="stepper-step" id="step-ind-2">
+                    <div class="stepper-num">2</div>
+                    <div class="stepper-label">Configure</div>
                 </div>
-                <div style="flex:1; padding:1rem 1.5rem; border-right:1px solid var(--border-light);">
-                    <div style="font-size:0.7rem; color:var(--text-muted); font-weight:700; margin-bottom:0.2rem;">STEP 3</div>
-                    <div style="font-size:0.9rem; font-weight:500; color:var(--text-secondary);">Run analysis</div>
+                <div class="stepper-step" id="step-ind-3">
+                    <div class="stepper-num">3</div>
+                    <div class="stepper-label">Scrape &amp; Analyze</div>
                 </div>
-                <div style="flex:1; padding:1rem 1.5rem;">
-                    <div style="font-size:0.7rem; color:var(--text-muted); font-weight:700; margin-bottom:0.2rem;">STEP 4</div>
-                    <div style="font-size:0.9rem; font-weight:500; color:var(--text-secondary);">Results</div>
-                </div>
-            </div>
-            
-            <form id="custom-upload-form" enctype="multipart/form-data">
-                <div class="card" id="dropzone" style="border: 2px dashed var(--border-light); text-align:center; padding:4rem 2rem; margin-bottom:1rem; cursor:pointer;">
-                    <input type="file" id="csv-upload" name="file" accept=".csv" style="display:none;">
-                    <svg width="40" height="40" fill="none" stroke="#2563eb" stroke-width="1.5" viewBox="0 0 24 24" style="margin-bottom:1rem;"><path d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"/></svg>
-                    <h3 style="font-family:Playfair Display, serif; font-size:1.25rem; margin-bottom:0.5rem;" id="dropzone-text">Drop your CSV here</h3>
-                    <p style="font-size:0.9rem; color:var(--text-secondary);">or <span style="color:#2563eb; font-weight:500;">browse your files</span></p>
-                </div>
-            </form>
-            
-            <div style="display:flex; justify-content:space-between; align-items:center;">
-                <p style="font-size:0.8rem; color:var(--text-muted);">Accepted: CSV files with a text column of reviews/documents.</p>
-                <button class="btn btn-outline" style="border-radius:var(--radius-pill); font-size:0.8rem; padding:0.4rem 1rem;" onclick="startSimulatedAnalysis()">Use sample Amazon dataset</button>
-            </div>
-            
-            <!-- Hidden progress config for the demo -->
-            <div id="analyze-config-panel" class="config-panel" style="display:none; margin-top:2rem;">
-                <div class="config-inner">
-                    <div class="config-group">
-                        <label for="n-topics">Number of Topics</label>
-                        <input type="range" id="n-topics" min="2" max="15" value="5" step="1">
-                        <div class="config-value" id="n-topics-value">5</div>
-                    </div>
-                    <div class="config-group">
-                        <label for="sample-size">Sample Size</label>
-                        <input type="range" id="sample-size" min="500" max="20000" value="5000" step="500">
-                        <div class="config-value" id="sample-size-value">5,000</div>
-                    </div>
-                    <div class="config-group" style="padding-top: 0.5rem;">
-                        <button class="btn btn-dark" id="btn-analyze" onclick="startAnalysis()">
-                            Run Analysis
-                        </button>
-                    </div>
-                </div>
-                
-                <!-- Progress -->
-                <div class="progress-container" id="progress-container">
-                    <div class="progress-bar-track">
-                        <div class="progress-bar-fill" id="progress-fill"></div>
-                    </div>
-                    <div class="progress-status">
-                        <span class="progress-step" id="progress-step">Initializing...</span>
-                        <span class="progress-percent" id="progress-percent">0%</span>
-                    </div>
-                </div>
-
-                <!-- Error banner -->
-                <div class="error-banner" id="error-banner">
-                    <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4m0 4h.01"/></svg>
-                    <span id="error-message"></span>
+                <div class="stepper-step" id="step-ind-4">
+                    <div class="stepper-num">4</div>
+                    <div class="stepper-label">Results</div>
                 </div>
             </div>
 
+            <!-- URL Input Card -->
+            <div class="card" style="padding:2rem; margin-bottom:1.5rem;">
+                <h3 style="margin-top:0; font-family:'Playfair Display',serif; font-size:1.2rem; margin-bottom:0.4rem;">Product URLs</h3>
+                <p style="font-size:0.85rem; color:var(--text-secondary); margin-bottom:1.5rem;">
+                    Supported sites: <strong>Flipkart</strong>, <strong>Snapdeal</strong>, <strong>Myntra</strong>, <strong>Amazon</strong>. The first two are required.
+                </p>
+
+                <!-- URL Row Template -->
+                <div class="url-row" id="url-row-1">
+                    <div class="url-site-badge" id="site-badge-1">
+                        <span class="site-icon">🛒</span>
+                        <span class="site-name" id="site-name-1">Site 1</span>
+                    </div>
+                    <div style="flex:1; position:relative;">
+                        <input
+                            type="url"
+                            id="url-input-1"
+                            class="url-input"
+                            placeholder="https://www.flipkart.com/product/... (required)"
+                            oninput="detectSite(1)"
+                        >
+                        <div class="url-status" id="url-status-1"></div>
+                    </div>
+                </div>
+
+                <div class="url-row" id="url-row-2">
+                    <div class="url-site-badge" id="site-badge-2">
+                        <span class="site-icon">🏷️</span>
+                        <span class="site-name" id="site-name-2">Site 2</span>
+                    </div>
+                    <div style="flex:1; position:relative;">
+                        <input
+                            type="url"
+                            id="url-input-2"
+                            class="url-input"
+                            placeholder="https://www.snapdeal.com/product/... (required)"
+                            oninput="detectSite(2)"
+                        >
+                        <div class="url-status" id="url-status-2"></div>
+                    </div>
+                </div>
+
+                <div class="url-row" id="url-row-3">
+                    <div class="url-site-badge url-site-optional" id="site-badge-3">
+                        <span class="site-icon">👗</span>
+                        <span class="site-name" id="site-name-3">Optional</span>
+                    </div>
+                    <div style="flex:1; position:relative;">
+                        <input
+                            type="url"
+                            id="url-input-3"
+                            class="url-input"
+                            placeholder="https://www.myntra.com/... (optional)"
+                            oninput="detectSite(3)"
+                        >
+                        <div class="url-status" id="url-status-3"></div>
+                    </div>
+                </div>
+
+                <div class="url-row" id="url-row-4">
+                    <div class="url-site-badge url-site-optional" id="site-badge-4">
+                        <span class="site-icon">📦</span>
+                        <span class="site-name" id="site-name-4">Optional</span>
+                    </div>
+                    <div style="flex:1; position:relative;">
+                        <input
+                            type="url"
+                            id="url-input-4"
+                            class="url-input"
+                            placeholder="https://www.amazon.in/... (optional)"
+                            oninput="detectSite(4)"
+                        >
+                        <div class="url-status" id="url-status-4"></div>
+                    </div>
+                </div>
+
+                <!-- Supported site chips -->
+                <div style="display:flex; gap:0.6rem; flex-wrap:wrap; margin-top:1.25rem; padding-top:1.25rem; border-top:1px dashed var(--border-light);">
+                    <span class="site-chip flipkart">🛒 Flipkart</span>
+                    <span class="site-chip snapdeal">🏷️ Snapdeal</span>
+                    <span class="site-chip myntra">👗 Myntra</span>
+                    <span class="site-chip amazon">📦 Amazon</span>
+                </div>
+            </div>
+
+            <!-- Config Panel -->
+            <div class="card" style="padding:1.75rem; margin-bottom:1.5rem;">
+                <h3 style="margin-top:0; font-family:'Playfair Display',serif; font-size:1.2rem; margin-bottom:1.25rem;">Configuration</h3>
+                <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; align-items:center;">
+                    <div class="config-group" style="margin:0;">
+                        <label for="n-topics">Number of Topics &nbsp;<strong id="n-topics-value" style="color:var(--text-primary);">5</strong></label>
+                        <input type="range" id="n-topics" min="2" max="15" value="5" step="1" style="width:100%; margin-top:0.5rem;">
+                    </div>
+                    <div class="config-group" style="margin:0;">
+                        <label for="scrape-pages">Pages to scrape per site &nbsp;<strong id="scrape-pages-value" style="color:var(--text-primary);">3</strong></label>
+                        <input type="range" id="scrape-pages" min="1" max="8" value="3" step="1" style="width:100%; margin-top:0.5rem;">
+                    </div>
+                </div>
+                <div style="margin-top:1.5rem;">
+                    <button class="btn btn-dark" id="btn-scrape" onclick="startScrapeAnalysis()" style="width:100%; padding:0.85rem; font-size:1rem; letter-spacing:0.03em;">
+                        <span id="btn-scrape-icon">🔍</span> &nbsp;Scrape &amp; Analyze
+                    </button>
+                </div>
+            </div>
+
+            <!-- Progress Container -->
+            <div class="progress-container" id="progress-container" style="margin-bottom:1rem;">
+                <div class="progress-bar-track">
+                    <div class="progress-bar-fill" id="progress-fill"></div>
+                </div>
+                <div class="progress-status">
+                    <span class="progress-step" id="progress-step">Initializing...</span>
+                    <span class="progress-percent" id="progress-percent">0%</span>
+                </div>
+            </div>
+
+            <!-- Scrape log: shows live status messages -->
+            <div id="scrape-log" style="display:none; background:var(--bg-subtle); border:1px solid var(--border-light); border-radius:var(--radius-md); padding:1rem; font-family:'JetBrains Mono',monospace; font-size:0.78rem; color:var(--text-secondary); max-height:180px; overflow-y:auto; margin-bottom:1rem;">
+            </div>
+
+            <!-- Error banner -->
+            <div class="error-banner" id="error-banner">
+                <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4m0 4h.01"/></svg>
+                <span id="error-message"></span>
+            </div>
+
+            <!-- Disclaimer -->
+            <p style="font-size:0.75rem; color:var(--text-muted); margin-top:1rem; line-height:1.6;">
+                ⚠️ Scraping is performed for educational/research purposes only. Anti-bot measures on some sites (especially Amazon) may limit results. Scraping time is typically 30–120 seconds depending on the number of pages.
+            </p>
         </div>
     </div>
 
@@ -859,6 +937,26 @@
                 </div>
             </div>
             
+            <div class="section mt-4">
+                <div class="section-header">
+                    <div class="badge"><span class="badge-dot" style="background:var(--lda-primary)"></span> LDA TOPICS</div>
+                    <h2>Detailed LDA Results</h2>
+                </div>
+                <div class="topics-grid" id="custom-lda-topics-grid">
+                    <!-- Populated by JS -->
+                </div>
+            </div>
+
+            <div class="section mt-4 mb-4">
+                <div class="section-header">
+                    <div class="badge"><span class="badge-dot" style="background:var(--nmf-primary)"></span> NMF TOPICS</div>
+                    <h2>Detailed NMF Results</h2>
+                </div>
+                <div class="topics-grid" id="custom-nmf-topics-grid">
+                    <!-- Populated by JS -->
+                </div>
+            </div>
+
         </div>
     </div>
 

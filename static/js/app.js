@@ -22,9 +22,9 @@ let isCustomRun = false;
 document.addEventListener('DOMContentLoaded', () => {
     // Setup config sliders
     const nTopicsSlider = document.getElementById('n-topics');
-    const sampleSlider = document.getElementById('sample-size');
+    const scrapePagesSlider = document.getElementById('scrape-pages');
     const nTopicsVal = document.getElementById('n-topics-value');
-    const sampleVal = document.getElementById('sample-size-value');
+    const scrapePagesVal = document.getElementById('scrape-pages-value');
 
     if (nTopicsSlider) {
         nTopicsSlider.addEventListener('input', () => {
@@ -32,9 +32,9 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    if (sampleSlider) {
-        sampleSlider.addEventListener('input', () => {
-            sampleVal.textContent = parseInt(sampleSlider.value).toLocaleString();
+    if (scrapePagesSlider) {
+        scrapePagesSlider.addEventListener('input', () => {
+            scrapePagesVal.textContent = scrapePagesSlider.value;
         });
     }
 
@@ -57,38 +57,14 @@ document.addEventListener('DOMContentLoaded', () => {
             e.preventDefault();
             dropzone.style.backgroundColor = 'var(--bg-subtle)';
         });
-        
-        dropzone.addEventListener('dragleave', () => {
-            dropzone.style.backgroundColor = 'transparent';
-        });
-        
-        dropzone.addEventListener('drop', (e) => {
-            e.preventDefault();
-            dropzone.style.backgroundColor = 'transparent';
-            if (e.dataTransfer.files.length > 0) {
-                fileInput.files = e.dataTransfer.files;
-                handleFileSelect();
-            }
-        });
-        
-        fileInput.addEventListener('change', handleFileSelect);
     }
-    
+
     // Check hash for direct navigation
     const hash = window.location.hash.replace('#', '');
     if (hash) {
         navigateTo(hash);
     }
 });
-
-function handleFileSelect() {
-    const fileInput = document.getElementById('csv-upload');
-    const dropzoneText = document.getElementById('dropzone-text');
-    if (fileInput.files.length > 0) {
-        dropzoneText.textContent = fileInput.files[0].name;
-        startSimulatedAnalysis(); // Show config panel
-    }
-}
 
 // ── Navigation (SPA Routing) ──────────────────────────────────
 function navigateTo(pageId) {
@@ -122,77 +98,149 @@ function navigateTo(pageId) {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
-// ── Demo flow for Analyze Page ────────────────────────────────
-function startSimulatedAnalysis() {
-    const configPanel = document.getElementById('analyze-config-panel');
-    configPanel.style.display = 'block';
-    
-    // Auto-scroll to config
-    configPanel.scrollIntoView({ behavior: 'smooth', block: 'center' });
+// ── Scraper & Analysis Control ────────────────────────────────
+
+const SUPPORTED_SITES = [
+    { id: 'amazon', domain: 'amazon.', name: 'Amazon', color: '#ff9900', icon: '🛒' },
+    { id: 'flipkart', domain: 'flipkart.com', name: 'Flipkart', color: '#2874f0', icon: '🛍️' },
+    { id: 'myntra', domain: 'myntra.com', name: 'Myntra', color: '#ff3f6c', icon: '👗' },
+    { id: 'snapdeal', domain: 'snapdeal.com', name: 'Snapdeal', color: '#e40046', icon: '🏷️' }
+];
+
+function detectSiteFromUrl(url) {
+    if (!url) return null;
+    const lower = url.toLowerCase();
+    return SUPPORTED_SITES.find(site => lower.includes(site.domain)) || null;
 }
 
-// ── Analysis Control ──────────────────────────────────────────
+window.detectSite = function(inputIdx) {
+    const input = document.getElementById(`url-input-${inputIdx}`);
+    const badge = document.getElementById(`site-badge-${inputIdx}`);
+    const nameEl = document.getElementById(`site-name-${inputIdx}`);
+    const status = document.getElementById(`url-status-${inputIdx}`);
+    if (!input || !badge) return;
 
-function startAnalysis() {
-    const nTopics = parseInt(document.getElementById('n-topics').value);
-    const sampleSize = parseInt(document.getElementById('sample-size').value);
-    const btn = document.getElementById('btn-analyze');
-    const fileInput = document.getElementById('csv-upload');
+    const val = input.value.trim();
+    if (!val) {
+        badge.className = 'site-badge';
+        badge.querySelector('.site-icon').textContent = '🔗';
+        nameEl.textContent = `Site ${inputIdx}`;
+        input.classList.remove('url-valid', 'url-invalid');
+        status.textContent = '';
+        return;
+    }
 
-    btn.disabled = true;
-    btn.innerHTML = 'Running...';
+    const site = detectSiteFromUrl(val);
+    badge.className = 'site-badge';
+    
+    if (site) {
+        badge.classList.add(`site-${site.id}`);
+        badge.querySelector('.site-icon').textContent = site.icon;
+        nameEl.textContent = site.name;
+        input.classList.remove('url-invalid');
+        input.classList.add('url-valid');
+        status.textContent = '✔';
+        status.style.color = '#10b981';
+    } else {
+        badge.classList.add('site-unknown');
+        badge.querySelector('.site-icon').textContent = '❓';
+        nameEl.textContent = 'Unknown';
+        input.classList.add('url-invalid');
+        status.textContent = '❌';
+        status.style.color = '#ef4444';
+    }
+}
+
+function startScrapeAnalysis() {
+    const urls = [];
+    for (let i = 1; i <= 4; i++) {
+        const val = (document.getElementById(`url-input-${i}`)?.value || '').trim();
+        if (val) urls.push(val);
+    }
+
+    if (urls.length < 2) {
+        showError('Please enter at least 2 product URLs (one per required site).');
+        return;
+    }
+
+    for (const url of urls) {
+        if (!detectSiteFromUrl(url)) {
+            showError(`Unsupported site: ${url}. Supported: Flipkart, Snapdeal, Myntra, Amazon.`);
+            return;
+        }
+    }
+
+    const nTopics = parseInt(document.getElementById('n-topics')?.value || 5);
+    const maxPages = parseInt(document.getElementById('scrape-pages')?.value || 3);
+
+    const btn = document.getElementById('btn-scrape');
+    if (btn) {
+        btn.disabled = true;
+        btn.innerHTML = '⏳ &nbsp;Scraping...';
+        btn.classList.add('running');
+    }
 
     hideError();
-
-    // Show progress
     const progressContainer = document.getElementById('progress-container');
-    progressContainer.classList.add('active');
-    updateProgress(0, 'Starting pipeline...');
+    if (progressContainer) progressContainer.classList.add('active');
+    updateProgress(0, 'Connecting to sites...');
 
-    if (fileInput && fileInput.files.length > 0) {
-        // Custom upload
-        const formData = new FormData();
-        formData.append('file', fileInput.files[0]);
-        formData.append('n_topics', nTopics);
-        formData.append('sample_size', sampleSize);
+    const log = document.getElementById('scrape-log');
+    if (log) {
+        log.style.display = 'block';
+        log.innerHTML = '';
+    }
+    appendScrapeLog(`Sending ${urls.length} URLs to scraper...`);
 
-        fetch('/api/upload', {
-            method: 'POST',
-            body: formData
-        })
-        .then(res => res.json())
-        .then(data => {
-            if (data.error) {
-                showError(data.error);
-                resetButton();
-                return;
-            }
-            startPolling();
-        })
-        .catch(err => {
-            showError('Failed to upload file: ' + err.message);
-            resetButton();
-        });
-    } else {
-        // Standard analyze
-        fetch('/api/analyze', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ n_topics: nTopics, sample_size: sampleSize })
-        })
-        .then(res => res.json())
-        .then(data => {
-            if (data.error) {
-                showError(data.error);
-                resetButton();
-                return;
-            }
-            startPolling();
-        })
-        .catch(err => {
-            showError('Failed to start analysis: ' + err.message);
-            resetButton();
-        });
+    setStep(3);
+
+    fetch('/api/scrape', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ urls, n_topics: nTopics, max_pages: maxPages })
+    })
+    .then(res => res.json())
+    .then(data => {
+        if (data.error) {
+            showError(data.error);
+            resetScrapeButton();
+            return;
+        }
+        appendScrapeLog(`Scraping started...`);
+        startPolling();
+    })
+    .catch(err => {
+        showError('Failed to start scraping: ' + err.message);
+        resetScrapeButton();
+    });
+}
+
+function appendScrapeLog(msg) {
+    const log = document.getElementById('scrape-log');
+    if (!log) return;
+    const ts = new Date().toLocaleTimeString('en-IN', { hour12: false });
+    const row = document.createElement('div');
+    row.textContent = `[${ts}] ${msg}`;
+    log.appendChild(row);
+    log.scrollTop = log.scrollHeight;
+}
+
+function resetScrapeButton() {
+    const btn = document.getElementById('btn-scrape');
+    if (btn) {
+        btn.disabled = false;
+        btn.innerHTML = '🔍 &nbsp;Scrape & Analyze';
+        btn.classList.remove('running');
+    }
+}
+
+function setStep(active) {
+    for (let i = 1; i <= 4; i++) {
+        const el = document.getElementById(`step-ind-${i}`);
+        if (!el) continue;
+        el.classList.remove('active', 'done');
+        if (i < active) el.classList.add('done');
+        else if (i === active) el.classList.add('active');
     }
 }
 
@@ -207,20 +255,23 @@ function pollStatus() {
         .then(status => {
             isCustomRun = status.is_custom;
             updateProgress(status.progress, status.current_step);
+            if (status.current_step) appendScrapeLog(status.current_step);
 
             if (status.status === 'complete') {
                 clearInterval(pollInterval);
                 pollInterval = null;
                 updateProgress(100, 'Analysis complete!');
+                appendScrapeLog('Pipeline complete ✔');
+                setStep(4);
                 setTimeout(fetchAndRenderResults, 500);
             } else if (status.status === 'error') {
                 clearInterval(pollInterval);
                 pollInterval = null;
                 showError(status.error || 'An unknown error occurred.');
-                resetButton();
+                resetScrapeButton();
             }
         })
-        .catch(() => { /* ignore transient errors */ });
+        .catch(() => { /* ignore */ });
 }
 
 function fetchAndRenderResults() {
@@ -230,7 +281,7 @@ function fetchAndRenderResults() {
         .then(data => {
             if (data.error) {
                 showError(data.error);
-                resetButton();
+                resetScrapeButton();
                 return;
             }
             if (isCustomRun) {
@@ -1027,4 +1078,8 @@ function renderCustomResults(data) {
             plugins: { legend: { display: false } }
         }
     });
+
+    // Render detailed topics
+    renderAllTopicsGrid('custom-lda-topics-grid', data.lda.topics, data.lda.prevalence, 'lda', data.meta.processed_reviews, data.lda.metrics.coherence);
+    renderAllTopicsGrid('custom-nmf-topics-grid', data.nmf.topics, data.nmf.prevalence, 'nmf', data.meta.processed_reviews, data.nmf.metrics.coherence);
 }
