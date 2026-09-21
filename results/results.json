@@ -2,9 +2,9 @@
   "meta": {
     "total_reviews": 5000,
     "processed_reviews": 4880,
-    "sample_size": 5000,
-    "n_topics": 2,
-    "total_time": 143.27,
+    "sample_size": 12000,
+    "n_topics": 9,
+    "total_time": 102.51,
     "vocabulary_size_bow": 2433,
     "vocabulary_size_tfidf": 2433
   },
@@ -14,64 +14,64 @@
         "id": 0,
         "top_words": [
           {
+            "word": "family",
+            "weight": 0.053391
+          },
+          {
+            "word": "enjoy",
+            "weight": 0.042226
+          },
+          {
+            "word": "friend",
+            "weight": 0.03175
+          },
+          {
+            "word": "house",
+            "weight": 0.026542
+          },
+          {
+            "word": "bulb",
+            "weight": 0.024418
+          },
+          {
+            "word": "hub",
+            "weight": 0.023505
+          },
+          {
+            "word": "hue",
+            "weight": 0.022444
+          },
+          {
             "word": "echo",
-            "weight": 0.027428
+            "weight": 0.020913
           },
           {
-            "word": "alexa",
-            "weight": 0.019302
-          },
-          {
-            "word": "music",
-            "weight": 0.015946
-          },
-          {
-            "word": "show",
-            "weight": 0.015591
-          },
-          {
-            "word": "device",
-            "weight": 0.013062
-          },
-          {
-            "word": "sound",
-            "weight": 0.012674
-          },
-          {
-            "word": "work",
-            "weight": 0.012462
-          },
-          {
-            "word": "easy",
-            "weight": 0.011791
-          },
-          {
-            "word": "home",
-            "weight": 0.010529
-          },
-          {
-            "word": "video",
-            "weight": 0.009557
-          },
-          {
-            "word": "set",
-            "weight": 0.00906
-          },
-          {
-            "word": "speaker",
-            "weight": 0.008913
+            "word": "control",
+            "weight": 0.020819
           },
           {
             "word": "light",
-            "weight": 0.007614
+            "weight": 0.019993
           },
           {
-            "word": "screen",
-            "weight": 0.007244
+            "word": "easy",
+            "weight": 0.01864
           },
           {
-            "word": "family",
-            "weight": 0.007054
+            "word": "gift",
+            "weight": 0.016108
+          },
+          {
+            "word": "echo plus",
+            "weight": 0.013746
+          },
+          {
+            "word": "whole",
+            "weight": 0.013739
+          },
+          {
+            "word": "around",
+            "weight": 0.0134
           }
         ]
       },
@@ -79,90 +79,587 @@
         "id": 1,
         "top_words": [
           {
-            "word": "tablet",
-            "weight": 0.035706
+            "word": "battery",
+            "weight": 0.031792
           },
           {
-            "word": "kindle",
-            "weight": 0.018125
+            "word": "every",
+            "weight": 0.029749
           },
           {
-            "word": "easy",
-            "weight": 0.012386
+            "word": "reader",
+            "weight": 0.026397
           },
           {
-            "word": "love",
-            "weight": 0.011799
+            "word": "recommend",
+            "weight": 0.026231
           },
           {
-            "word": "book",
-            "weight": 0.011765
+            "word": "money",
+            "weight": 0.024334
           },
           {
-            "word": "kid",
-            "weight": 0.011519
+            "word": "day",
+            "weight": 0.023557
           },
           {
-            "word": "price",
-            "weight": 0.01116
+            "word": "life",
+            "weight": 0.021719
           },
           {
-            "word": "fire",
-            "weight": 0.011114
+            "word": "battery life",
+            "weight": 0.019871
           },
           {
-            "word": "old",
-            "weight": 0.010369
+            "word": "highly",
+            "weight": 0.016283
           },
           {
-            "word": "year",
-            "weight": 0.010028
+            "word": "right",
+            "weight": 0.016268
           },
           {
-            "word": "game",
-            "weight": 0.009689
+            "word": "value",
+            "weight": 0.014223
           },
           {
-            "word": "apps",
-            "weight": 0.009152
+            "word": "absolutely",
+            "weight": 0.012383
           },
           {
-            "word": "read",
-            "weight": 0.00841
+            "word": "worth",
+            "weight": 0.01124
+          },
+          {
+            "word": "highly recommend",
+            "weight": 0.011
           },
           {
             "word": "screen",
-            "weight": 0.007758
+            "weight": 0.010672
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "top_words": [
+          {
+            "word": "tablet",
+            "weight": 0.107053
+          },
+          {
+            "word": "kid",
+            "weight": 0.041272
+          },
+          {
+            "word": "old",
+            "weight": 0.034072
+          },
+          {
+            "word": "year",
+            "weight": 0.032904
+          },
+          {
+            "word": "apps",
+            "weight": 0.031632
+          },
+          {
+            "word": "year old",
+            "weight": 0.025302
+          },
+          {
+            "word": "love",
+            "weight": 0.023359
+          },
+          {
+            "word": "price",
+            "weight": 0.014445
+          },
+          {
+            "word": "daughter",
+            "weight": 0.013507
+          },
+          {
+            "word": "play",
+            "weight": 0.011405
+          },
+          {
+            "word": "time",
+            "weight": 0.011309
+          },
+          {
+            "word": "little",
+            "weight": 0.010532
+          },
+          {
+            "word": "child",
+            "weight": 0.010038
+          },
+          {
+            "word": "son",
+            "weight": 0.009559
+          },
+          {
+            "word": "granddaughter",
+            "weight": 0.008543
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "top_words": [
+          {
+            "word": "kindle",
+            "weight": 0.048627
+          },
+          {
+            "word": "fire",
+            "weight": 0.037792
+          },
+          {
+            "word": "book",
+            "weight": 0.035039
+          },
+          {
+            "word": "game",
+            "weight": 0.032955
+          },
+          {
+            "word": "tablet",
+            "weight": 0.021501
+          },
+          {
+            "word": "read",
+            "weight": 0.020534
           },
           {
             "word": "reading",
-            "weight": 0.00736
+            "weight": 0.018825
+          },
+          {
+            "word": "easy",
+            "weight": 0.017314
+          },
+          {
+            "word": "size",
+            "weight": 0.016839
+          },
+          {
+            "word": "new",
+            "weight": 0.013847
+          },
+          {
+            "word": "kindle fire",
+            "weight": 0.012291
+          },
+          {
+            "word": "movie",
+            "weight": 0.010979
+          },
+          {
+            "word": "screen",
+            "weight": 0.009769
+          },
+          {
+            "word": "play",
+            "weight": 0.008504
+          },
+          {
+            "word": "work",
+            "weight": 0.008251
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "top_words": [
+          {
+            "word": "easy",
+            "weight": 0.029938
+          },
+          {
+            "word": "screen",
+            "weight": 0.017716
+          },
+          {
+            "word": "set",
+            "weight": 0.017624
+          },
+          {
+            "word": "time",
+            "weight": 0.01569
+          },
+          {
+            "word": "device",
+            "weight": 0.015483
+          },
+          {
+            "word": "kindle",
+            "weight": 0.012436
+          },
+          {
+            "word": "easy set",
+            "weight": 0.010405
+          },
+          {
+            "word": "light",
+            "weight": 0.010215
+          },
+          {
+            "word": "last",
+            "weight": 0.00778
+          },
+          {
+            "word": "easier",
+            "weight": 0.007073
+          },
+          {
+            "word": "far",
+            "weight": 0.006951
+          },
+          {
+            "word": "read",
+            "weight": 0.006774
+          },
+          {
+            "word": "cover",
+            "weight": 0.005948
+          },
+          {
+            "word": "wanted",
+            "weight": 0.005939
+          },
+          {
+            "word": "button",
+            "weight": 0.005886
+          }
+        ]
+      },
+      {
+        "id": 5,
+        "top_words": [
+          {
+            "word": "echo",
+            "weight": 0.04174
+          },
+          {
+            "word": "alexa",
+            "weight": 0.029672
+          },
+          {
+            "word": "show",
+            "weight": 0.023901
+          },
+          {
+            "word": "music",
+            "weight": 0.023193
+          },
+          {
+            "word": "sound",
+            "weight": 0.020702
+          },
+          {
+            "word": "home",
+            "weight": 0.015261
+          },
+          {
+            "word": "speaker",
+            "weight": 0.013943
+          },
+          {
+            "word": "work",
+            "weight": 0.012631
+          },
+          {
+            "word": "device",
+            "weight": 0.011796
+          },
+          {
+            "word": "echo show",
+            "weight": 0.010946
+          },
+          {
+            "word": "video",
+            "weight": 0.010799
+          },
+          {
+            "word": "smart",
+            "weight": 0.010782
+          },
+          {
+            "word": "dot",
+            "weight": 0.00898
+          },
+          {
+            "word": "screen",
+            "weight": 0.008514
+          },
+          {
+            "word": "play",
+            "weight": 0.008048
+          }
+        ]
+      },
+      {
+        "id": 6,
+        "top_words": [
+          {
+            "word": "voyage",
+            "weight": 0.055132
+          },
+          {
+            "word": "cant",
+            "weight": 0.054955
+          },
+          {
+            "word": "beat",
+            "weight": 0.051998
+          },
+          {
+            "word": "exactly",
+            "weight": 0.038758
+          },
+          {
+            "word": "keep",
+            "weight": 0.03564
+          },
+          {
+            "word": "cant beat",
+            "weight": 0.035067
+          },
+          {
+            "word": "design",
+            "weight": 0.026854
+          },
+          {
+            "word": "graphic",
+            "weight": 0.024672
+          },
+          {
+            "word": "beat price",
+            "weight": 0.021234
+          },
+          {
+            "word": "entertained",
+            "weight": 0.021036
+          },
+          {
+            "word": "kept",
+            "weight": 0.019846
+          },
+          {
+            "word": "kindle voyage",
+            "weight": 0.019798
+          },
+          {
+            "word": "niece",
+            "weight": 0.018964
+          },
+          {
+            "word": "maybe",
+            "weight": 0.017019
+          },
+          {
+            "word": "page turn",
+            "weight": 0.016129
+          }
+        ]
+      },
+      {
+        "id": 7,
+        "top_words": [
+          {
+            "word": "price",
+            "weight": 0.046277
+          },
+          {
+            "word": "video",
+            "weight": 0.021811
+          },
+          {
+            "word": "christmas",
+            "weight": 0.020079
+          },
+          {
+            "word": "internet",
+            "weight": 0.016087
+          },
+          {
+            "word": "user",
+            "weight": 0.015698
+          },
+          {
+            "word": "loved",
+            "weight": 0.013832
+          },
+          {
+            "word": "email",
+            "weight": 0.013699
+          },
+          {
+            "word": "work",
+            "weight": 0.013024
+          },
+          {
+            "word": "friendly",
+            "weight": 0.012467
+          },
+          {
+            "word": "sale",
+            "weight": 0.011844
+          },
+          {
+            "word": "child",
+            "weight": 0.011696
+          },
+          {
+            "word": "play",
+            "weight": 0.011366
+          },
+          {
+            "word": "learning",
+            "weight": 0.011287
+          },
+          {
+            "word": "feature",
+            "weight": 0.010961
+          },
+          {
+            "word": "basic",
+            "weight": 0.010291
+          }
+        ]
+      },
+      {
+        "id": 8,
+        "top_words": [
+          {
+            "word": "love",
+            "weight": 0.059183
+          },
+          {
+            "word": "gift",
+            "weight": 0.056293
+          },
+          {
+            "word": "easy",
+            "weight": 0.032499
+          },
+          {
+            "word": "wife",
+            "weight": 0.030336
+          },
+          {
+            "word": "son",
+            "weight": 0.029946
+          },
+          {
+            "word": "christmas",
+            "weight": 0.027516
+          },
+          {
+            "word": "tablet",
+            "weight": 0.025601
+          },
+          {
+            "word": "plus",
+            "weight": 0.021114
+          },
+          {
+            "word": "happy",
+            "weight": 0.018857
+          },
+          {
+            "word": "work",
+            "weight": 0.016648
+          },
+          {
+            "word": "mom",
+            "weight": 0.016543
+          },
+          {
+            "word": "everything",
+            "weight": 0.012959
+          },
+          {
+            "word": "recommend",
+            "weight": 0.012583
+          },
+          {
+            "word": "christmas gift",
+            "weight": 0.01215
+          },
+          {
+            "word": "like",
+            "weight": 0.012098
           }
         ]
       }
     ],
     "prevalence": [
-      0.3615,
-      0.6385
+      0.0453,
+      0.0447,
+      0.1873,
+      0.1873,
+      0.1539,
+      0.2297,
+      0.0072,
+      0.0711,
+      0.0736
     ],
     "representative_reviews": {
       "0": [
-        "Alexa Show is really well put together. The main reason for my purchase was to create my own 'surveillance system' linking my Ring Doorbell, and Ring Floodlights to view on command by Alexa on the Show Screen. Yes, you can talk to it, and get results for almost any query, but with the show, you get ...",
-        "Alexa Show is really well put together. The main reason for my purchase was to create my own 'surveillance system' linking my Ring Doorbell, and Ring Floodlights to view on command by Alexa on the Show Screen. Yes, you can talk to it, and get results for almost any query, but with the show, you get ...",
-        "I have had the Echo Show for about a month now. So this review is from a new user whom has never had smart devices aside from cell phones. Alexa is great for listening to music, most of it free if you're an Amazon Prime member, pair your Echo device with a bluetooth speaker for awesome sound. Alexa ..."
+        "It's a lot of fun. To fully enjoy it, we had to get Amazon music unlimited. We bought four of them, so we can keep in touch with family. Alexa is very entertaining!",
+        "I have several Kindles so knew what to expect. It is a great reading device and I keep several in different locations.",
+        "I have several Kindles so knew what to expect. It is a great reading device and I keep several in different locations."
       ],
       "1": [
-        "Even when I\u201a\u00c4\u00f4m outside in bright sunlight, the words of the book I\u201a\u00c4\u00f4m reading are still crystal clear. That alone makes the Kindle Oasis worth what it cost me.The Kindle Oasis wakes up in just seconds, and any book I choose instantly opens, ready to be read.It is the perfect size and isn\u201a\u00c4\u00f4t heavy...",
-        "Even when I\u201a\u00c4\u00f4m outside in bright sunlight, the words of the book I\u201a\u00c4\u00f4m reading are still crystal clear. That alone makes the Kindle Oasis worth what it cost me.The Kindle Oasis wakes up in just seconds, and any book I choose instantly opens, ready to be read.It is the perfect size and isn\u201a\u00c4\u00f4t heavy...",
-        "When they first announced the Kindle Oasis, I did not have much of a desire to upgrade from my 1st generation Kindle Paperwhite. Just as I felt when they announced the Voyage.I read a lot, so my Kindle travels with me throughout the day most of the time. I have never had an issue with battery life, ..."
+        "I use this every day on my commute. Great battery life, no backlight but very readable with normal lighting. I like the built in dictionary. Email yourself pdf or mobi files for easy transfers.",
+        "I use this every day on my commute. Great battery life, no backlight but very readable with normal lighting. I like the built in dictionary. Email yourself pdf or mobi files for easy transfers.",
+        "I bought this with paper white and didn\u201a\u00c4\u00f4t see much of a difference in terms of resolution and use. I totally recommend this reader as it\u201a\u00c4\u00f4s so small and powerful!"
+      ],
+      "2": [
+        "I bought 2 of these tablets for my two youngest children. They had a lot of options to chose from as far as children apps go, but they were already familiar with the iPad since they stole mine all the time. Lol. That made it hard for them as well as myself to figure out how to use at first. Besides ...",
+        "This tablet works great and my daughter loves it. Only reason not 5 stars is because you cant access google play without rooting the tablet. Way to ruin android amazon.",
+        "I go this tablet after problems with 2 Samsung tablets. so far like it. all apps I use available. A little slower than previous tablets that is the only reason for the 4 stars"
+      ],
+      "3": [
+        "I love my new Kindle. The size is perfect. It fits right in my purse. Easy to navigate and I love the touch screen. I am able to read outside without a glare. Only flaw is that it is not backlit, so in order to read in the dark I need a book light. I don't mind that so much, I just wish kindle would...",
+        "I love my new Kindle. The size is perfect. It fits right in my purse. Easy to navigate and I love the touch screen. I am able to read outside without a glare. Only flaw is that it is not backlit, so in order to read in the dark I need a book light. I don't mind that so much, I just wish kindle would...",
+        "I bought this for my daughter, wanting to get her a kindle without having access to games (like with the kindle fire). This latest version of the kindle is excellent. I am jealous of my daughter and now am thinking about upgrading from my older kindle. The touchscreen is responsive. If you like read..."
+      ],
+      "4": [
+        "Product is good, light. Amazing battery backup. I charge the Kindle one in 4 weeks. Great product for reasonable price. USB connection is easy, Books are easy to download. Overall, everyone must have Kindle with them and this is the best product/model to start with.Understandably, this is the beginn...",
+        "Product is good, light. Amazing battery backup. I charge the Kindle one in 4 weeks. Great product for reasonable price. USB connection is easy, Books are easy to download. Overall, everyone must have Kindle with them and this is the best product/model to start with.Understandably, this is the beginn...",
+        "I was looking for a kindle whitepaper. I saw online for $80. What a deal. I ordered it on line and picked it up in the store. I got it home and couldn't adjust the brightness. After a lengthy time with online customer service I called customer service. After 20 minuets with speaking to a female Elme..."
+      ],
+      "5": [
+        "Alexa Show is really well put together. The main reason for my purchase was to create my own 'surveillance system' linking my Ring Doorbell, and Ring Floodlights to view on command by Alexa on the Show Screen. Yes, you can talk to it, and get results for almost any query, but with the show, you get ...",
+        "Alexa Show is really well put together. The main reason for my purchase was to create my own 'surveillance system' linking my Ring Doorbell, and Ring Floodlights to view on command by Alexa on the Show Screen. Yes, you can talk to it, and get results for almost any query, but with the show, you get ...",
+        "I like having the screen and being able to see things like weather reports, etc. Still not using it to its full potential, but we have it controlling a couple of lamps, giving us weather reports, setting timers and alarms. It's making me lazy! Sometimes it doesn't hear my voice. Hears my husband's v..."
+      ],
+      "6": [
+        "Exactly what I was looking for size wise and functional.",
+        "Exactly what I was looking for size wise and functional.",
+        "Bought this for my grandniece, keeps her entertained. Can't beat the price."
+      ],
+      "7": [
+        "I like the video feature for my doorbell. Wish it automatically showed a picture when door bell rung. Does not FaceTime. Maybe later. Also not all cameras are compatible.",
+        "I like the video feature for my doorbell. Wish it automatically showed a picture when door bell rung. Does not FaceTime. Maybe later. Also not all cameras are compatible.",
+        "Not a very responsive program. Very limited information program. Not user friendly."
+      ],
+      "8": [
+        "This make an excellent ebook reader. Don't expect much from this device except to read basic ebooks. The good thing is it's cheap and good to read in the sun.",
+        "This make an excellent ebook reader. Don't expect much from this device except to read basic ebooks. The good thing is it's cheap and good to read in the sun.",
+        "This make an excellent ebook reader. Don't expect much from this device except to read basic ebooks. The good thing is it's cheap and good to read in the sun."
       ]
     },
     "metrics": {
-      "coherence": 0.5578,
-      "diversity": 0.95,
-      "perplexity": 949.34
+      "coherence": 0.4662,
+      "diversity": 0.8556,
+      "perplexity": 1022.62
     },
-    "training_time": 42.12
+    "training_time": 31.15
   },
   "nmf": {
     "topics": [
@@ -171,63 +668,63 @@
         "top_words": [
           {
             "word": "tablet",
-            "weight": 0.025743
-          },
-          {
-            "word": "love",
-            "weight": 0.013181
-          },
-          {
-            "word": "easy",
-            "weight": 0.01248
-          },
-          {
-            "word": "old",
-            "weight": 0.012448
-          },
-          {
-            "word": "year",
-            "weight": 0.011934
-          },
-          {
-            "word": "kid",
-            "weight": 0.011086
-          },
-          {
-            "word": "kindle",
-            "weight": 0.011013
-          },
-          {
-            "word": "year old",
-            "weight": 0.010232
+            "weight": 0.060433
           },
           {
             "word": "price",
-            "weight": 0.009642
+            "weight": 0.024612
           },
           {
-            "word": "fire",
-            "weight": 0.009397
-          },
-          {
-            "word": "game",
-            "weight": 0.007786
-          },
-          {
-            "word": "book",
-            "weight": 0.006882
+            "word": "work",
+            "weight": 0.014344
           },
           {
             "word": "apps",
-            "weight": 0.006732
+            "weight": 0.011796
           },
           {
-            "word": "gift",
-            "weight": 0.006497
+            "word": "tablet price",
+            "weight": 0.010598
           },
           {
-            "word": "daughter",
-            "weight": 0.005944
+            "word": "fire",
+            "weight": 0.008375
+          },
+          {
+            "word": "fire tablet",
+            "weight": 0.007212
+          },
+          {
+            "word": "little",
+            "weight": 0.007156
+          },
+          {
+            "word": "child",
+            "weight": 0.006886
+          },
+          {
+            "word": "recommend",
+            "weight": 0.005855
+          },
+          {
+            "word": "size",
+            "weight": 0.005783
+          },
+          {
+            "word": "time",
+            "weight": 0.0055
+          },
+          {
+            "word": "tablet work",
+            "weight": 0.005486
+          },
+          {
+            "word": "screen",
+            "weight": 0.005393
+          },
+          {
+            "word": "ipad",
+            "weight": 0.005094
           }
         ]
       },
@@ -236,108 +733,710 @@
         "top_words": [
           {
             "word": "echo",
-            "weight": 0.03295
+            "weight": 0.036295
           },
           {
             "word": "alexa",
-            "weight": 0.018976
+            "weight": 0.020369
           },
           {
             "word": "show",
-            "weight": 0.01841
+            "weight": 0.020138
           },
           {
             "word": "echo show",
-            "weight": 0.013346
+            "weight": 0.014821
           },
           {
             "word": "music",
-            "weight": 0.012494
+            "weight": 0.012634
           },
           {
             "word": "sound",
-            "weight": 0.011434
+            "weight": 0.011474
           },
           {
             "word": "home",
-            "weight": 0.010238
-          },
-          {
-            "word": "device",
-            "weight": 0.00933
+            "weight": 0.010931
           },
           {
             "word": "plus",
-            "weight": 0.009161
+            "weight": 0.009854
           },
           {
-            "word": "work",
-            "weight": 0.008402
-          },
-          {
-            "word": "video",
-            "weight": 0.008146
+            "word": "device",
+            "weight": 0.009514
           },
           {
             "word": "echo plus",
-            "weight": 0.008124
+            "weight": 0.008827
           },
           {
-            "word": "light",
-            "weight": 0.008015
+            "word": "video",
+            "weight": 0.008619
           },
           {
             "word": "smart",
-            "weight": 0.007878
+            "weight": 0.008392
           },
           {
             "word": "dot",
-            "weight": 0.007607
+            "weight": 0.008311
+          },
+          {
+            "word": "light",
+            "weight": 0.008267
+          },
+          {
+            "word": "speaker",
+            "weight": 0.007784
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "top_words": [
+          {
+            "word": "old",
+            "weight": 0.111743
+          },
+          {
+            "word": "year",
+            "weight": 0.109368
+          },
+          {
+            "word": "year old",
+            "weight": 0.10916
+          },
+          {
+            "word": "old love",
+            "weight": 0.027062
+          },
+          {
+            "word": "love",
+            "weight": 0.025714
+          },
+          {
+            "word": "tablet year",
+            "weight": 0.025553
+          },
+          {
+            "word": "old grandson",
+            "weight": 0.016928
+          },
+          {
+            "word": "old son",
+            "weight": 0.016887
+          },
+          {
+            "word": "grandson",
+            "weight": 0.013763
+          },
+          {
+            "word": "son",
+            "weight": 0.01265
+          },
+          {
+            "word": "old granddaughter",
+            "weight": 0.010936
+          },
+          {
+            "word": "game",
+            "weight": 0.01011
+          },
+          {
+            "word": "old daughter",
+            "weight": 0.009154
+          },
+          {
+            "word": "granddaughter",
+            "weight": 0.007953
+          },
+          {
+            "word": "christmas",
+            "weight": 0.006914
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "top_words": [
+          {
+            "word": "kindle",
+            "weight": 0.086161
+          },
+          {
+            "word": "fire",
+            "weight": 0.03832
+          },
+          {
+            "word": "kindle fire",
+            "weight": 0.03596
+          },
+          {
+            "word": "new",
+            "weight": 0.01379
+          },
+          {
+            "word": "reading",
+            "weight": 0.011479
+          },
+          {
+            "word": "size",
+            "weight": 0.010065
+          },
+          {
+            "word": "new kindle",
+            "weight": 0.009509
+          },
+          {
+            "word": "screen",
+            "weight": 0.009479
+          },
+          {
+            "word": "read",
+            "weight": 0.009336
+          },
+          {
+            "word": "battery",
+            "weight": 0.00914
+          },
+          {
+            "word": "easy",
+            "weight": 0.00814
+          },
+          {
+            "word": "book",
+            "weight": 0.008097
+          },
+          {
+            "word": "life",
+            "weight": 0.007994
+          },
+          {
+            "word": "light",
+            "weight": 0.007875
+          },
+          {
+            "word": "old kindle",
+            "weight": 0.007727
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "top_words": [
+          {
+            "word": "easy",
+            "weight": 0.176367
+          },
+          {
+            "word": "set",
+            "weight": 0.081337
+          },
+          {
+            "word": "easy set",
+            "weight": 0.08006
+          },
+          {
+            "word": "love easy",
+            "weight": 0.013702
+          },
+          {
+            "word": "setup",
+            "weight": 0.01233
+          },
+          {
+            "word": "tablet easy",
+            "weight": 0.011764
+          },
+          {
+            "word": "work easy",
+            "weight": 0.010748
+          },
+          {
+            "word": "easy setup",
+            "weight": 0.008899
+          },
+          {
+            "word": "easy read",
+            "weight": 0.008727
+          },
+          {
+            "word": "super",
+            "weight": 0.007891
+          },
+          {
+            "word": "super easy",
+            "weight": 0.007859
+          },
+          {
+            "word": "sound",
+            "weight": 0.007796
+          },
+          {
+            "word": "fun",
+            "weight": 0.00768
+          },
+          {
+            "word": "work",
+            "weight": 0.007602
+          },
+          {
+            "word": "set easy",
+            "weight": 0.007426
+          }
+        ]
+      },
+      {
+        "id": 5,
+        "top_words": [
+          {
+            "word": "gift",
+            "weight": 0.120496
+          },
+          {
+            "word": "christmas",
+            "weight": 0.065781
+          },
+          {
+            "word": "christmas gift",
+            "weight": 0.043816
+          },
+          {
+            "word": "loved",
+            "weight": 0.026154
+          },
+          {
+            "word": "recommend",
+            "weight": 0.013159
+          },
+          {
+            "word": "price",
+            "weight": 0.012421
+          },
+          {
+            "word": "present",
+            "weight": 0.012165
+          },
+          {
+            "word": "wife",
+            "weight": 0.011639
+          },
+          {
+            "word": "christmas present",
+            "weight": 0.010783
+          },
+          {
+            "word": "happy",
+            "weight": 0.009789
+          },
+          {
+            "word": "absolutely",
+            "weight": 0.009605
+          },
+          {
+            "word": "family",
+            "weight": 0.009271
+          },
+          {
+            "word": "love",
+            "weight": 0.008904
+          },
+          {
+            "word": "mother",
+            "weight": 0.008213
+          },
+          {
+            "word": "son",
+            "weight": 0.008048
+          }
+        ]
+      },
+      {
+        "id": 6,
+        "top_words": [
+          {
+            "word": "book",
+            "weight": 0.054292
+          },
+          {
+            "word": "game",
+            "weight": 0.043798
+          },
+          {
+            "word": "read",
+            "weight": 0.037038
+          },
+          {
+            "word": "play",
+            "weight": 0.03566
+          },
+          {
+            "word": "read book",
+            "weight": 0.022416
+          },
+          {
+            "word": "play game",
+            "weight": 0.021494
+          },
+          {
+            "word": "reading",
+            "weight": 0.013534
+          },
+          {
+            "word": "watch",
+            "weight": 0.009837
+          },
+          {
+            "word": "movie",
+            "weight": 0.008732
+          },
+          {
+            "word": "music",
+            "weight": 0.008704
+          },
+          {
+            "word": "son",
+            "weight": 0.008675
+          },
+          {
+            "word": "playing",
+            "weight": 0.007591
+          },
+          {
+            "word": "reading book",
+            "weight": 0.007351
+          },
+          {
+            "word": "download",
+            "weight": 0.007168
+          },
+          {
+            "word": "time",
+            "weight": 0.007155
+          }
+        ]
+      },
+      {
+        "id": 7,
+        "top_words": [
+          {
+            "word": "kid",
+            "weight": 0.171389
+          },
+          {
+            "word": "tablet kid",
+            "weight": 0.037268
+          },
+          {
+            "word": "kid friendly",
+            "weight": 0.015007
+          },
+          {
+            "word": "friendly",
+            "weight": 0.013542
+          },
+          {
+            "word": "kid easy",
+            "weight": 0.011607
+          },
+          {
+            "word": "kid tablet",
+            "weight": 0.010316
+          },
+          {
+            "word": "fun",
+            "weight": 0.010035
+          },
+          {
+            "word": "control",
+            "weight": 0.009113
+          },
+          {
+            "word": "adult",
+            "weight": 0.009052
+          },
+          {
+            "word": "parental",
+            "weight": 0.008796
+          },
+          {
+            "word": "gift kid",
+            "weight": 0.008365
+          },
+          {
+            "word": "parental control",
+            "weight": 0.00807
+          },
+          {
+            "word": "fire kid",
+            "weight": 0.007639
+          },
+          {
+            "word": "fire",
+            "weight": 0.0072
+          },
+          {
+            "word": "age",
+            "weight": 0.006999
+          }
+        ]
+      },
+      {
+        "id": 8,
+        "top_words": [
+          {
+            "word": "love",
+            "weight": 0.150169
+          },
+          {
+            "word": "daughter",
+            "weight": 0.061433
+          },
+          {
+            "word": "daughter love",
+            "weight": 0.048743
+          },
+          {
+            "word": "grandson",
+            "weight": 0.029861
+          },
+          {
+            "word": "love tablet",
+            "weight": 0.025969
+          },
+          {
+            "word": "love easy",
+            "weight": 0.025668
+          },
+          {
+            "word": "absolutely love",
+            "weight": 0.023369
+          },
+          {
+            "word": "absolutely",
+            "weight": 0.022073
+          },
+          {
+            "word": "grandson love",
+            "weight": 0.021807
+          },
+          {
+            "word": "son love",
+            "weight": 0.019258
+          },
+          {
+            "word": "wife",
+            "weight": 0.018166
+          },
+          {
+            "word": "granddaughter",
+            "weight": 0.017782
+          },
+          {
+            "word": "granddaughter love",
+            "weight": 0.017536
+          },
+          {
+            "word": "wife love",
+            "weight": 0.016348
+          },
+          {
+            "word": "son",
+            "weight": 0.015499
           }
         ]
       }
     ],
     "prevalence": [
-      0.6691,
-      0.3309
+      0.1863,
+      0.2496,
+      0.0566,
+      0.1174,
+      0.0824,
+      0.074,
+      0.1035,
+      0.0697,
+      0.0607
     ],
     "representative_reviews": {
       "0": [
         "Purchased this tablet for a gift..They love it. Easy to use.",
-        "My 5 year old loves his tablet. It's perfect for him.",
-        "Bought this tablet for my 84 year old grandpa and he loves it. Easy to use"
+        "My son's love there tablet. Great but for the price",
+        "My son's love there tablet. Great but for the price"
       ],
       "1": [
-        "When I first read about Amazon Echo Show, I thought the sound quality would be inferior to Echo because of the small size, which to me would be a deal breaker. I read that the sound is actually superior to Echo & it is compatible with most existing security cameras, so I decided to buy one. Then Bes...",
         "The Echo was so good, I ended up getting the Echo Show as well. At first it was a device that I enjoyed using for various reasons, one being that I could ask Alexa to watch any YouTube videos I wanted to watch. Then one day, I asked Alexa to play a video and she responded by saying,\"Google is not su...",
-        "We love our echo show, It\u201a\u00c4\u00f4s fun to use and she can do a lot of things."
+        "When I first read about Amazon Echo Show, I thought the sound quality would be inferior to Echo because of the small size, which to me would be a deal breaker. I read that the sound is actually superior to Echo & it is compatible with most existing security cameras, so I decided to buy one. Then Bes...",
+        "I have one Alexa and three Echo dots and having Echo Show now is awesome!"
+      ],
+      "2": [
+        "Both my 2 year old and my 4 year old love this tablet!",
+        "I am using it for my 3 year old and she loves it..",
+        "Great for my 7 year old she loves it!!! Great price and great product!!!"
+      ],
+      "3": [
+        "Kindle products are fantastic. I've used a kindle & now have a Kindle fire. Use it everyday, so naturally, I would select a Kindle for my granddaughter.",
+        "got this for my kindle 7 tablet . Does an excellent job charging the kindle fire 7 a lot faster than the one it came with the kindle fire",
+        "The kid really love this kindle fire. The protection for the kindle help protect the kindle"
+      ],
+      "4": [
+        "Great product. Easy to use .very easy to set up ..",
+        "Product is great. It is Easy to use and easy to set up",
+        "Very easy to set up.Changed how I do a lot of things."
+      ],
+      "5": [
+        "It was bought as a Christmas gift so therefore no review.",
+        "Got it as a Christmas gift and I love it! I would recommend this product.",
+        "Great price - great shipping - great item! Perfect Christmas gift for our granddaughter!"
+      ],
+      "6": [
+        "Perfect thing I needed to read books on and play my games",
+        "I love to read! Books,books, books and more books.",
+        "My kids read books play games take pictures they love this."
+      ],
+      "7": [
+        "Great item, we love our Echo. If only she could mow the yard for the kids....",
+        "Got this for the kids for Xmas...was the BEST gift.",
+        "I got this for my kid, because it is tailored for kids. They liked it and it worked."
+      ],
+      "8": [
+        "Excellent product for what it does. Spouse loves it!Nough said!",
+        "Bought it for my daughter and she loves it great product at a great price!",
+        "My daughter loves it. She loves the books that she can read."
       ]
     },
     "metrics": {
-      "coherence": 0.6103,
-      "diversity": 1.0,
-      "reconstruction_error": 68.82
+      "coherence": 0.652,
+      "diversity": 0.9,
+      "reconstruction_error": 67.2
     },
-    "training_time": 0.06
+    "training_time": 0.15
   },
   "similarity": {
     "matrix": [
       [
-        0.257,
-        0.957
+        0.049,
+        0.363,
+        0.015,
+        0.048,
+        0.153,
+        0.184,
+        0.059,
+        0.159,
+        0.011
       ],
       [
-        0.957,
-        0.167
+        0.185,
+        0.111,
+        0.009,
+        0.146,
+        0.1,
+        0.068,
+        0.028,
+        0.034,
+        0.041
+      ],
+      [
+        0.755,
+        0.033,
+        0.413,
+        0.021,
+        0.016,
+        0.036,
+        0.097,
+        0.319,
+        0.244
+      ],
+      [
+        0.371,
+        0.09,
+        0.074,
+        0.721,
+        0.159,
+        0.026,
+        0.556,
+        0.032,
+        0.037
+      ],
+      [
+        0.229,
+        0.245,
+        0.062,
+        0.346,
+        0.549,
+        0.045,
+        0.194,
+        0.038,
+        0.054
+      ],
+      [
+        0.119,
+        0.947,
+        0.023,
+        0.043,
+        0.048,
+        0.032,
+        0.129,
+        0.023,
+        0.01
+      ],
+      [
+        0.074,
+        0.027,
+        0.01,
+        0.05,
+        0.011,
+        0.026,
+        0.013,
+        0.025,
+        0.027
+      ],
+      [
+        0.345,
+        0.151,
+        0.036,
+        0.028,
+        0.026,
+        0.311,
+        0.147,
+        0.12,
+        0.053
+      ],
+      [
+        0.262,
+        0.091,
+        0.101,
+        0.087,
+        0.254,
+        0.597,
+        0.067,
+        0.023,
+        0.483
       ]
     ],
     "lda_labels": [
       "LDA Topic 0",
-      "LDA Topic 1"
+      "LDA Topic 1",
+      "LDA Topic 2",
+      "LDA Topic 3",
+      "LDA Topic 4",
+      "LDA Topic 5",
+      "LDA Topic 6",
+      "LDA Topic 7",
+      "LDA Topic 8"
     ],
     "nmf_labels": [
       "NMF Topic 0",
-      "NMF Topic 1"
+      "NMF Topic 1",
+      "NMF Topic 2",
+      "NMF Topic 3",
+      "NMF Topic 4",
+      "NMF Topic 5",
+      "NMF Topic 6",
+      "NMF Topic 7",
+      "NMF Topic 8"
     ]
   }
 }

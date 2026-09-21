@@ -1,12 +1,12 @@
 {
   "meta": {
-    "total_reviews": 200,
-    "processed_reviews": 200,
-    "sample_size": 5000,
+    "total_reviews": 28,
+    "processed_reviews": 25,
+    "sample_size": null,
     "n_topics": 5,
-    "total_time": 12.86,
-    "vocabulary_size_bow": 80,
-    "vocabulary_size_tfidf": 80
+    "total_time": 137.26,
+    "vocabulary_size_bow": 9,
+    "vocabulary_size_tfidf": 9
   },
   "lda": {
     "topics": [
@@ -14,64 +14,40 @@
         "id": 0,
         "top_words": [
           {
+            "word": "flipkart",
+            "weight": 0.413466
+          },
+          {
             "word": "fast",
-            "weight": 0.060819
+            "weight": 0.13943
           },
           {
-            "word": "battery",
-            "weight": 0.060812
+            "word": "power",
+            "weight": 0.107182
           },
           {
-            "word": "charging",
-            "weight": 0.06081
+            "word": "backup",
+            "weight": 0.085377
           },
           {
-            "word": "speed charger",
-            "weight": 0.060809
+            "word": "time",
+            "weight": 0.084861
           },
           {
-            "word": "work",
-            "weight": 0.060809
+            "word": "power bank",
+            "weight": 0.048201
           },
           {
-            "word": "life fast",
-            "weight": 0.060801
+            "word": "bank",
+            "weight": 0.046727
           },
           {
-            "word": "speed",
-            "weight": 0.0608
+            "word": "charge",
+            "weight": 0.03944
           },
           {
-            "word": "battery life",
-            "weight": 0.0608
-          },
-          {
-            "word": "charger work",
-            "weight": 0.060794
-          },
-          {
-            "word": "device number",
-            "weight": 0.060793
-          },
-          {
-            "word": "charging speed",
-            "weight": 0.060788
-          },
-          {
-            "word": "life",
-            "weight": 0.060787
-          },
-          {
-            "word": "fast charging",
-            "weight": 0.060786
-          },
-          {
-            "word": "charger",
-            "weight": 0.060777
-          },
-          {
-            "word": "device",
-            "weight": 0.060773
+            "word": "mah",
+            "weight": 0.035316
           }
         ]
       },
@@ -79,64 +55,40 @@
         "id": 1,
         "top_words": [
           {
-            "word": "perfectly",
-            "weight": 0.014052
+            "word": "fast",
+            "weight": 0.419802
           },
           {
-            "word": "picture quality",
-            "weight": 0.013761
+            "word": "power",
+            "weight": 0.175802
           },
           {
-            "word": "low light",
-            "weight": 0.013264
+            "word": "charge",
+            "weight": 0.061137
           },
           {
-            "word": "sound quality",
-            "weight": 0.013239
+            "word": "flipkart",
+            "weight": 0.059229
           },
           {
-            "word": "comfortable",
-            "weight": 0.01313
+            "word": "time",
+            "weight": 0.058872
           },
           {
-            "word": "camera picture",
-            "weight": 0.01312
+            "word": "mah",
+            "weight": 0.058116
           },
           {
-            "word": "photography",
-            "weight": 0.013018
+            "word": "power bank",
+            "weight": 0.057634
           },
           {
-            "word": "audio output",
-            "weight": 0.012999
+            "word": "bank",
+            "weight": 0.056203
           },
           {
-            "word": "recommended",
-            "weight": 0.012997
-          },
-          {
-            "word": "fast charging",
-            "weight": 0.01296
-          },
-          {
-            "word": "speed charger",
-            "weight": 0.012882
-          },
-          {
-            "word": "highly",
-            "weight": 0.012857
-          },
-          {
-            "word": "quality durable",
-            "weight": 0.012837
-          },
-          {
-            "word": "material",
-            "weight": 0.012823
-          },
-          {
-            "word": "light",
-            "weight": 0.012816
+            "word": "backup",
+            "weight": 0.053205
           }
         ]
       },
@@ -144,64 +96,40 @@
         "id": 2,
         "top_words": [
           {
-            "word": "quality",
-            "weight": 0.060774
+            "word": "mah",
+            "weight": 0.216602
           },
           {
-            "word": "recommended photography",
-            "weight": 0.060551
+            "word": "backup",
+            "weight": 0.21515
           },
           {
-            "word": "highly",
-            "weight": 0.060549
+            "word": "power",
+            "weight": 0.1336
           },
           {
-            "word": "camera",
-            "weight": 0.060538
+            "word": "charge",
+            "weight": 0.132614
           },
           {
-            "word": "highly recommended",
-            "weight": 0.060536
+            "word": "time",
+            "weight": 0.128191
           },
           {
-            "word": "photography number",
-            "weight": 0.060524
+            "word": "power bank",
+            "weight": 0.047906
           },
           {
-            "word": "recommended",
-            "weight": 0.060523
+            "word": "bank",
+            "weight": 0.044693
           },
           {
-            "word": "low",
-            "weight": 0.060523
+            "word": "fast",
+            "weight": 0.040763
           },
           {
-            "word": "quality low",
-            "weight": 0.060518
-          },
-          {
-            "word": "photography",
-            "weight": 0.060511
-          },
-          {
-            "word": "picture quality",
-            "weight": 0.060509
-          },
-          {
-            "word": "light highly",
-            "weight": 0.060508
-          },
-          {
-            "word": "light",
-            "weight": 0.060507
-          },
-          {
-            "word": "picture",
-            "weight": 0.060503
-          },
-          {
-            "word": "low light",
-            "weight": 0.060493
+            "word": "flipkart",
+            "weight": 0.04048
           }
         ]
       },
@@ -209,64 +137,40 @@
         "id": 3,
         "top_words": [
           {
-            "word": "quality",
-            "weight": 0.054282
+            "word": "power",
+            "weight": 0.18397
           },
           {
-            "word": "headphone number",
-            "weight": 0.054202
+            "word": "charge",
+            "weight": 0.17153
           },
           {
-            "word": "output comfortable",
-            "weight": 0.054189
+            "word": "power bank",
+            "weight": 0.169003
           },
           {
-            "word": "comfortable",
-            "weight": 0.054187
+            "word": "bank",
+            "weight": 0.168284
           },
           {
-            "word": "audio output",
-            "weight": 0.054182
+            "word": "time",
+            "weight": 0.141929
           },
           {
-            "word": "bass clear",
-            "weight": 0.05418
+            "word": "mah",
+            "weight": 0.072454
           },
           {
-            "word": "clear audio",
-            "weight": 0.054173
+            "word": "backup",
+            "weight": 0.041171
           },
           {
-            "word": "sound quality",
-            "weight": 0.05417
+            "word": "flipkart",
+            "weight": 0.027419
           },
           {
-            "word": "deep bass",
-            "weight": 0.054166
-          },
-          {
-            "word": "clear",
-            "weight": 0.054163
-          },
-          {
-            "word": "bass",
-            "weight": 0.054161
-          },
-          {
-            "word": "sound",
-            "weight": 0.054158
-          },
-          {
-            "word": "audio",
-            "weight": 0.054151
-          },
-          {
-            "word": "headphone",
-            "weight": 0.054149
-          },
-          {
-            "word": "output",
-            "weight": 0.054148
+            "word": "fast",
+            "weight": 0.024239
           }
         ]
       },
@@ -274,108 +178,84 @@
         "id": 4,
         "top_words": [
           {
-            "word": "shipping build",
-            "weight": 0.029387
+            "word": "mah",
+            "weight": 0.383933
           },
           {
-            "word": "design number",
-            "weight": 0.029385
+            "word": "flipkart",
+            "weight": 0.082026
           },
           {
-            "word": "design",
-            "weight": 0.029373
+            "word": "power",
+            "weight": 0.079744
           },
           {
-            "word": "build",
-            "weight": 0.029372
-          },
-          {
-            "word": "durable",
-            "weight": 0.02937
-          },
-          {
-            "word": "material sleek",
-            "weight": 0.02937
-          },
-          {
-            "word": "sleek design",
-            "weight": 0.029369
-          },
-          {
-            "word": "quality durable",
-            "weight": 0.029369
-          },
-          {
-            "word": "sleek",
-            "weight": 0.029369
-          },
-          {
-            "word": "material",
-            "weight": 0.029369
-          },
-          {
-            "word": "fast shipping",
-            "weight": 0.029368
-          },
-          {
-            "word": "build quality",
-            "weight": 0.029367
-          },
-          {
-            "word": "durable material",
-            "weight": 0.029367
-          },
-          {
-            "word": "shipping",
-            "weight": 0.029363
+            "word": "time",
+            "weight": 0.077477
           },
           {
             "word": "fast",
-            "weight": 0.029362
+            "weight": 0.077106
+          },
+          {
+            "word": "bank",
+            "weight": 0.076101
+          },
+          {
+            "word": "charge",
+            "weight": 0.075362
+          },
+          {
+            "word": "power bank",
+            "weight": 0.074526
+          },
+          {
+            "word": "backup",
+            "weight": 0.073726
           }
         ]
       }
     ],
     "prevalence": [
-      0.2,
-      0.0,
-      0.2,
-      0.2,
-      0.4
+      0.36,
+      0.12,
+      0.08,
+      0.36,
+      0.08
     ],
     "representative_reviews": {
       "0": [
-        "Great battery life and fast charging speed. Charger works fantastic for all my devices. Review number 200",
-        "Great battery life and fast charging speed. Charger works fantastic for all my devices. Review number 195",
-        "Great battery life and fast charging speed. Charger works fantastic for all my devices. Review number 165"
+        "Power backup is amazing,look is smooth and fantastic ,rechargine time 7 to 8 hr,and very fast charging tnx for flipkart and i recoment to buy this product...\u263a\ufe0f",
+        "This Product is osm & value for money & this is original product for receive me and I am very happy thanks \ud83d\ude0a\ud83d\udc4d for flipkart fast delivery I really love this powerbank \ud83d\ude0d\ud83d\ude0d\ud83d\ude0d\ud83d\ude0d so guys this is best po... more",
+        "Good product...and awesome Ekart Facility...thanks Flipkart\u2764\ufe0f\u2764\ufe0f"
       ],
       "1": [
-        "Fast shipping and good build quality. Durable materials and sleek design. Review number 199",
-        "Fast shipping and good build quality. Durable materials and sleek design. Review number 194",
-        "Fast shipping and good build quality. Durable materials and sleek design. Review number 164"
+        "Best power and fast charging i love this product as safe delivery",
+        "* best battery life * good performance * value for money * nice fast chargering",
+        "Fast charging, long-lasting, and affordable. What more could you ask for ??"
       ],
       "2": [
-        "Camera picture quality is excellent even in low light. Highly recommended for photography. Review number 198",
-        "Camera picture quality is excellent even in low light. Highly recommended for photography. Review number 193",
-        "Camera picture quality is excellent even in low light. Highly recommended for photography. Review number 163"
+        "Technical this powerbank has 15000mAh battery backup.. It can charge 5000mah 3 times once fully charged. It takes alomost 5 to 7 hours with 20watt charger..",
+        "\u2764\ufe0f\u2764\ufe0f really this product is very nice. Long lasting power backup and I am satisfied \u263a\ufe0f",
+        "How to switch off the button on this device it stays on always plz send me the details to Switch of the device"
       ],
       "3": [
-        "Sound quality is amazing with deep bass and clear audio output. Very comfortable headphones. Review number 197",
-        "Sound quality is amazing with deep bass and clear audio output. Very comfortable headphones. Review number 172",
-        "Sound quality is amazing with deep bass and clear audio output. Very comfortable headphones. Review number 162"
+        "This is a amazing power bank for every you charged by this . This is charge my redmi k20pro 4000 mah battery 4.5 times 4 time fully charged and 5th time half charge not. Bad thank you mi. Tq Flipkart ... more",
+        "iam using this power bank last 2,3 years...then last i bought the lstest vertion ... its so good and amazing power backup , my rdmi note 7 pro more than 3 times charing put in this power bank .one dow... more",
+        "This power bank is so good but I recommend you to buy 30000 mah mi power bank Also battery backup is good It takes 6.5 hrs to charge from 35 watt charger I am happy you should buy this ......"
       ],
       "4": [
-        "Smooth software installation and simple user interface. Works perfectly on my laptop. Review number 196",
-        "Smooth software installation and simple user interface. Works perfectly on my laptop. Review number 171",
-        "Smooth software installation and simple user interface. Works perfectly on my laptop. Review number 161"
+        "Review for: Capacity 20000 mAh \u2022 Color Blue",
+        "Review for: Capacity 20000 mAh \u2022 Color Sandstone Black",
+        "How to switch off the button on this device it stays on always plz send me the details to Switch of the device"
       ]
     },
     "metrics": {
-      "coherence": 0.8246,
-      "diversity": 0.88,
-      "perplexity": 32.04
+      "coherence": 0.549,
+      "diversity": 0.2,
+      "perplexity": 18.15
     },
-    "training_time": 0.66
+    "training_time": 22.65
   },
   "nmf": {
     "topics": [
@@ -383,64 +263,40 @@
         "id": 0,
         "top_words": [
           {
-            "word": "work device",
-            "weight": 0.064409
+            "word": "power",
+            "weight": 0.270817
           },
           {
-            "word": "speed charger",
-            "weight": 0.064409
+            "word": "bank",
+            "weight": 0.232663
           },
           {
-            "word": "speed",
-            "weight": 0.064409
+            "word": "power bank",
+            "weight": 0.232663
           },
           {
-            "word": "battery life",
-            "weight": 0.064409
+            "word": "backup",
+            "weight": 0.111456
           },
           {
-            "word": "charger work",
-            "weight": 0.064409
+            "word": "time",
+            "weight": 0.05405
           },
           {
-            "word": "fast charging",
-            "weight": 0.064409
+            "word": "charge",
+            "weight": 0.045149
           },
           {
-            "word": "charging speed",
-            "weight": 0.064409
+            "word": "mah",
+            "weight": 0.043102
           },
           {
-            "word": "charging",
-            "weight": 0.064409
-          },
-          {
-            "word": "battery",
-            "weight": 0.064409
-          },
-          {
-            "word": "device number",
-            "weight": 0.064409
-          },
-          {
-            "word": "device",
-            "weight": 0.064409
-          },
-          {
-            "word": "life",
-            "weight": 0.064409
-          },
-          {
-            "word": "life fast",
-            "weight": 0.064409
-          },
-          {
-            "word": "charger",
-            "weight": 0.064409
+            "word": "flipkart",
+            "weight": 0.010034
           },
           {
             "word": "fast",
-            "weight": 0.049272
+            "weight": 6.6e-05
           }
         ]
       },
@@ -448,64 +304,40 @@
         "id": 1,
         "top_words": [
           {
-            "word": "work perfectly",
-            "weight": 0.05637
+            "word": "flipkart",
+            "weight": 0.994292
           },
           {
-            "word": "user interface",
-            "weight": 0.05637
+            "word": "fast",
+            "weight": 0.005708
           },
           {
-            "word": "user",
-            "weight": 0.05637
+            "word": "time",
+            "weight": 0.0
           },
           {
-            "word": "simple user",
-            "weight": 0.05637
+            "word": "power",
+            "weight": 0.0
           },
           {
-            "word": "smooth",
-            "weight": 0.05637
+            "word": "power bank",
+            "weight": 0.0
           },
           {
-            "word": "smooth software",
-            "weight": 0.05637
+            "word": "mah",
+            "weight": 0.0
           },
           {
-            "word": "software",
-            "weight": 0.05637
+            "word": "charge",
+            "weight": 0.0
           },
           {
-            "word": "software installation",
-            "weight": 0.05637
+            "word": "bank",
+            "weight": 0.0
           },
           {
-            "word": "interface",
-            "weight": 0.05637
-          },
-          {
-            "word": "interface work",
-            "weight": 0.05637
-          },
-          {
-            "word": "installation simple",
-            "weight": 0.05637
-          },
-          {
-            "word": "installation",
-            "weight": 0.05637
-          },
-          {
-            "word": "laptop",
-            "weight": 0.05637
-          },
-          {
-            "word": "perfectly laptop",
-            "weight": 0.05637
-          },
-          {
-            "word": "perfectly",
-            "weight": 0.05637
+            "word": "backup",
+            "weight": 0.0
           }
         ]
       },
@@ -513,64 +345,40 @@
         "id": 2,
         "top_words": [
           {
-            "word": "sound quality",
-            "weight": 0.056874
+            "word": "fast",
+            "weight": 0.811022
           },
           {
-            "word": "sound",
-            "weight": 0.056874
+            "word": "power",
+            "weight": 0.107476
           },
           {
-            "word": "comfortable headphone",
-            "weight": 0.056874
+            "word": "backup",
+            "weight": 0.042672
           },
           {
-            "word": "comfortable",
-            "weight": 0.056874
+            "word": "time",
+            "weight": 0.03883
           },
           {
-            "word": "headphone number",
-            "weight": 0.056874
+            "word": "power bank",
+            "weight": 0.0
           },
           {
-            "word": "deep",
-            "weight": 0.056874
+            "word": "flipkart",
+            "weight": 0.0
           },
           {
-            "word": "clear",
-            "weight": 0.056874
+            "word": "mah",
+            "weight": 0.0
           },
           {
-            "word": "clear audio",
-            "weight": 0.056874
+            "word": "charge",
+            "weight": 0.0
           },
           {
-            "word": "audio",
-            "weight": 0.056874
-          },
-          {
-            "word": "audio output",
-            "weight": 0.056874
-          },
-          {
-            "word": "bass",
-            "weight": 0.056874
-          },
-          {
-            "word": "bass clear",
-            "weight": 0.056874
-          },
-          {
-            "word": "deep bass",
-            "weight": 0.056874
-          },
-          {
-            "word": "output",
-            "weight": 0.056874
-          },
-          {
-            "word": "output comfortable",
-            "weight": 0.056874
+            "word": "bank",
+            "weight": 0.0
           }
         ]
       },
@@ -578,64 +386,40 @@
         "id": 3,
         "top_words": [
           {
-            "word": "low light",
-            "weight": 0.064178
+            "word": "mah",
+            "weight": 0.965124
           },
           {
-            "word": "highly",
-            "weight": 0.064178
+            "word": "backup",
+            "weight": 0.034876
           },
           {
-            "word": "camera",
-            "weight": 0.064178
+            "word": "time",
+            "weight": 0.0
           },
           {
-            "word": "camera picture",
-            "weight": 0.064178
+            "word": "power",
+            "weight": 0.0
           },
           {
-            "word": "highly recommended",
-            "weight": 0.064178
+            "word": "power bank",
+            "weight": 0.0
           },
           {
-            "word": "light",
-            "weight": 0.064178
+            "word": "flipkart",
+            "weight": 0.0
           },
           {
-            "word": "light highly",
-            "weight": 0.064178
+            "word": "fast",
+            "weight": 0.0
           },
           {
-            "word": "low",
-            "weight": 0.064178
+            "word": "charge",
+            "weight": 0.0
           },
           {
-            "word": "picture quality",
-            "weight": 0.064178
-          },
-          {
-            "word": "picture",
-            "weight": 0.064178
-          },
-          {
-            "word": "photography number",
-            "weight": 0.064178
-          },
-          {
-            "word": "photography",
-            "weight": 0.064178
-          },
-          {
-            "word": "recommended",
-            "weight": 0.064178
-          },
-          {
-            "word": "quality low",
-            "weight": 0.064178
-          },
-          {
-            "word": "recommended photography",
-            "weight": 0.064178
+            "word": "bank",
+            "weight": 0.0
           }
         ]
       },
@@ -643,145 +427,121 @@
         "id": 4,
         "top_words": [
           {
-            "word": "sleek design",
-            "weight": 0.068577
+            "word": "charge",
+            "weight": 0.547214
           },
           {
-            "word": "sleek",
-            "weight": 0.068577
+            "word": "time",
+            "weight": 0.425624
           },
           {
-            "word": "durable material",
-            "weight": 0.068577
+            "word": "mah",
+            "weight": 0.022926
           },
           {
-            "word": "material",
-            "weight": 0.068577
+            "word": "fast",
+            "weight": 0.004236
           },
           {
-            "word": "design number",
-            "weight": 0.068577
+            "word": "power bank",
+            "weight": 0.0
           },
           {
-            "word": "build",
-            "weight": 0.068577
+            "word": "flipkart",
+            "weight": 0.0
           },
           {
-            "word": "build quality",
-            "weight": 0.068577
+            "word": "power",
+            "weight": 0.0
           },
           {
-            "word": "design",
-            "weight": 0.068577
+            "word": "bank",
+            "weight": 0.0
           },
           {
-            "word": "fast shipping",
-            "weight": 0.068577
-          },
-          {
-            "word": "durable",
-            "weight": 0.068577
-          },
-          {
-            "word": "shipping",
-            "weight": 0.068577
-          },
-          {
-            "word": "shipping build",
-            "weight": 0.068577
-          },
-          {
-            "word": "material sleek",
-            "weight": 0.068577
-          },
-          {
-            "word": "quality durable",
-            "weight": 0.068577
-          },
-          {
-            "word": "quality",
-            "weight": 0.039919
+            "word": "backup",
+            "weight": 0.0
           }
         ]
       }
     ],
     "prevalence": [
+      0.4,
+      0.16,
       0.2,
-      0.2,
-      0.2,
-      0.2,
-      0.2
+      0.12,
+      0.12
     ],
     "representative_reviews": {
       "0": [
-        "Great battery life and fast charging speed. Charger works fantastic for all my devices. Review number 200",
-        "Great battery life and fast charging speed. Charger works fantastic for all my devices. Review number 195",
-        "Great battery life and fast charging speed. Charger works fantastic for all my devices. Review number 165"
+        "iam using this power bank last 2,3 years...then last i bought the lstest vertion ... its so good and amazing power backup , my rdmi note 7 pro more than 3 times charing put in this power bank .one dow... more",
+        "This power bank is so good but I recommend you to buy 30000 mah mi power bank Also battery backup is good It takes 6.5 hrs to charge from 35 watt charger I am happy you should buy this ......",
+        "Best option for 20000 mah power Bank"
       ],
       "1": [
-        "Smooth software installation and simple user interface. Works perfectly on my laptop. Review number 196",
-        "Smooth software installation and simple user interface. Works perfectly on my laptop. Review number 171",
-        "Smooth software installation and simple user interface. Works perfectly on my laptop. Review number 161"
+        "Good product...and awesome Ekart Facility...thanks Flipkart\u2764\ufe0f\u2764\ufe0f",
+        "Flipkart Internet Private Limited, Buildings Alyssa, Begonia & Clove Embassy Tech Village, Outer Ring Road, Devarabeesanahalli Village, Bengaluru, 560103, Karnataka, India",
+        "Flipkart Internet Private Limited,"
       ],
       "2": [
-        "Sound quality is amazing with deep bass and clear audio output. Very comfortable headphones. Review number 197",
-        "Sound quality is amazing with deep bass and clear audio output. Very comfortable headphones. Review number 172",
-        "Sound quality is amazing with deep bass and clear audio output. Very comfortable headphones. Review number 162"
+        "Fast charging, long-lasting, and affordable. What more could you ask for ??",
+        "* best battery life * good performance * value for money * nice fast chargering",
+        "Best power and fast charging i love this product as safe delivery"
       ],
       "3": [
-        "Camera picture quality is excellent even in low light. Highly recommended for photography. Review number 198",
-        "Camera picture quality is excellent even in low light. Highly recommended for photography. Review number 193",
-        "Camera picture quality is excellent even in low light. Highly recommended for photography. Review number 163"
+        "Review for: Capacity 20000 mAh \u2022 Color Blue",
+        "Review for: Capacity 20000 mAh \u2022 Color Sandstone Black",
+        "Technical this powerbank has 15000mAh battery backup.. It can charge 5000mah 3 times once fully charged. It takes alomost 5 to 7 hours with 20watt charger.."
       ],
       "4": [
-        "Fast shipping and good build quality. Durable materials and sleek design. Review number 199",
-        "Fast shipping and good build quality. Durable materials and sleek design. Review number 194",
-        "Fast shipping and good build quality. Durable materials and sleek design. Review number 164"
+        "Pros: 1.Charging time with 18W charger is 7 hours. With 10 watt charger it takes 10.5 hours to charge completely. (If your charger is 15W , it will still take 10.5 hours to charge). 2. It doesn't h... more",
+        "Superb!!! \ud83d\udc4d\ud83d\udc4d\ud83d\udc4d This power bank fully charges my k20 pro 4 and 1/2 times with continuously 18w fast charge. I tested it's performance and it charges at the same speed and takes exactly same time as ... more",
+        "This is a amazing power bank for every you charged by this . This is charge my redmi k20pro 4000 mah battery 4.5 times 4 time fully charged and 5th time half charge not. Bad thank you mi. Tq Flipkart ... more"
       ]
     },
     "metrics": {
-      "coherence": 1.0,
-      "diversity": 1.0,
-      "reconstruction_error": 1.19
+      "coherence": 0.549,
+      "diversity": 0.2,
+      "reconstruction_error": 1.47
     },
-    "training_time": 0.0
+    "training_time": 0.15
   },
   "similarity": {
     "matrix": [
       [
-        0.996,
-        0.051,
-        0.007,
-        0.007,
-        0.007
+        0.343,
+        0.876,
+        0.339,
+        0.081,
+        0.18
       ],
       [
-        0.441,
-        0.471,
-        0.47,
-        0.455,
-        0.428
+        0.414,
+        0.128,
+        0.924,
+        0.125,
+        0.185
       ],
       [
-        0.007,
-        0.008,
-        0.045,
-        0.994,
-        0.046
+        0.596,
+        0.104,
+        0.192,
+        0.574,
+        0.488
       ],
       [
-        0.007,
-        0.007,
-        0.995,
-        0.043,
-        0.043
+        0.878,
+        0.071,
+        0.148,
+        0.192,
+        0.584
       ],
       [
-        0.072,
-        0.721,
-        0.029,
-        0.03,
-        0.666
+        0.454,
+        0.187,
+        0.213,
+        0.875,
+        0.272
       ]
     ],
     "lda_labels": [

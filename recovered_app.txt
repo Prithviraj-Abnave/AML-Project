@@ -1,0 +1,394 @@
+
+Created At: 2026-09-11T10:40:58+05:30
+Completed At: 2026-09-11T10:41:01+05:30
+The following changes were made by the multi_replace_file_content tool to: c:\Users\admin\Desktop\SEM 7\Advance ML\Project\static\js\app.js. If relevant, proactively run terminal commands to execute this code for the USER. Don't ask for permission.
+[diff_block_start]
+@@ -20,13 +20,10 @@
+ 
+ // ── Initialization ────────────────────────────────────────────
+ document.addEventListener('DOMContentLoaded', () => {
+-    // Setup config sliders
++    // ── Topics slider ───────────────────────────────────────────
+     const nTopicsSlider = document.getElementById('n-topics');
+-    const sampleSlider = document.getElementById('sample-size');
+-    const nTopicsVal = document.getElementById('n-topics-value');
+-    const sampleVal = document.getElementById('sample-size-value');
+-
+-    if (nTopicsSlider) {
++    const nTopicsVal    = document.getElementById('n-topics-value');
++    if (nTopicsSlider && nTopicsVal) {
+         nTopicsSlider.addEventListener('input', () => {
+             nTopicsVal.textContent = nTopicsSlider.value;
+         });
+@@ -33,7 +33,10 @@
+ 
+-    if (sampleSlider) {
+-        sampleSlider.addEventListener('input', () => {
+-            sampleVal.textContent = parseInt(sampleSlider.value).toLocaleString();
++    // ── Scrape-pages slider ─────────────────────────────────────
++    const scrapePagesSlider = document.getElementById('scrape-pages');
++    const scrapePagesVal    = document.getElementById('scrape-pages-value');
++    if (scrapePagesSlider && scrapePagesVal) {
++        scrapePagesSlider.addEventListener('input', () => {
++            scrapePagesVal.textContent = scrapePagesSlider.value;
+         });
+     }
+ 
+@@ -40,38 +40,9 @@
+     Chart.defaults.font.family = "'Inter', sans-serif";
+     Chart.defaults.color = COLORS.text;
+-    
++
+     // Try loading cached results on page load
+     loadCachedResults();
+-    
+-    // File upload events
+-    const dropzone = document.getElementById('dropzone');
+-    const fileInput = document.getElementById('csv-upload');
+-    const dropzoneText = document.getElementById('dropzone-text');
+-
+-    if (dropzone && fileInput) {
+-        dropzone.addEventListener('click', () => fileInput.click());
+-        
+-        dropzone.addEventListener('dragover', (e) => {
+-            e.preventDefault();
+-            dropzone.style.backgroundColor = 'var(--bg-subtle)';
+-        });
+-        
+-        dropzone.addEventListener('dragleave', () => {
+-            dropzone.style.backgroundColor = 'transparent';
+-        });
+-        
+-        dropzone.addEventListener('drop', (e) => {
+-            e.preventDefault();
+-            dropzone.style.backgroundColor = 'transparent';
+-            if (e.dataTransfer.files.length > 0) {
+-                fileInput.files = e.dataTransfer.files;
+-                handleFileSelect();
+-            }
+-        });
+-        
+-        fileInput.addEventListener('change', handleFileSelect);
+-    }
+-    
++
+     // Check hash for direct navigation
+     const hash = window.location.hash.replace('#', '');
+     if (hash) {
+@@ -78,15 +78,6 @@
+     }
+ });
+ 
+-function handleFileSelect() {
+-    const fileInput = document.getElementById('csv-upload');
+-    const dropzoneText = document.getElementById('dropzone-text');
+-    if (fileInput.files.length > 0) {
+-        dropzoneText.textContent = fileInput.files[0].name;
+-        startSimulatedAnalysis(); // Show config panel
+-    }
+-}
+-
+ // ── Navigation (SPA Routing) ──────────────────────────────────
+ function navigateTo(pageId) {
+     // Update hash
+@@ -118,77 +118,159 @@
+     window.scrollTo({ top: 0, behavior: 'smooth' });
+ }
+ 
+-// ── Demo flow for Analyze Page ────────────────────────────────
+-function startSimulatedAnalysis() {
+-    const configPanel = document.getElementById('analyze-config-panel');
+-    configPanel.style.display = 'block';
+-    
+-    // Auto-scroll to config
+-    configPanel.scrollIntoView({ behavior: 'smooth', block: 'center' });
+-}
+-
+-// ── Analysis Control ──────────────────────────────────────────
+-
+-function startAnalysis() {
+-    const nTopics = parseInt(document.getElementById('n-topics').value);
+-    const sampleSize = parseInt(document.getElementById('sample-size').value);
+-    const btn = document.getElementById('btn-analyze');
+-    const fileInput = document.getElementById('csv-upload');
+-
++// ── Site Detection (for URL badges) ──────────────────────────
++const SITE_META = {
++    flipkart: { icon: '🛒', label: 'Flipkart',  cssClass: 'site-flipkart' },
++    snapdeal: { icon: '🏷️', label: 'Snapdeal',  cssClass: 'site-snapdeal' },
++    myntra:   { icon: '👗', label: 'Myntra',    cssClass: 'site-myntra'   },
++    amazon:   { icon: '📦', label: 'Amazon',    cssClass: 'site-amazon'   },
++};
++
++function detectSiteFromUrl(url) {
++    if (!url) return null;
++    const h = url.toLowerCase();
++    if (h.includes('flipkart.com')) return 'flipkart';
++    if (h.includes('snapdeal.com')) return 'snapdeal';
++    if (h.includes('myntra.com'))   return 'myntra';
++    if (h.includes('amazon.in') || h.includes('amazon.com')) return 'amazon';
++    return null;
++}
++
++function detectSite(idx) {
++    const input  = document.getElementById(`url-input-${idx}`);
++    const badge  = document.getElementById(`site-badge-${idx}`);
++    const status = document.getElementById(`url-status-${idx}`);
++    const nameEl = document.getElementById(`site-name-${idx}`);
++    if (!input || !badge) return;
++
++    const url  = input.value.trim();
++    const site = detectSiteFromUrl(url);
++    const meta = site ? SITE_META[site] : null;
++
++    // Reset badge classes
++    badge.className = 'url-site-badge';
++    input.className = 'url-input';
++    status.textContent = '';
++
++    if (!url) {
++        badge.classList.add(idx > 2 ? 'url-site-optional' : '');
++        nameEl.textContent = idx > 2 ? 'Optional' : `Site ${idx}`;
++        badge.querySelector('.site-icon').textContent = idx === 3 ? '👗' : idx === 4 ? '📦' : '🛒';
++        return;
++    }
++
++    if (meta) {
++        badge.classList.add(meta.cssClass);
++        badge.querySelector('.site-icon').textContent = meta.icon;
++        nameEl.textContent = meta.label;
++        input.classList.add('url-valid');
++        status.textContent = '✓';
++        status.style.color = '#10b981';
++    } else {
++        badge.classList.add('site-unknown');
++        badge.querySelector('.site-icon').textContent = '❓';
++        nameEl.textContent = 'Unknown';
++        input.classList.add('url-invalid');
++        status.textContent = '✗';
++        status.style.color = '#ef4444';
++    }
++}
++
++// ── Scrape & Analyze Control ──────────────────────────────────
++
++function startScrapeAnalysis() {
++    // Collect URLs
++    const urls = [];
++    for (let i = 1; i <= 4; i++) {
++        const val = (document.getElementById(`url-input-${i}`)?.value || '').trim();
++        if (val) urls.push(val);
++    }
++
++    // Basic validation
++    if (urls.length < 2) {
++        showError('Please enter at least 2 product URLs (one per required site).');
++        return;
++    }
++
++    for (const url of urls) {
++        if (!detectSiteFromUrl(url)) {
++            showError(`Unsupported site: ${url}. Supported: Flipkart, Snapdeal, Myntra, Amazon.`);
++            return;
++        }
++    }
++
++    const nTopics   = parseInt(document.getElementById('n-topics')?.value || 5);
++    const maxPages  = parseInt(document.getElementById('scrape-pages')?.value || 3);
++
++    // UI — disable button, show progress
++    const btn = document.getElementById('btn-scrape');
+     btn.disabled = true;
+-    btn.innerHTML = 'Running...';
++    btn.innerHTML = '⏳ &nbsp;Scraping...';
++    btn.classList.add('running');
+ 
+     hideError();
+-
+-    // Show progress
+     const progressContainer = document.getElementById('progress-container');
+     progressContainer.classList.add('active');
+-    updateProgress(0, 'Starting pipeline...');
+-
+-    if (fileInput && fileInput.files.length > 0) {
+-        // Custom upload
+-        const formData = new FormData();
+-        formData.append('file', fileInput.files[0]);
+-        formData.append('n_topics', nTopics);
+-        formData.append('sample_size', sampleSize);
+-
+-        fetch('/api/upload', {
+-            method: 'POST',
+-            body: formData
+-        })
+-        .then(res => res.json())
+-        .then(data => {
+-            if (data.error) {
+-                showError(data.error);
+-                resetButton();
+-                return;
+-            }
+-            startPolling();
+-        })
+-        .catch(err => {
+-            showError('Failed to upload file: ' + err.message);
+-            resetButton();
+-        });
+-    } else {
+-        // Standard analyze
+-        fetch('/api/analyze', {
+-            method: 'POST',
+-            headers: { 'Content-Type': 'application/json' },
+-            body: JSON.stringify({ n_topics: nTopics, sample_size: sampleSize })
+-        })
+-        .then(res => res.json())
+-        .then(data => {
+-            if (data.error) {
+-                showError(data.error);
+-                resetButton();
+-                return;
+-            }
+-            startPolling();
+-        })
+-        .catch(err => {
+-            showError('Failed to start analysis: ' + err.message);
+-            resetButton();
+-        });
++    updateProgress(0, 'Connecting to sites...');
++
++    // Show scrape log
++    const log = document.getElementById('scrape-log');
++    if (log) {
++        log.style.display = 'block';
++        log.innerHTML = '';
++    }
++    appendScrapeLog(`Sending ${urls.length} URLs to scraper...`);
++
++    // Advance stepper
++    setStep(3);
++
++    fetch('/api/scrape', {
++        method: 'POST',
++        headers: { 'Content-Type': 'application/json' },
++        body: JSON.stringify({ urls, n_topics: nTopics, max_pages: maxPages })
++    })
++    .then(res => res.json())
++    .then(data => {
++        if (data.error) {
++            showError(data.error);
++            resetScrapeButton();
++            return;
++        }
++        appendScrapeLog(`Scraping started for: ${urls.map(u => detectSiteFromUrl(u) || 'unknown').join(', ')}`);
++        startPolling();
++    })
++    .catch(err => {
++        showError('Failed to start scraping: ' + err.message);
++        resetScrapeButton();
++    });
++}
++
++function appendScrapeLog(msg) {
++    const log = document.getElementById('scrape-log');
++    if (!log) return;
++    const ts  = new Date().toLocaleTimeString('en-IN', { hour12: false });
++    const row = document.createElement('div');
++    row.textContent = `[${ts}] ${msg}`;
++    log.appendChild(row);
++    log.scrollTop = log.scrollHeight;
++}
++
++function resetScrapeButton() {
++    const btn = document.getElementById('btn-scrape');
++    if (btn) {
++        btn.disabled = false;
++        btn.innerHTML = '🔍 &nbsp;Scrape & Analyze';
++        btn.classList.remove('running');
++    }
++}
++
++function setStep(active) {
++    for (let i = 1; i <= 4; i++) {
++        const el = document.getElementById(`step-ind-${i}`);
++        if (!el) continue;
++        el.classList.remove('active', 'done');
++        if (i < active) el.classList.add('done');
++        else if (i === active) el.classList.add('active');
+     }
+ }
+ 
+[diff_block_end]
+
+Please note that the above snippet only shows the MODIFIED lines from the last change. It shows up to 3 lines of unchanged lines before and after the modified lines. The actual file contents may have many more lines not shown.
+
+Created At: 2026-09-11T10:41:35+05:30
+Completed At: 2026-09-11T10:41:38+05:30
+The following changes were made by the multi_replace_file_content tool to: c:\Users\admin\Desktop\SEM 7\Advance ML\Project\static\js\app.js. If relevant, proactively run terminal commands to execute this code for the USER. Don't ask for permission.
+[diff_block_start]
+@@ -252,6 +252,11 @@
+             isCustomRun = status.is_custom;
+             updateProgress(status.progress, status.current_step);
+ 
++            // Feed step messages to the scrape log
++            if (status.current_step) {
++                appendScrapeLog(status.current_step);
++            }
++
+             if (status.status === 'complete') {
+                 clearInterval(pollInterval);
+                 pollInterval = null;
+@@ -258,3 +258,5 @@
++                appendScrapeLog('Pipeline complete ✔');
++                setStep(4);
+                 setTimeout(fetchAndRenderResults, 500);
+             } else if (status.status === 'error') {
+                 clearInterval(pollInterval);
+@@ -261,5 +261,5 @@
+                 showError(status.error || 'An unknown error occurred.');
+-                resetButton();
++                resetScrapeButton();
+             }
+         })
+         .catch(() => { /* ignore transient errors */ });
+@@ -271,7 +271,7 @@
+         .then(data => {
+             if (data.error) {
+                 showError(data.error);
+-                resetButton();
++                resetScrapeButton();
+                 return;
+             }
+             if (isCustomRun) {
+@@ -278,4 +278,5 @@
+-                resetButton();
++                resetScrapeButton();
++                setStep(4);
+                 setTimeout(() => navigateTo('custom-results'), 1000);
+             } else {
+                 currentData = data;
+@@ -282,4 +282,4 @@
+-                resetButton();
++                resetScrapeButton();
+                 setTimeout(() => navigateTo('compare'), 1000);
+             }
+         })
+@@ -286,7 +286,10 @@
+             showError('Failed to load results: ' + err.message);
+-            resetButton();
+-        });
+-}
++            resetScrapeButton();
++        });
++}
++
++// Shim for any remaining references to resetButton()
++function resetButton() { resetScrapeButton(); }
+ 
+ function loadCachedResults() {
+     fetch('/api/results')
+[diff_block_end]
+
+Please note that the above snippet only shows the MODIFIED lines from the last change. It shows up to 3 lines of unchanged lines before and after the modified lines. The actual file contents may have many more lines not shown.
+
+
+

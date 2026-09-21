@@ -45,7 +45,8 @@
                         </p>
                         <div class="hero-buttons">
                             <button class="btn btn-dark" onclick="navigateTo('compare')">See the comparison</button>
-                            <button class="btn btn-outline" onclick="navigateTo('analyze')">Analyze your product &rarr;</button>
+                            <button class="btn btn-outline" onclick="navigateTo('analyze')">Analyze your product
+                                &rarr;</button>
                         </div>
                     </div>
                     <div class="hero-chart">
@@ -58,8 +59,12 @@
                             <canvas id="homeOverviewChart"></canvas>
                         </div>
                         <div class="chart-legend mt-2">
-                            <div class="legend-item"><div class="legend-dot lda"></div> LDA</div>
-                            <div class="legend-item"><div class="legend-dot nmf"></div> NMF</div>
+                            <div class="legend-item">
+                                <div class="legend-dot lda"></div> LDA
+                            </div>
+                            <div class="legend-item">
+                                <div class="legend-dot nmf"></div> NMF
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -101,8 +106,10 @@
                         <p class="section-desc">The five topics recovered by each model, ranked by document share.</p>
                     </div>
                     <div class="section-actions">
-                        <button class="btn btn-outline" onclick="navigateTo('lda')" style="padding: 0.4rem 1rem; font-size: 0.8rem;">LDA detail &rarr;</button>
-                        <button class="btn btn-outline" onclick="navigateTo('nmf')" style="padding: 0.4rem 1rem; font-size: 0.8rem;">NMF detail &rarr;</button>
+                        <button class="btn btn-outline" onclick="navigateTo('lda')"
+                            style="padding: 0.4rem 1rem; font-size: 0.8rem;">LDA detail &rarr;</button>
+                        <button class="btn btn-outline" onclick="navigateTo('nmf')"
+                            style="padding: 0.4rem 1rem; font-size: 0.8rem;">NMF detail &rarr;</button>
                     </div>
                 </div>
                 <div class="grid-2">
@@ -127,7 +134,10 @@
 
             <div class="methodology-box">
                 <h4>Methodology</h4>
-                <p>Both models were trained on TF-IDF (NMF) / count-vectorized (LDA) tokens after lemmatization and stopword filtering. Coherence uses the C_v metric on the top-10 words per topic. See the <a href="#" onclick="navigateTo('dataset')" style="color:var(--nmf-primary)">Dataset</a> page for the full pipeline.</p>
+                <p>Both models were trained on TF-IDF (NMF) / count-vectorized (LDA) tokens after lemmatization and
+                    stopword filtering. Coherence uses the C_v metric on the top-10 words per topic. See the <a href="#"
+                        onclick="navigateTo('dataset')" style="color:var(--nmf-primary)">Dataset</a> page for the full
+                    pipeline.</p>
             </div>
         </div>
     </div>
@@ -141,27 +151,42 @@
             <div class="page-header">
                 <div class="badge"><span class="badge-dot lda"></span> MODEL - LATENT DIRICHLET ALLOCATION</div>
                 <h1>LDA results</h1>
-                <p class="lead">A probabilistic generative model: each document is a mixture of topics, each topic a distribution over words.</p>
+                <p class="lead">A probabilistic generative model: each document is a mixture of topics, each topic a
+                    distribution over words.</p>
             </div>
 
-            <div class="card mb-4" style="background:#f8fafc; border:1px solid var(--lda-light); border-left:4px solid var(--lda-primary)">
+            <div class="card mb-4"
+                style="background:#f8fafc; border:1px solid var(--lda-light); border-left:4px solid var(--lda-primary)">
                 <div style="padding:1.5rem;">
-                    <h3 style="margin-top:0; color:var(--lda-primary); font-family:Playfair Display, serif; font-size:1.4rem;">How LDA Works</h3>
+                    <h3
+                        style="margin-top:0; color:var(--lda-primary); font-family:Playfair Display, serif; font-size:1.4rem;">
+                        How LDA Works</h3>
                     <div style="display:flex; gap:2rem; align-items:center;">
                         <div style="flex:1;">
-                            <p style="font-size:0.9rem; line-height:1.6; color:var(--text-secondary); margin-bottom:1rem;">
-                                Imagine you have a giant pile of documents. <strong>Latent Dirichlet Allocation (LDA)</strong> assumes that each document is just a mixture of different topics (e.g., 60% Sports, 40% Politics), and each topic is just a mixture of words (e.g., Sports uses "ball" and "game" a lot).
+                            <p
+                                style="font-size:0.9rem; line-height:1.6; color:var(--text-secondary); margin-bottom:1rem;">
+                                Imagine you have a giant pile of documents. <strong>Latent Dirichlet Allocation
+                                    (LDA)</strong> assumes that each document is just a mixture of different topics
+                                (e.g., 60% Sports, 40% Politics), and each topic is just a mixture of words (e.g.,
+                                Sports uses "ball" and "game" a lot).
                             </p>
                             <p style="font-size:0.9rem; line-height:1.6; color:var(--text-secondary); margin-bottom:0;">
-                                LDA works backward. It looks at the words in the documents and asks: <em>"What hidden topics, and what word mixtures for those topics, would most likely generate these exact documents?"</em> It uses probability to group words that frequently appear together into "topics", without ever knowing what the texts actually mean!
+                                LDA works backward. It looks at the words in the documents and asks: <em>"What hidden
+                                    topics, and what word mixtures for those topics, would most likely generate these
+                                    exact documents?"</em> It uses probability to group words that frequently appear
+                                together into "topics", without ever knowing what the texts actually mean!
                             </p>
                         </div>
-                        <div style="flex:1; background:white; border-radius:var(--radius-md); padding:1.5rem; border:1px solid var(--border-light);">
-                            <ul style="margin:0; padding-left:1.2rem; font-size:0.9rem; color:var(--text-secondary); line-height:1.8;">
+                        <div
+                            style="flex:1; background:white; border-radius:var(--radius-md); padding:1.5rem; border:1px solid var(--border-light);">
+                            <ul
+                                style="margin:0; padding-left:1.2rem; font-size:0.9rem; color:var(--text-secondary); line-height:1.8;">
                                 <li><strong>Input:</strong> Raw text documents.</li>
-                                <li><strong>Assumption 1:</strong> Documents are probability distributions over topics.</li>
+                                <li><strong>Assumption 1:</strong> Documents are probability distributions over topics.
+                                </li>
                                 <li><strong>Assumption 2:</strong> Topics are probability distributions over words.</li>
-                                <li><strong>Output:</strong> The hidden topics and the percentage of each topic in every document.</li>
+                                <li><strong>Output:</strong> The hidden topics and the percentage of each topic in every
+                                    document.</li>
                             </ul>
                         </div>
                     </div>
@@ -196,7 +221,8 @@
                     <div class="card-header">
                         <div>
                             <h3>Topic distribution</h3>
-                            <p class="card-subtitle">Share of documents assigned to each topic (dominant-topic method).</p>
+                            <p class="card-subtitle">Share of documents assigned to each topic (dominant-topic method).
+                            </p>
                         </div>
                     </div>
                     <div class="chart-wrapper">
@@ -240,36 +266,58 @@
             <div class="page-header">
                 <div class="badge"><span class="badge-dot nmf"></span> MODEL - NON-NEGATIVE MATRIX FACTORIZATION</div>
                 <h1>NMF results</h1>
-                <p class="lead">A deterministic linear-algebra factorization of the TF-IDF matrix into non-negative topic and document components.</p>
+                <p class="lead">A deterministic linear-algebra factorization of the TF-IDF matrix into non-negative
+                    topic and document components.</p>
             </div>
 
-            <div class="card mb-4" style="background:#fffbeb; border:1px solid var(--nmf-light); border-left:4px solid var(--nmf-primary)">
+            <div class="card mb-4"
+                style="background:#fffbeb; border:1px solid var(--nmf-light); border-left:4px solid var(--nmf-primary)">
                 <div style="padding:1.5rem;">
-                    <h3 style="margin-top:0; color:var(--nmf-primary); font-family:Playfair Display, serif; font-size:1.4rem;">How NMF Works</h3>
+                    <h3
+                        style="margin-top:0; color:var(--nmf-primary); font-family:Playfair Display, serif; font-size:1.4rem;">
+                        How NMF Works</h3>
                     <div style="display:flex; gap:2rem; align-items:center;">
                         <div style="flex:1;">
-                            <p style="font-size:0.9rem; line-height:1.6; color:var(--text-secondary); margin-bottom:1rem;">
-                                Think of <strong>Non-negative Matrix Factorization (NMF)</strong> as a giant math puzzle. You start with a massive grid (a matrix) where rows are documents, columns are words, and the numbers represent how often a word appears in a document.
+                            <p
+                                style="font-size:0.9rem; line-height:1.6; color:var(--text-secondary); margin-bottom:1rem;">
+                                Think of <strong>Non-negative Matrix Factorization (NMF)</strong> as a giant math
+                                puzzle. You start with a massive grid (a matrix) where rows are documents, columns are
+                                words, and the numbers represent how often a word appears in a document.
                             </p>
                             <p style="font-size:0.9rem; line-height:1.6; color:var(--text-secondary); margin-bottom:0;">
-                                NMF mathematically squishes this giant matrix into two much smaller matrices that, when multiplied together, recreate the original grid. The <em>"Non-negative"</em> rule means we can't use negative numbers. This forces the algorithm to learn building blocks (topics) that strictly <strong>add up</strong> to form a document, making the topics highly interpretable!
+                                NMF mathematically squishes this giant matrix into two much smaller matrices that, when
+                                multiplied together, recreate the original grid. The <em>"Non-negative"</em> rule means
+                                we can't use negative numbers. This forces the algorithm to learn building blocks
+                                (topics) that strictly <strong>add up</strong> to form a document, making the topics
+                                highly interpretable!
                             </p>
                         </div>
-                        <div style="flex:1; background:white; border-radius:var(--radius-md); padding:1rem; border:1px solid var(--border-light); text-align:center;">
-                            <div style="display:flex; justify-content:center; align-items:center; font-family:'JetBrains Mono', monospace; font-size:1.2rem; color:var(--text-primary); gap:1rem;">
+                        <div
+                            style="flex:1; background:white; border-radius:var(--radius-md); padding:1rem; border:1px solid var(--border-light); text-align:center;">
+                            <div
+                                style="display:flex; justify-content:center; align-items:center; font-family:'JetBrains Mono', monospace; font-size:1.2rem; color:var(--text-primary); gap:1rem;">
                                 <div style="text-align:center;">
-                                    <div style="padding:1rem 1.5rem; border:1px solid var(--border-light); border-radius:4px; background:#f1f5f9;">V</div>
-                                    <div style="font-size:0.6rem; color:var(--text-muted); margin-top:0.25rem;">(Docs &times; Words)</div>
+                                    <div
+                                        style="padding:1rem 1.5rem; border:1px solid var(--border-light); border-radius:4px; background:#f1f5f9;">
+                                        V</div>
+                                    <div style="font-size:0.6rem; color:var(--text-muted); margin-top:0.25rem;">(Docs
+                                        &times; Words)</div>
                                 </div>
                                 <div>&asymp;</div>
                                 <div style="text-align:center;">
-                                    <div style="padding:1rem 1.5rem; border:1px solid var(--border-light); border-radius:4px; background:var(--nmf-light); color:var(--nmf-primary); font-weight:bold;">W</div>
-                                    <div style="font-size:0.6rem; color:var(--text-muted); margin-top:0.25rem;">(Docs &times; Topics)</div>
+                                    <div
+                                        style="padding:1rem 1.5rem; border:1px solid var(--border-light); border-radius:4px; background:var(--nmf-light); color:var(--nmf-primary); font-weight:bold;">
+                                        W</div>
+                                    <div style="font-size:0.6rem; color:var(--text-muted); margin-top:0.25rem;">(Docs
+                                        &times; Topics)</div>
                                 </div>
                                 <div>&times;</div>
                                 <div style="text-align:center;">
-                                    <div style="padding:1rem 1.5rem; border:1px solid var(--border-light); border-radius:4px; background:var(--nmf-light); color:var(--nmf-primary); font-weight:bold;">H</div>
-                                    <div style="font-size:0.6rem; color:var(--text-muted); margin-top:0.25rem;">(Topics &times; Words)</div>
+                                    <div
+                                        style="padding:1rem 1.5rem; border:1px solid var(--border-light); border-radius:4px; background:var(--nmf-light); color:var(--nmf-primary); font-weight:bold;">
+                                        H</div>
+                                    <div style="font-size:0.6rem; color:var(--text-muted); margin-top:0.25rem;">(Topics
+                                        &times; Words)</div>
                                 </div>
                             </div>
                         </div>
@@ -305,7 +353,8 @@
                     <div class="card-header">
                         <div>
                             <h3>Topic distribution</h3>
-                            <p class="card-subtitle">Share of documents assigned to each topic (dominant-topic method).</p>
+                            <p class="card-subtitle">Share of documents assigned to each topic (dominant-topic method).
+                            </p>
                         </div>
                     </div>
                     <div class="chart-wrapper">
@@ -350,10 +399,15 @@
                 <div class="badge"><span class="badge-dot"></span> HEAD TO HEAD</div>
                 <h1>LDA <em>vs</em> NMF</h1>
                 <div style="display:flex; justify-content:space-between; align-items:flex-end;">
-                    <p class="lead" style="margin:0;">Side-by-side comparison on identical preprocessing and topic count (k = 5).</p>
+                    <p class="lead" style="margin:0;">Side-by-side comparison on identical preprocessing and topic count
+                        (k = 5).</p>
                     <div class="chart-legend" style="margin:0;">
-                        <div class="legend-item"><div class="legend-dot lda"></div> LDA</div>
-                        <div class="legend-item"><div class="legend-dot nmf"></div> NMF</div>
+                        <div class="legend-item">
+                            <div class="legend-dot lda"></div> LDA
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-dot nmf"></div> NMF
+                        </div>
                     </div>
                 </div>
             </div>
@@ -367,7 +421,8 @@
                             <div class="stat-value" id="comp-lda-coh" style="color:var(--lda-primary)">0.614</div>
                         </div>
                         <div style="text-align:right;">
-                            <div class="stat-label" style="color:var(--nmf-primary); margin-bottom:0.2rem;">NMF <span style="color:#10b981;">&blacktriangle; better</span></div>
+                            <div class="stat-label" style="color:var(--nmf-primary); margin-bottom:0.2rem;">NMF <span
+                                    style="color:#10b981;">&blacktriangle; better</span></div>
                             <div class="stat-value" id="comp-nmf-coh" style="color:var(--nmf-primary)">0.704</div>
                         </div>
                     </div>
@@ -380,7 +435,8 @@
                             <div class="stat-value" id="comp-lda-div" style="color:var(--lda-primary)">0.72</div>
                         </div>
                         <div style="text-align:right;">
-                            <div class="stat-label" style="color:var(--nmf-primary); margin-bottom:0.2rem;">NMF <span style="color:#10b981;">&blacktriangle; better</span></div>
+                            <div class="stat-label" style="color:var(--nmf-primary); margin-bottom:0.2rem;">NMF <span
+                                    style="color:#10b981;">&blacktriangle; better</span></div>
                             <div class="stat-value" id="comp-nmf-div" style="color:var(--nmf-primary)">0.81</div>
                         </div>
                     </div>
@@ -393,7 +449,8 @@
                             <div class="stat-value" id="comp-lda-time" style="color:var(--lda-primary)">184s</div>
                         </div>
                         <div style="text-align:right;">
-                            <div class="stat-label" style="color:var(--nmf-primary); margin-bottom:0.2rem;">NMF <span style="color:#10b981;">&blacktriangle; better</span></div>
+                            <div class="stat-label" style="color:var(--nmf-primary); margin-bottom:0.2rem;">NMF <span
+                                    style="color:#10b981;">&blacktriangle; better</span></div>
                             <div class="stat-value" id="comp-nmf-time" style="color:var(--nmf-primary)">62s</div>
                         </div>
                     </div>
@@ -406,7 +463,8 @@
                             <div class="stat-value" style="color:var(--lda-primary)">512 MB</div>
                         </div>
                         <div style="text-align:right;">
-                            <div class="stat-label" style="color:var(--nmf-primary); margin-bottom:0.2rem;">NMF <span style="color:#10b981;">&blacktriangle; better</span></div>
+                            <div class="stat-label" style="color:var(--nmf-primary); margin-bottom:0.2rem;">NMF <span
+                                    style="color:#10b981;">&blacktriangle; better</span></div>
                             <div class="stat-value" style="color:var(--nmf-primary)">348 MB</div>
                         </div>
                     </div>
@@ -421,8 +479,16 @@
                             <p class="card-subtitle">Higher is better on both axes.</p>
                         </div>
                         <div class="chart-legend" style="margin:0;">
-                            <div class="legend-item"><div class="legend-dot lda" style="border-radius:50%; border:1px solid var(--lda-primary); background:var(--lda-light)"></div> LDA</div>
-                            <div class="legend-item"><div class="legend-dot nmf" style="border-radius:50%; border:1px solid var(--nmf-primary); background:var(--nmf-light)"></div> NMF</div>
+                            <div class="legend-item">
+                                <div class="legend-dot lda"
+                                    style="border-radius:50%; border:1px solid var(--lda-primary); background:var(--lda-light)">
+                                </div> LDA
+                            </div>
+                            <div class="legend-item">
+                                <div class="legend-dot nmf"
+                                    style="border-radius:50%; border:1px solid var(--nmf-primary); background:var(--nmf-light)">
+                                </div> NMF
+                            </div>
                         </div>
                     </div>
                     <div class="chart-wrapper">
@@ -433,11 +499,16 @@
                     <div class="card-header">
                         <div>
                             <h3>Normalized profile</h3>
-                            <p class="card-subtitle">Radar of all comparable metrics (scaled 0-1, larger is stronger).</p>
+                            <p class="card-subtitle">Radar of all comparable metrics (scaled 0-1, larger is stronger).
+                            </p>
                         </div>
                         <div class="chart-legend" style="margin:0;">
-                            <div class="legend-item"><div class="legend-dot lda" style="border-radius:50%"></div> LDA</div>
-                            <div class="legend-item"><div class="legend-dot nmf" style="border-radius:50%"></div> NMF</div>
+                            <div class="legend-item">
+                                <div class="legend-dot lda" style="border-radius:50%"></div> LDA
+                            </div>
+                            <div class="legend-item">
+                                <div class="legend-dot nmf" style="border-radius:50%"></div> NMF
+                            </div>
                         </div>
                     </div>
                     <div class="chart-wrapper">
@@ -454,8 +525,16 @@
                             <p class="card-subtitle">Training on the same 25k-review corpus.</p>
                         </div>
                         <div class="chart-legend" style="margin:0;">
-                            <div class="legend-item"><div class="legend-dot lda" style="border-radius:50%; border:1px solid var(--lda-primary); background:var(--lda-light)"></div> LDA</div>
-                            <div class="legend-item"><div class="legend-dot nmf" style="border-radius:50%; border:1px solid var(--nmf-primary); background:var(--nmf-light)"></div> NMF</div>
+                            <div class="legend-item">
+                                <div class="legend-dot lda"
+                                    style="border-radius:50%; border:1px solid var(--lda-primary); background:var(--lda-light)">
+                                </div> LDA
+                            </div>
+                            <div class="legend-item">
+                                <div class="legend-dot nmf"
+                                    style="border-radius:50%; border:1px solid var(--nmf-primary); background:var(--nmf-light)">
+                                </div> NMF
+                            </div>
                         </div>
                     </div>
                     <div class="chart-wrapper">
@@ -482,10 +561,14 @@
                     <table style="width:100%; border-collapse:collapse; text-align:left;">
                         <thead>
                             <tr style="background:var(--bg-subtle); border-bottom:1px solid var(--border-light);">
-                                <th style="padding:1rem; font-size:0.75rem; color:var(--text-muted); font-weight:700;">LDA TOPIC</th>
-                                <th style="padding:1rem; font-size:0.75rem; color:var(--text-muted); font-weight:700;">NMF TOPIC</th>
-                                <th style="padding:1rem; font-size:0.75rem; color:var(--text-muted); font-weight:700;">COSINE (WORD VECTORS)</th>
-                                <th style="padding:1rem; font-size:0.75rem; color:var(--text-muted); font-weight:700;">INTERPRETATION</th>
+                                <th style="padding:1rem; font-size:0.75rem; color:var(--text-muted); font-weight:700;">
+                                    LDA TOPIC</th>
+                                <th style="padding:1rem; font-size:0.75rem; color:var(--text-muted); font-weight:700;">
+                                    NMF TOPIC</th>
+                                <th style="padding:1rem; font-size:0.75rem; color:var(--text-muted); font-weight:700;">
+                                    COSINE (WORD VECTORS)</th>
+                                <th style="padding:1rem; font-size:0.75rem; color:var(--text-muted); font-weight:700;">
+                                    INTERPRETATION</th>
                             </tr>
                         </thead>
                         <tbody id="topic-alignment-body">
@@ -494,26 +577,42 @@
                     </table>
                 </div>
             </div>
-            
+
             <div class="section pt-0">
                 <h2>Model interpretation</h2>
                 <p class="section-desc">What the numbers mean, in practice.</p>
                 <div class="grid-2">
                     <div class="card" style="display:flex; gap:1rem; align-items:flex-start; padding:1.25rem;">
-                        <div style="background:var(--lda-light); color:var(--lda-primary); width:28px; height:28px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:700; font-size:0.8rem; flex-shrink:0;">1</div>
-                        <p style="font-size:0.9rem; color:var(--text-secondary); margin:0;">NMF produces sharper, more interpretable topics on this dataset — its top words carry higher weight concentration per topic.</p>
+                        <div
+                            style="background:var(--lda-light); color:var(--lda-primary); width:28px; height:28px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:700; font-size:0.8rem; flex-shrink:0;">
+                            1</div>
+                        <p style="font-size:0.9rem; color:var(--text-secondary); margin:0;">NMF produces sharper, more
+                            interpretable topics on this dataset — its top words carry higher weight concentration per
+                            topic.</p>
                     </div>
                     <div class="card" style="display:flex; gap:1rem; align-items:flex-start; padding:1.25rem;">
-                        <div style="background:#ffedd5; color:#c2410c; width:28px; height:28px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:700; font-size:0.8rem; flex-shrink:0;">2</div>
-                        <p style="font-size:0.9rem; color:var(--text-secondary); margin:0;">LDA distributes probability more evenly across documents, capturing softer thematic overlaps but at the cost of coherence.</p>
+                        <div
+                            style="background:#ffedd5; color:#c2410c; width:28px; height:28px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:700; font-size:0.8rem; flex-shrink:0;">
+                            2</div>
+                        <p style="font-size:0.9rem; color:var(--text-secondary); margin:0;">LDA distributes probability
+                            more evenly across documents, capturing softer thematic overlaps but at the cost of
+                            coherence.</p>
                     </div>
                     <div class="card" style="display:flex; gap:1rem; align-items:flex-start; padding:1.25rem;">
-                        <div style="background:var(--lda-light); color:var(--lda-primary); width:28px; height:28px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:700; font-size:0.8rem; flex-shrink:0;">3</div>
-                        <p style="font-size:0.9rem; color:var(--text-secondary); margin:0;">For short, opinionated reviews with TF-IDF weighting, NMF's non-negative factorization aligns well with human topic judgments.</p>
+                        <div
+                            style="background:var(--lda-light); color:var(--lda-primary); width:28px; height:28px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:700; font-size:0.8rem; flex-shrink:0;">
+                            3</div>
+                        <p style="font-size:0.9rem; color:var(--text-secondary); margin:0;">For short, opinionated
+                            reviews with TF-IDF weighting, NMF's non-negative factorization aligns well with human topic
+                            judgments.</p>
                     </div>
                     <div class="card" style="display:flex; gap:1rem; align-items:flex-start; padding:1.25rem;">
-                        <div style="background:#ffedd5; color:#c2410c; width:28px; height:28px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:700; font-size:0.8rem; flex-shrink:0;">4</div>
-                        <p style="font-size:0.9rem; color:var(--text-secondary); margin:0;">LDA remains preferable when documents are longer, more mixed, or when a generative probabilistic interpretation is needed.</p>
+                        <div
+                            style="background:#ffedd5; color:#c2410c; width:28px; height:28px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:700; font-size:0.8rem; flex-shrink:0;">
+                            4</div>
+                        <p style="font-size:0.9rem; color:var(--text-secondary); margin:0;">LDA remains preferable when
+                            documents are longer, more mixed, or when a generative probabilistic interpretation is
+                            needed.</p>
                     </div>
                 </div>
             </div>
@@ -533,11 +632,17 @@
                 <p class="lead">The Amazon customer-review corpus used across every experiment on this site.</p>
             </div>
 
-            <div class="card mt-4 mb-3" style="background:#f0fdfa; border:1px solid #ccfbf1; border-left:4px solid #14b8a6">
+            <div class="card mt-4 mb-3"
+                style="background:#f0fdfa; border:1px solid #ccfbf1; border-left:4px solid #14b8a6">
                 <div style="padding:1.5rem;">
-                    <h3 style="margin-top:0; color:#0f766e; font-family:Playfair Display, serif; font-size:1.4rem;">About the Data</h3>
+                    <h3 style="margin-top:0; color:#0f766e; font-family:Playfair Display, serif; font-size:1.4rem;">
+                        About the Data</h3>
                     <p style="font-size:0.9rem; line-height:1.6; color:var(--text-secondary); margin-bottom:0;">
-                        We use the Amazon Product Data dataset (He and McAuley, 2016), specifically the <strong>Electronics 5-core</strong> subset. This dataset contains millions of reviews from May 1996 to July 2014. The "5-core" designation means it only includes items and users that have at least 5 reviews each, ensuring a dense, high-quality corpus for NLP tasks. It's a standard benchmark for sentiment analysis and topic modeling due to its rich, opinionated text.
+                        We use the Amazon Product Data dataset (He and McAuley, 2016), specifically the
+                        <strong>Electronics 5-core</strong> subset. This dataset contains millions of reviews from May
+                        1996 to July 2014. The "5-core" designation means it only includes items and users that have at
+                        least 5 reviews each, ensuring a dense, high-quality corpus for NLP tasks. It's a standard
+                        benchmark for sentiment analysis and topic modeling due to its rich, opinionated text.
                     </p>
                 </div>
             </div>
@@ -589,7 +694,7 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="grid-2 mb-4">
                 <div class="card">
                     <div class="card-header">
@@ -601,16 +706,44 @@
                     <table style="width:100%; border-collapse:collapse; text-align:left; margin-top:1rem;">
                         <thead>
                             <tr style="background:var(--bg-subtle); border-bottom:1px solid var(--border-light);">
-                                <th style="padding:0.75rem 1rem; font-size:0.75rem; color:var(--text-muted); font-weight:700;">COLUMN</th>
-                                <th style="padding:0.75rem 1rem; font-size:0.75rem; color:var(--text-muted); font-weight:700;">TYPE</th>
+                                <th
+                                    style="padding:0.75rem 1rem; font-size:0.75rem; color:var(--text-muted); font-weight:700;">
+                                    COLUMN</th>
+                                <th
+                                    style="padding:0.75rem 1rem; font-size:0.75rem; color:var(--text-muted); font-weight:700;">
+                                    TYPE</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr style="border-bottom:1px solid var(--border-subtle);"><td style="padding:0.75rem 1rem; font-family:monospace; font-size:0.85rem;">review_id</td><td style="padding:0.75rem 1rem; font-size:0.85rem; color:var(--text-secondary);">string</td></tr>
-                            <tr style="border-bottom:1px solid var(--border-subtle);"><td style="padding:0.75rem 1rem; font-family:monospace; font-size:0.85rem;">product_id</td><td style="padding:0.75rem 1rem; font-size:0.85rem; color:var(--text-secondary);">string</td></tr>
-                            <tr style="border-bottom:1px solid var(--border-subtle);"><td style="padding:0.75rem 1rem; font-family:monospace; font-size:0.85rem;">review_text</td><td style="padding:0.75rem 1rem; font-size:0.85rem; color:var(--text-secondary);">string</td></tr>
-                            <tr style="border-bottom:1px solid var(--border-subtle);"><td style="padding:0.75rem 1rem; font-family:monospace; font-size:0.85rem;">rating</td><td style="padding:0.75rem 1rem; font-size:0.85rem; color:var(--text-secondary);">int</td></tr>
-                            <tr><td style="padding:0.75rem 1rem; font-family:monospace; font-size:0.85rem;">timestamp</td><td style="padding:0.75rem 1rem; font-size:0.85rem; color:var(--text-secondary);">datetime</td></tr>
+                            <tr style="border-bottom:1px solid var(--border-subtle);">
+                                <td style="padding:0.75rem 1rem; font-family:monospace; font-size:0.85rem;">review_id
+                                </td>
+                                <td style="padding:0.75rem 1rem; font-size:0.85rem; color:var(--text-secondary);">string
+                                </td>
+                            </tr>
+                            <tr style="border-bottom:1px solid var(--border-subtle);">
+                                <td style="padding:0.75rem 1rem; font-family:monospace; font-size:0.85rem;">product_id
+                                </td>
+                                <td style="padding:0.75rem 1rem; font-size:0.85rem; color:var(--text-secondary);">string
+                                </td>
+                            </tr>
+                            <tr style="border-bottom:1px solid var(--border-subtle);">
+                                <td style="padding:0.75rem 1rem; font-family:monospace; font-size:0.85rem;">review_text
+                                </td>
+                                <td style="padding:0.75rem 1rem; font-size:0.85rem; color:var(--text-secondary);">string
+                                </td>
+                            </tr>
+                            <tr style="border-bottom:1px solid var(--border-subtle);">
+                                <td style="padding:0.75rem 1rem; font-family:monospace; font-size:0.85rem;">rating</td>
+                                <td style="padding:0.75rem 1rem; font-size:0.85rem; color:var(--text-secondary);">int
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding:0.75rem 1rem; font-family:monospace; font-size:0.85rem;">timestamp
+                                </td>
+                                <td style="padding:0.75rem 1rem; font-size:0.85rem; color:var(--text-secondary);">
+                                    datetime</td>
+                            </tr>
                         </tbody>
                     </table>
                 </div>
@@ -618,7 +751,8 @@
                     <div class="card-header">
                         <div>
                             <h3>Preprocessing pipeline</h3>
-                            <p class="card-subtitle">Steps applied identically for LDA and NMF (except the vectorizer).</p>
+                            <p class="card-subtitle">Steps applied identically for LDA and NMF (except the vectorizer).
+                            </p>
                         </div>
                     </div>
                     <ol style="padding-left:1.5rem; color:var(--text-secondary); font-size:0.9rem; line-height:2.2;">
@@ -631,10 +765,11 @@
                     </ol>
                 </div>
             </div>
-            
+
             <div class="methodology-box" style="border-left-color:#14b8a6; background:#f0fdfa; border-color:#ccfbf1;">
                 <h4 style="color:#0f766e;">Source</h4>
-                <p>Amazon Product Data (He & McAuley, UCSD, 2016). We use the Electronics 5-core subset for reproducibility. See <a href="#" style="color:#0f766e;">the original release page</a>.</p>
+                <p>Amazon Product Data (He & McAuley, UCSD, 2016). We use the Electronics 5-core subset for
+                    reproducibility. See <a href="#" style="color:#0f766e;">the original release page</a>.</p>
             </div>
         </div>
     </div>
@@ -653,28 +788,38 @@
 
             <div class="grid-3 mb-4">
                 <div class="card">
-                    <div style="width:40px; height:40px; border-radius:50%; background:var(--bg-subtle); display:flex; align-items:center; justify-content:center; font-family:Playfair Display, serif; font-style:italic; font-size:1.1rem; color:var(--text-muted); margin-bottom:1rem;">01</div>
-                    <h3 style="font-family:Playfair Display, serif; margin-bottom:0.2rem; font-size:1.1rem;">Siddhanth Mungekar</h3>
+                    <div
+                        style="width:40px; height:40px; border-radius:50%; background:var(--bg-subtle); display:flex; align-items:center; justify-content:center; font-family:Playfair Display, serif; font-style:italic; font-size:1.1rem; color:var(--text-muted); margin-bottom:1rem;">
+                        01</div>
+                    <h3 style="font-family:Playfair Display, serif; margin-bottom:0.2rem; font-size:1.1rem;">Siddhanth
+                        Mungekar</h3>
                     <p style="font-size:0.75rem; color:var(--text-muted); margin-bottom:1rem;">Roll No: 23102B0035</p>
                     <p style="font-size:0.85rem; color:var(--text-secondary); line-height:1.6;">Team Member 1</p>
                 </div>
                 <div class="card">
-                    <div style="width:40px; height:40px; border-radius:50%; background:var(--bg-subtle); display:flex; align-items:center; justify-content:center; font-family:Playfair Display, serif; font-style:italic; font-size:1.1rem; color:var(--text-muted); margin-bottom:1rem;">02</div>
-                    <h3 style="font-family:Playfair Display, serif; margin-bottom:0.2rem; font-size:1.1rem;">Prithviraj Abnave</h3>
+                    <div
+                        style="width:40px; height:40px; border-radius:50%; background:var(--bg-subtle); display:flex; align-items:center; justify-content:center; font-family:Playfair Display, serif; font-style:italic; font-size:1.1rem; color:var(--text-muted); margin-bottom:1rem;">
+                        02</div>
+                    <h3 style="font-family:Playfair Display, serif; margin-bottom:0.2rem; font-size:1.1rem;">Prithviraj
+                        Abnave</h3>
                     <p style="font-size:0.75rem; color:var(--text-muted); margin-bottom:1rem;">Roll No: 23102B0035</p>
                     <p style="font-size:0.85rem; color:var(--text-secondary); line-height:1.6;">Team Member 2</p>
                 </div>
                 <div class="card">
-                    <div style="width:40px; height:40px; border-radius:50%; background:var(--bg-subtle); display:flex; align-items:center; justify-content:center; font-family:Playfair Display, serif; font-style:italic; font-size:1.1rem; color:var(--text-muted); margin-bottom:1rem;">03</div>
-                    <h3 style="font-family:Playfair Display, serif; margin-bottom:0.2rem; font-size:1.1rem;">Soham Narvankar</h3>
+                    <div
+                        style="width:40px; height:40px; border-radius:50%; background:var(--bg-subtle); display:flex; align-items:center; justify-content:center; font-family:Playfair Display, serif; font-style:italic; font-size:1.1rem; color:var(--text-muted); margin-bottom:1rem;">
+                        03</div>
+                    <h3 style="font-family:Playfair Display, serif; margin-bottom:0.2rem; font-size:1.1rem;">Soham
+                        Narvankar</h3>
                     <p style="font-size:0.75rem; color:var(--text-muted); margin-bottom:1rem;">Roll No: 23102B0041</p>
                     <p style="font-size:0.85rem; color:var(--text-secondary); line-height:1.6;">Team Member 3</p>
                 </div>
             </div>
-            
+
             <div class="methodology-box" style="border-left-color:#10b981; background:#ecfdf5; border-color:#d1fae5;">
                 <h4 style="color:#047857;">Acknowledgements</h4>
-                <p>Thanks to the maintainers of scikit-learn, gensim and NLTK, and to Jianmo Ni and Julian McAuley for the Amazon review dataset used throughout this work.</p>
+                <p>Thanks to the maintainers of scikit-learn, gensim and NLTK, and to Jianmo Ni and Julian McAuley for
+                    the Amazon review dataset used throughout this work.</p>
             </div>
         </div>
     </div>
@@ -686,13 +831,16 @@
     <div id="page-analyze" class="page-section" style="display:none;">
         <div class="container" style="max-width:860px;">
             <div class="page-header pb-0">
-                <div class="badge"><span class="badge-dot" style="background:#3b82f6"></span> RUN YOUR OWN EXPERIMENT</div>
+                <div class="badge"><span class="badge-dot" style="background:#3b82f6"></span> RUN YOUR OWN EXPERIMENT
+                </div>
                 <h1>Analyze a product</h1>
-                <p class="lead">Paste links to the <strong>same product</strong> from 2–4 different e-commerce sites. We'll scrape the reviews, merge them, and run both LDA and NMF — no CSV needed.</p>
+                <p class="lead">Paste links to the <strong>same product</strong> from 2–4 different e-commerce sites.
+                    We'll scrape the reviews, merge them, and run both LDA and NMF — no CSV needed.</p>
             </div>
 
             <!-- Stepper -->
-            <div style="display:flex; margin:2rem 0; border:1px solid var(--border-light); border-radius:var(--radius-md); background:var(--bg-card); overflow:hidden;" id="analyze-stepper">
+            <div style="display:flex; margin:2rem 0; border:1px solid var(--border-light); border-radius:var(--radius-md); background:var(--bg-card); overflow:hidden;"
+                id="analyze-stepper">
                 <div class="stepper-step active" id="step-ind-1">
                     <div class="stepper-num">1</div>
                     <div class="stepper-label">Paste URLs</div>
@@ -713,82 +861,61 @@
 
             <!-- URL Input Card -->
             <div class="card" style="padding:2rem; margin-bottom:1.5rem;">
-                <h3 style="margin-top:0; font-family:'Playfair Display',serif; font-size:1.2rem; margin-bottom:0.4rem;">Product URLs</h3>
+                <h3 style="margin-top:0; font-family:'Playfair Display',serif; font-size:1.2rem; margin-bottom:0.4rem;">
+                    Product URLs</h3>
                 <p style="font-size:0.85rem; color:var(--text-secondary); margin-bottom:1.5rem;">
-                    Supported sites: <strong>Flipkart</strong>, <strong>Snapdeal</strong>, <strong>Myntra</strong>, <strong>Amazon</strong>. The first two are required.
+                    Supported sites: <strong>Flipkart</strong>, <strong>Snapdeal</strong>, <strong>Myntra</strong>,
+                    <strong>Amazon</strong>. The first two are required.
                 </p>
 
                 <!-- URL Row Template -->
                 <div class="url-row" id="url-row-1">
                     <div class="url-site-badge" id="site-badge-1">
-                        <span class="site-icon">🛒</span>
                         <span class="site-name" id="site-name-1">Site 1</span>
                     </div>
                     <div style="flex:1; position:relative;">
-                        <input
-                            type="url"
-                            id="url-input-1"
-                            class="url-input"
-                            placeholder="https://www.flipkart.com/product/... (required)"
-                            oninput="detectSite(1)"
-                        >
+                        <input type="url" id="url-input-1" class="url-input"
+                            placeholder="https://www.flipkart.com/product/... (required)" oninput="detectSite(1)">
                         <div class="url-status" id="url-status-1"></div>
                     </div>
                 </div>
 
                 <div class="url-row" id="url-row-2">
                     <div class="url-site-badge" id="site-badge-2">
-                        <span class="site-icon">🏷️</span>
                         <span class="site-name" id="site-name-2">Site 2</span>
                     </div>
                     <div style="flex:1; position:relative;">
-                        <input
-                            type="url"
-                            id="url-input-2"
-                            class="url-input"
-                            placeholder="https://www.snapdeal.com/product/... (required)"
-                            oninput="detectSite(2)"
-                        >
+                        <input type="url" id="url-input-2" class="url-input"
+                            placeholder="https://www.snapdeal.com/product/... (required)" oninput="detectSite(2)">
                         <div class="url-status" id="url-status-2"></div>
                     </div>
                 </div>
 
                 <div class="url-row" id="url-row-3">
-                    <div class="url-site-badge url-site-optional" id="site-badge-3">
-                        <span class="site-icon">👗</span>
-                        <span class="site-name" id="site-name-3">Optional</span>
+                    <div class="url-site-badge" id="site-badge-2">
+                        <span class="site-name" id="site-name-3">Site 3 (Optional)</span>
                     </div>
                     <div style="flex:1; position:relative;">
-                        <input
-                            type="url"
-                            id="url-input-3"
-                            class="url-input"
-                            placeholder="https://www.myntra.com/... (optional)"
-                            oninput="detectSite(3)"
-                        >
+                        <input type="url" id="url-input-3" class="url-input"
+                            placeholder="https://www.myntra.com/... (optional)" oninput="detectSite(3)">
                         <div class="url-status" id="url-status-3"></div>
                     </div>
                 </div>
 
                 <div class="url-row" id="url-row-4">
-                    <div class="url-site-badge url-site-optional" id="site-badge-4">
-                        <span class="site-icon">📦</span>
-                        <span class="site-name" id="site-name-4">Optional</span>
+                    <div class="url-site-badge" id="site-badge-2">
+                        <span class="site-name" id="site-name-4">Site 4 (Optional) </span>
                     </div>
                     <div style="flex:1; position:relative;">
-                        <input
-                            type="url"
-                            id="url-input-4"
-                            class="url-input"
-                            placeholder="https://www.amazon.in/... (optional)"
-                            oninput="detectSite(4)"
-                        >
+                        <input type="url" id="url-input-4" class="url-input"
+                            placeholder="https://www.amazon.in/... (optional)" oninput="detectSite(4)">
                         <div class="url-status" id="url-status-4"></div>
                     </div>
                 </div>
 
                 <!-- Supported site chips -->
-                <div style="display:flex; gap:0.6rem; flex-wrap:wrap; margin-top:1.25rem; padding-top:1.25rem; border-top:1px dashed var(--border-light);">
+                <div
+                    style="display:flex; gap:0.6rem; flex-wrap:wrap; margin-top:1.25rem; padding-top:1.25rem; border-top:1px dashed var(--border-light);">
                     <span class="site-chip flipkart">🛒 Flipkart</span>
                     <span class="site-chip snapdeal">🏷️ Snapdeal</span>
                     <span class="site-chip myntra">👗 Myntra</span>
@@ -798,19 +925,26 @@
 
             <!-- Config Panel -->
             <div class="card" style="padding:1.75rem; margin-bottom:1.5rem;">
-                <h3 style="margin-top:0; font-family:'Playfair Display',serif; font-size:1.2rem; margin-bottom:1.25rem;">Configuration</h3>
+                <h3
+                    style="margin-top:0; font-family:'Playfair Display',serif; font-size:1.2rem; margin-bottom:1.25rem;">
+                    Configuration</h3>
                 <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; align-items:center;">
                     <div class="config-group" style="margin:0;">
-                        <label for="n-topics">Number of Topics &nbsp;<strong id="n-topics-value" style="color:var(--text-primary);">5</strong></label>
-                        <input type="range" id="n-topics" min="2" max="15" value="5" step="1" style="width:100%; margin-top:0.5rem;">
+                        <label for="n-topics">Number of Topics &nbsp;<strong id="n-topics-value"
+                                style="color:var(--text-primary);">5</strong></label>
+                        <input type="range" id="n-topics" min="2" max="15" value="5" step="1"
+                            style="width:100%; margin-top:0.5rem;">
                     </div>
                     <div class="config-group" style="margin:0;">
-                        <label for="scrape-pages">Pages to scrape per site &nbsp;<strong id="scrape-pages-value" style="color:var(--text-primary);">3</strong></label>
-                        <input type="range" id="scrape-pages" min="1" max="8" value="3" step="1" style="width:100%; margin-top:0.5rem;">
+                        <label for="scrape-pages">Pages to scrape per site &nbsp;<strong id="scrape-pages-value"
+                                style="color:var(--text-primary);">3</strong></label>
+                        <input type="range" id="scrape-pages" min="1" max="8" value="3" step="1"
+                            style="width:100%; margin-top:0.5rem;">
                     </div>
                 </div>
                 <div style="margin-top:1.5rem;">
-                    <button class="btn btn-dark" id="btn-scrape" onclick="startScrapeAnalysis()" style="width:100%; padding:0.85rem; font-size:1rem; letter-spacing:0.03em;">
+                    <button class="btn btn-dark" id="btn-scrape" onclick="startScrapeAnalysis()"
+                        style="width:100%; padding:0.85rem; font-size:1rem; letter-spacing:0.03em;">
                         <span id="btn-scrape-icon">🔍</span> &nbsp;Scrape &amp; Analyze
                     </button>
                 </div>
@@ -828,18 +962,24 @@
             </div>
 
             <!-- Scrape log: shows live status messages -->
-            <div id="scrape-log" style="display:none; background:var(--bg-subtle); border:1px solid var(--border-light); border-radius:var(--radius-md); padding:1rem; font-family:'JetBrains Mono',monospace; font-size:0.78rem; color:var(--text-secondary); max-height:180px; overflow-y:auto; margin-bottom:1rem;">
+            <div id="scrape-log"
+                style="display:none; background:var(--bg-subtle); border:1px solid var(--border-light); border-radius:var(--radius-md); padding:1rem; font-family:'JetBrains Mono',monospace; font-size:0.78rem; color:var(--text-secondary); max-height:180px; overflow-y:auto; margin-bottom:1rem;">
             </div>
 
             <!-- Error banner -->
             <div class="error-banner" id="error-banner">
-                <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4m0 4h.01"/></svg>
+                <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <circle cx="12" cy="12" r="10" />
+                    <path d="M12 8v4m0 4h.01" />
+                </svg>
                 <span id="error-message"></span>
             </div>
 
             <!-- Disclaimer -->
             <p style="font-size:0.75rem; color:var(--text-muted); margin-top:1rem; line-height:1.6;">
-                ⚠️ Scraping is performed for educational/research purposes only. Anti-bot measures on some sites (especially Amazon) may limit results. Scraping time is typically 30–120 seconds depending on the number of pages.
+                ⚠️ Scraping is performed for educational/research purposes only. Anti-bot measures on some sites
+                (especially Amazon) may limit results. Scraping time is typically 30–120 seconds depending on the number
+                of pages.
             </p>
         </div>
     </div>
@@ -851,7 +991,8 @@
     <div id="page-custom-results" class="page-section" style="display:none;">
         <div class="container">
             <div class="page-header pb-0">
-                <div class="badge"><span class="badge-dot" style="background:#8b5cf6"></span> CUSTOM DATASET RESULTS</div>
+                <div class="badge"><span class="badge-dot" style="background:#8b5cf6"></span> CUSTOM DATASET RESULTS
+                </div>
                 <h1>Custom Analysis</h1>
                 <div style="display:flex; justify-content:space-between; align-items:flex-end;">
                     <p class="lead" style="margin:0;">Results for your uploaded dataset.</p>
@@ -913,8 +1054,16 @@
                             <h3>Quality — coherence & diversity</h3>
                         </div>
                         <div class="chart-legend" style="margin:0;">
-                            <div class="legend-item"><div class="legend-dot lda" style="border-radius:50%; border:1px solid var(--lda-primary); background:var(--lda-light)"></div> LDA</div>
-                            <div class="legend-item"><div class="legend-dot nmf" style="border-radius:50%; border:1px solid var(--nmf-primary); background:var(--nmf-light)"></div> NMF</div>
+                            <div class="legend-item">
+                                <div class="legend-dot lda"
+                                    style="border-radius:50%; border:1px solid var(--lda-primary); background:var(--lda-light)">
+                                </div> LDA
+                            </div>
+                            <div class="legend-item">
+                                <div class="legend-dot nmf"
+                                    style="border-radius:50%; border:1px solid var(--nmf-primary); background:var(--nmf-light)">
+                                </div> NMF
+                            </div>
                         </div>
                     </div>
                     <div class="chart-wrapper">
@@ -927,8 +1076,12 @@
                             <h3>Normalized profile</h3>
                         </div>
                         <div class="chart-legend" style="margin:0;">
-                            <div class="legend-item"><div class="legend-dot lda" style="border-radius:50%"></div> LDA</div>
-                            <div class="legend-item"><div class="legend-dot nmf" style="border-radius:50%"></div> NMF</div>
+                            <div class="legend-item">
+                                <div class="legend-dot lda" style="border-radius:50%"></div> LDA
+                            </div>
+                            <div class="legend-item">
+                                <div class="legend-dot nmf" style="border-radius:50%"></div> NMF
+                            </div>
                         </div>
                     </div>
                     <div class="chart-wrapper">
@@ -936,10 +1089,11 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="section mt-4">
                 <div class="section-header">
-                    <div class="badge"><span class="badge-dot" style="background:var(--lda-primary)"></span> LDA TOPICS</div>
+                    <div class="badge"><span class="badge-dot" style="background:var(--lda-primary)"></span> LDA TOPICS
+                    </div>
                     <h2>Detailed LDA Results</h2>
                 </div>
                 <div class="topics-grid" id="custom-lda-topics-grid">
@@ -949,7 +1103,8 @@
 
             <div class="section mt-4 mb-4">
                 <div class="section-header">
-                    <div class="badge"><span class="badge-dot" style="background:var(--nmf-primary)"></span> NMF TOPICS</div>
+                    <div class="badge"><span class="badge-dot" style="background:var(--nmf-primary)"></span> NMF TOPICS
+                    </div>
                     <h2>Detailed NMF Results</h2>
                 </div>
                 <div class="topics-grid" id="custom-nmf-topics-grid">
