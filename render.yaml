@@ -1,6 +1,7 @@
 services:
   - type: web
     name: topic-modeling-dashboard
+    plan: free
     env: python
     buildCommand: "./build.sh"
     startCommand: "gunicorn app:app"
