@@ -21,6 +21,72 @@ from urllib.parse import urlparse
 
 logger = logging.getLogger(__name__)
 
+
+# ── Generic Playwright (Croma, Reliance) ────────────────────────────────────
+
+def scrape_playwright_generic(url: str, site_name: str, max_pages: int = 3) -> list:
+    """Generic Playwright scraper for Croma/Reliance best-effort."""
+    reviews = []
+    try:
+        pw, browser, context = _get_playwright_browser()
+    except Exception as e:
+        logger.error(f"[{site_name}] Playwright init failed: {e}")
+        return []
+        
+    try:
+        page = context.new_page()
+        logger.info(f"[{site_name}] Fetching URL: {url}")
+        try:
+            page.goto(url, wait_until="domcontentloaded", timeout=35000)
+            time.sleep(3.0)
+        except Exception as e:
+            logger.warning(f"[{site_name}] Navigation failed: {e}")
+            return reviews
+
+        # Scroll to load lazy content
+        for _ in range(3):
+            page.evaluate("window.scrollBy(0, window.innerHeight)")
+            time.sleep(1.0)
+            
+        page_reviews = []
+        selectors = [
+            ".review-text", ".review-desc", "[class*='review'] p", 
+            "div[class*='Review'] p", ".comment p"
+        ]
+        
+        for sel in selectors:
+            elements = page.locator(sel).all()
+            if elements:
+                for el in elements:
+                    try:
+                        text = _clean(el.inner_text())
+                        if len(text) >= 20:
+                            page_reviews.append(text)
+                    except Exception:
+                        pass
+                if page_reviews:
+                    break
+                    
+        if not page_reviews:
+            html = page.content()
+            from bs4 import BeautifulSoup
+            soup = BeautifulSoup(html, "lxml")
+            for tag in soup.find_all(["p", "div", "span"]):
+                text = _clean(tag.get_text())
+                if 40 < len(text) < 2000 and not tag.find_all(["div", "section"]):
+                    page_reviews.append(text)
+            page_reviews = page_reviews[:30]
+
+        reviews.extend(page_reviews)
+        logger.info(f"[{site_name}] Found {len(page_reviews)} reviews.")
+    finally:
+        try:
+            browser.close()
+            pw.stop()
+        except Exception:
+            pass
+    return reviews
+
 # ---------------------------------------------------------------------------
 # Helpers
 # ---------------------------------------------------------------------------
@@ -60,6 +126,10 @@ def _detect_site(url: str) -> str:
         return "myntra"
     if "amazon" in host:
         return "amazon"
+    if "croma" in host:
+        return "croma"
+    if "reliancedigital" in host:
+        return "reliance"
     return "unknown"
 
 
@@ -478,6 +548,72 @@ def scrape_amazon(url: str, max_pages: int = 3) -> list:
 # Main entry point
 # ---------------------------------------------------------------------------
 
+
+# ── Generic Playwright (Croma, Reliance) ────────────────────────────────────
+
+def scrape_playwright_generic(url: str, site_name: str, max_pages: int = 3) -> list:
+    """Generic Playwright scraper for Croma/Reliance best-effort."""
+    reviews = []
+    try:
+        pw, browser, context = _get_playwright_browser()
+    except Exception as e:
+        logger.error(f"[{site_name}] Playwright init failed: {e}")
+        return []
+        
+    try:
+        page = context.new_page()
+        logger.info(f"[{site_name}] Fetching URL: {url}")
+        try:
+            page.goto(url, wait_until="domcontentloaded", timeout=35000)
+            time.sleep(3.0)
+        except Exception as e:
+            logger.warning(f"[{site_name}] Navigation failed: {e}")
+            return reviews
+
+        # Scroll to load lazy content
+        for _ in range(3):
+            page.evaluate("window.scrollBy(0, window.innerHeight)")
+            time.sleep(1.0)
+            
+        page_reviews = []
+        selectors = [
+            ".review-text", ".review-desc", "[class*='review'] p", 
+            "div[class*='Review'] p", ".comment p"
+        ]
+        
+        for sel in selectors:
+            elements = page.locator(sel).all()
+            if elements:
+                for el in elements:
+                    try:
+                        text = _clean(el.inner_text())
+                        if len(text) >= 20:
+                            page_reviews.append(text)
+                    except Exception:
+                        pass
+                if page_reviews:
+                    break
+                    
+        if not page_reviews:
+            html = page.content()
+            from bs4 import BeautifulSoup
+            soup = BeautifulSoup(html, "lxml")
+            for tag in soup.find_all(["p", "div", "span"]):
+                text = _clean(tag.get_text())
+                if 40 < len(text) < 2000 and not tag.find_all(["div", "section"]):
+                    page_reviews.append(text)
+            page_reviews = page_reviews[:30]
+
+        reviews.extend(page_reviews)
+        logger.info(f"[{site_name}] Found {len(page_reviews)} reviews.")
+    finally:
+        try:
+            browser.close()
+            pw.stop()
+        except Exception:
+            pass
+    return reviews
+
 def scrape_reviews(urls: list, max_pages: int = 3) -> pd.DataFrame:
     """
     Scrape reviews from a list of product URLs.
@@ -515,6 +651,10 @@ def scrape_reviews(urls: list, max_pages: int = 3) -> pd.DataFrame:
                 texts = scrape_myntra(url, max_scrolls=max_pages)
             elif site == "amazon":
                 texts = scrape_amazon(url, max_pages=max_pages)
+            elif site == "croma":
+                texts = scrape_playwright_generic(url, "Croma", max_pages)
+            elif site == "reliance":
+                texts = scrape_playwright_generic(url, "Reliance", max_pages)
             else:
                 logger.warning(f"Unknown site for URL: {url}. Attempting generic extraction.")
                 texts = _scrape_generic(url)

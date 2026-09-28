@@ -137,12 +137,12 @@ def scrape():
         return jsonify({'error': 'n_topics must be between 2 and 20.'}), 400
 
     # Validate that URLs look plausible
-    supported_hosts = ('flipkart.com', 'snapdeal.com', 'myntra.com', 'amazon.in', 'amazon.com')
+    supported_hosts = ('flipkart.com', 'snapdeal.com', 'myntra.com', 'amazon.in', 'amazon.com', 'croma.com', 'reliancedigital.in')
     for url in urls:
         if not any(host in url.lower() for host in supported_hosts):
             return jsonify({
                 'error': f'Unsupported site in URL: {url}. '
-                         'Supported: Flipkart, Snapdeal, Myntra, Amazon.'
+                         'Supported: Flipkart, Snapdeal, Myntra, Amazon, Croma, Reliance Digital.'
             }), 400
 
     # Kick off scraping + pipeline in a background thread
