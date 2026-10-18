@@ -9,4 +9,5 @@ python -m pip install --upgrade pip
 pip install -r requirements.txt
 
 # Install Playwright browser binaries (specifically chromium since it's the standard for scraping)
-playwright install chromium
+# Note: On Replit, this is handled via replit.nix (playwright-driver.browsers)
+# playwright install chromium

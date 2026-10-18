@@ -1,12 +1,12 @@
 {
   "meta": {
-    "total_reviews": 28,
-    "processed_reviews": 25,
+    "total_reviews": 48,
+    "processed_reviews": 40,
     "sample_size": null,
-    "n_topics": 5,
-    "total_time": 137.26,
-    "vocabulary_size_bow": 9,
-    "vocabulary_size_tfidf": 9
+    "n_topics": 6,
+    "total_time": 41.01,
+    "vocabulary_size_bow": 16,
+    "vocabulary_size_tfidf": 16
   },
   "lda": {
     "topics": [
@@ -14,40 +14,64 @@
         "id": 0,
         "top_words": [
           {
-            "word": "flipkart",
-            "weight": 0.413466
-          },
-          {
-            "word": "fast",
-            "weight": 0.13943
-          },
-          {
             "word": "power",
-            "weight": 0.107182
-          },
-          {
-            "word": "backup",
-            "weight": 0.085377
-          },
-          {
-            "word": "time",
-            "weight": 0.084861
+            "weight": 0.198971
           },
           {
             "word": "power bank",
-            "weight": 0.048201
+            "weight": 0.160105
           },
           {
             "word": "bank",
-            "weight": 0.046727
+            "weight": 0.159567
           },
           {
-            "word": "charge",
-            "weight": 0.03944
+            "word": "fast",
+            "weight": 0.064755
+          },
+          {
+            "word": "design",
+            "weight": 0.05278
+          },
+          {
+            "word": "charging",
+            "weight": 0.0466
+          },
+          {
+            "word": "fast charging",
+            "weight": 0.045026
           },
           {
             "word": "mah",
-            "weight": 0.035316
+            "weight": 0.042612
+          },
+          {
+            "word": "quality",
+            "weight": 0.042525
+          },
+          {
+            "word": "backup",
+            "weight": 0.039925
+          },
+          {
+            "word": "charge",
+            "weight": 0.03886
+          },
+          {
+            "word": "money",
+            "weight": 0.033121
+          },
+          {
+            "word": "look",
+            "weight": 0.026096
+          },
+          {
+            "word": "battery",
+            "weight": 0.024777
+          },
+          {
+            "word": "time",
+            "weight": 0.018312
           }
         ]
       },
@@ -55,40 +79,64 @@
         "id": 1,
         "top_words": [
           {
-            "word": "fast",
-            "weight": 0.419802
+            "word": "powerbank",
+            "weight": 0.067628
           },
           {
-            "word": "power",
-            "weight": 0.175802
+            "word": "charging",
+            "weight": 0.066612
           },
           {
-            "word": "charge",
-            "weight": 0.061137
+            "word": "look",
+            "weight": 0.066153
           },
           {
-            "word": "flipkart",
-            "weight": 0.059229
-          },
-          {
-            "word": "time",
-            "weight": 0.058872
+            "word": "quality",
+            "weight": 0.064475
           },
           {
             "word": "mah",
-            "weight": 0.058116
+            "weight": 0.063939
           },
           {
-            "word": "power bank",
-            "weight": 0.057634
+            "word": "fast charging",
+            "weight": 0.063811
+          },
+          {
+            "word": "battery",
+            "weight": 0.062983
+          },
+          {
+            "word": "money",
+            "weight": 0.062672
+          },
+          {
+            "word": "power",
+            "weight": 0.06185
           },
           {
             "word": "bank",
-            "weight": 0.056203
+            "weight": 0.061839
+          },
+          {
+            "word": "time",
+            "weight": 0.061463
+          },
+          {
+            "word": "power bank",
+            "weight": 0.061156
           },
           {
             "word": "backup",
-            "weight": 0.053205
+            "weight": 0.060603
+          },
+          {
+            "word": "charge",
+            "weight": 0.058801
+          },
+          {
+            "word": "design",
+            "weight": 0.058184
           }
         ]
       },
@@ -96,40 +144,64 @@
         "id": 2,
         "top_words": [
           {
-            "word": "mah",
-            "weight": 0.216602
-          },
-          {
-            "word": "backup",
-            "weight": 0.21515
-          },
-          {
-            "word": "power",
-            "weight": 0.1336
-          },
-          {
             "word": "charge",
-            "weight": 0.132614
+            "weight": 0.364733
           },
           {
             "word": "time",
-            "weight": 0.128191
+            "weight": 0.139721
           },
           {
-            "word": "power bank",
-            "weight": 0.047906
+            "word": "backup",
+            "weight": 0.099413
           },
           {
-            "word": "bank",
-            "weight": 0.044693
+            "word": "mah",
+            "weight": 0.08574
+          },
+          {
+            "word": "battery",
+            "weight": 0.082973
+          },
+          {
+            "word": "charging",
+            "weight": 0.049335
+          },
+          {
+            "word": "design",
+            "weight": 0.020656
+          },
+          {
+            "word": "look",
+            "weight": 0.020302
+          },
+          {
+            "word": "powerbank",
+            "weight": 0.018116
+          },
+          {
+            "word": "power",
+            "weight": 0.018013
           },
           {
             "word": "fast",
-            "weight": 0.040763
+            "weight": 0.017327
           },
           {
-            "word": "flipkart",
-            "weight": 0.04048
+            "word": "fast charging",
+            "weight": 0.017161
+          },
+          {
+            "word": "bank",
+            "weight": 0.017011
+          },
+          {
+            "word": "money",
+            "weight": 0.01675
+          },
+          {
+            "word": "quality",
+            "weight": 0.016445
           }
         ]
       },
@@ -137,40 +209,64 @@
         "id": 3,
         "top_words": [
           {
-            "word": "power",
-            "weight": 0.18397
+            "word": "fast",
+            "weight": 0.221762
           },
           {
-            "word": "charge",
-            "weight": 0.17153
+            "word": "charging",
+            "weight": 0.179396
           },
           {
-            "word": "power bank",
-            "weight": 0.169003
-          },
-          {
-            "word": "bank",
-            "weight": 0.168284
+            "word": "fast charging",
+            "weight": 0.133856
           },
           {
             "word": "time",
-            "weight": 0.141929
+            "weight": 0.106307
           },
           {
-            "word": "mah",
-            "weight": 0.072454
+            "word": "look",
+            "weight": 0.067212
+          },
+          {
+            "word": "quality",
+            "weight": 0.048456
+          },
+          {
+            "word": "design",
+            "weight": 0.045932
+          },
+          {
+            "word": "battery",
+            "weight": 0.044875
+          },
+          {
+            "word": "powerbank",
+            "weight": 0.043781
+          },
+          {
+            "word": "charge",
+            "weight": 0.020096
+          },
+          {
+            "word": "bank",
+            "weight": 0.015234
+          },
+          {
+            "word": "money",
+            "weight": 0.01517
+          },
+          {
+            "word": "power",
+            "weight": 0.015142
           },
           {
             "word": "backup",
-            "weight": 0.041171
+            "weight": 0.014652
           },
           {
-            "word": "flipkart",
-            "weight": 0.027419
-          },
-          {
-            "word": "fast",
-            "weight": 0.024239
+            "word": "mah",
+            "weight": 0.014571
           }
         ]
       },
@@ -178,84 +274,179 @@
         "id": 4,
         "top_words": [
           {
-            "word": "mah",
-            "weight": 0.383933
+            "word": "design",
+            "weight": 0.162496
           },
           {
-            "word": "flipkart",
-            "weight": 0.082026
+            "word": "powerbank",
+            "weight": 0.157829
           },
           {
-            "word": "power",
-            "weight": 0.079744
-          },
-          {
-            "word": "time",
-            "weight": 0.077477
-          },
-          {
-            "word": "fast",
-            "weight": 0.077106
-          },
-          {
-            "word": "bank",
-            "weight": 0.076101
-          },
-          {
-            "word": "charge",
-            "weight": 0.075362
-          },
-          {
-            "word": "power bank",
-            "weight": 0.074526
+            "word": "money",
+            "weight": 0.118159
           },
           {
             "word": "backup",
-            "weight": 0.073726
+            "weight": 0.112143
+          },
+          {
+            "word": "power",
+            "weight": 0.109706
+          },
+          {
+            "word": "mah",
+            "weight": 0.071578
+          },
+          {
+            "word": "look",
+            "weight": 0.07109
+          },
+          {
+            "word": "fast charging",
+            "weight": 0.022998
+          },
+          {
+            "word": "charging",
+            "weight": 0.022661
+          },
+          {
+            "word": "time",
+            "weight": 0.02266
+          },
+          {
+            "word": "charge",
+            "weight": 0.022518
+          },
+          {
+            "word": "bank",
+            "weight": 0.022448
+          },
+          {
+            "word": "fast",
+            "weight": 0.022293
+          },
+          {
+            "word": "power bank",
+            "weight": 0.021139
+          },
+          {
+            "word": "quality",
+            "weight": 0.02039
+          }
+        ]
+      },
+      {
+        "id": 5,
+        "top_words": [
+          {
+            "word": "quality",
+            "weight": 0.243672
+          },
+          {
+            "word": "mah",
+            "weight": 0.147275
+          },
+          {
+            "word": "power",
+            "weight": 0.117237
+          },
+          {
+            "word": "bank",
+            "weight": 0.086113
+          },
+          {
+            "word": "power bank",
+            "weight": 0.083704
+          },
+          {
+            "word": "powerbank",
+            "weight": 0.080812
+          },
+          {
+            "word": "money",
+            "weight": 0.050419
+          },
+          {
+            "word": "fast",
+            "weight": 0.048926
+          },
+          {
+            "word": "charging",
+            "weight": 0.030984
+          },
+          {
+            "word": "charge",
+            "weight": 0.016979
+          },
+          {
+            "word": "fast charging",
+            "weight": 0.016557
+          },
+          {
+            "word": "design",
+            "weight": 0.01609
+          },
+          {
+            "word": "look",
+            "weight": 0.015937
+          },
+          {
+            "word": "backup",
+            "weight": 0.015455
+          },
+          {
+            "word": "time",
+            "weight": 0.014954
           }
         ]
       }
     ],
     "prevalence": [
-      0.36,
-      0.12,
-      0.08,
-      0.36,
-      0.08
+      0.425,
+      0.0,
+      0.1,
+      0.2,
+      0.1,
+      0.175
     ],
     "representative_reviews": {
       "0": [
-        "Power backup is amazing,look is smooth and fantastic ,rechargine time 7 to 8 hr,and very fast charging tnx for flipkart and i recoment to buy this product...\u263a\ufe0f",
-        "This Product is osm & value for money & this is original product for receive me and I am very happy thanks \ud83d\ude0a\ud83d\udc4d for flipkart fast delivery I really love this powerbank \ud83d\ude0d\ud83d\ude0d\ud83d\ude0d\ud83d\ude0d so guys this is best po... more",
-        "Good product...and awesome Ekart Facility...thanks Flipkart\u2764\ufe0f\u2764\ufe0f"
+        "Xiaomi Power Bank 4i 10000mAh \u2013 Review \u2b50\u2b50\u2b50\u2b50\u2b50 The Xiaomi Power Bank 4i is a compact and reliable power bank that is perfect for everyday use. Its 10,000mAh capacity provides enough backup to keep your smartphone charged while travelling, working, or during power cuts. The 22.5W fast charging is a gre...",
+        "Battery power bank is many times more than you think. That's why friends, while taking power bank, take this Mai's power bank without thinking.",
+        "Bought the Redmi 10000mAh power bank from Myntra, totally worth the money! Great build quality, compact design, and charges fast. Superb product, highly satisfied!"
       ],
       "1": [
-        "Best power and fast charging i love this product as safe delivery",
-        "* best battery life * good performance * value for money * nice fast chargering",
-        "Fast charging, long-lasting, and affordable. What more could you ask for ??"
+        "Bhai bhot acha product hai mujhe it's justified it's price\ud83d\udc4d",
+        "Flipkart Internet Private Limited,",
+        "Flipkart Internet Private Limited, Buildings Alyssa, Begonia & Clove Embassy Tech Village, Outer Ring Road, Devarabeesanahalli Village, Bengaluru, 560103, Karnataka, India"
       ],
       "2": [
-        "Technical this powerbank has 15000mAh battery backup.. It can charge 5000mah 3 times once fully charged. It takes alomost 5 to 7 hours with 20watt charger..",
-        "\u2764\ufe0f\u2764\ufe0f really this product is very nice. Long lasting power backup and I am satisfied \u263a\ufe0f",
-        "How to switch off the button on this device it stays on always plz send me the details to Switch of the device"
+        "It takes more time to charge and pb, There are provided normal cable, Not too good, We can charge our mobile 2times(4000 mah) battery, It has quick charge support, They don't provide type-c cable... more",
+        "Perfect delivery. Good Product from MI. Metal body feels premium. I'm using galaxy s9 plus with 3500 mah and can charge a 2 full charge and 40% charge. Satisfied with the backup",
+        "Reviewing after 1 week of use, Got around 8000 mhz battery backup and take 7 hours to fully charge on 2A charger. Mobile takes little bit more charging time not like 2.4A output its like 1.5A output.... more"
       ],
       "3": [
-        "This is a amazing power bank for every you charged by this . This is charge my redmi k20pro 4000 mah battery 4.5 times 4 time fully charged and 5th time half charge not. Bad thank you mi. Tq Flipkart ... more",
-        "iam using this power bank last 2,3 years...then last i bought the lstest vertion ... its so good and amazing power backup , my rdmi note 7 pro more than 3 times charing put in this power bank .one dow... more",
-        "This power bank is so good but I recommend you to buy 30000 mah mi power bank Also battery backup is good It takes 6.5 hrs to charge from 35 watt charger I am happy you should buy this ......"
+        "Looks very premium takes 3 to 4 hours to get charged but support fast charging to the devices",
+        "Good product i charger my OnePlus 7T 2 times 100% and third time 35% battery \ud83d\udd0b life is so good thank tou flip cart Dilivery is also so fast order come's in 2 days",
+        "Premium design fast charging very slim"
       ],
       "4": [
-        "Review for: Capacity 20000 mAh \u2022 Color Blue",
-        "Review for: Capacity 20000 mAh \u2022 Color Sandstone Black",
-        "How to switch off the button on this device it stays on always plz send me the details to Switch of the device"
+        "Best powerbank in this price range it has 12 layer circuit protection,and design and look is also very pretty and also have best power backup. If any one is thinking to buy mi 2i 10000 mah powerbank. ... more",
+        "Nice powerbank with good power backup Fabulous design and just go for it ... Got it for 629/- with supercoins",
+        "More worth for money.... Awesome product and Cute design...."
+      ],
+      "5": [
+        "Best quality powerbank... Nice fit and finish... Last for long... Heavy bulit quality... Awesome product from MI It has a lower power mode that's not found in any other power bank. When there's a low ... more",
+        "Excellent Mi 3i 10000 mAh power bank. Low price but high quality product. Best seller Retail Net No.1 product quality at reasonable price and fast shipping, recommended this seller. Yes Flipkart servi... more",
+        "One of the best powerbank under budget and also quality wise it is the great product mine old one got stolen by my friend then i got this one it wis so good ports are comparatively enough 2 usb and one c port and also there is led indicator which indicates battry percentage and also it is durable an..."
       ]
     },
     "metrics": {
-      "coherence": 0.549,
-      "diversity": 0.2,
-      "perplexity": 18.15
+      "coherence": 0.4485,
+      "diversity": 0.2667,
+      "perplexity": 26.85
     },
-    "training_time": 22.65
+    "training_time": 15.48
   },
   "nmf": {
     "topics": [
@@ -263,40 +454,64 @@
         "id": 0,
         "top_words": [
           {
-            "word": "power",
-            "weight": 0.270817
+            "word": "power bank",
+            "weight": 0.294756
           },
           {
             "word": "bank",
-            "weight": 0.232663
+            "weight": 0.294756
           },
           {
-            "word": "power bank",
-            "weight": 0.232663
+            "word": "power",
+            "weight": 0.270536
+          },
+          {
+            "word": "quality",
+            "weight": 0.06869
           },
           {
             "word": "backup",
-            "weight": 0.111456
+            "weight": 0.030813
           },
           {
-            "word": "time",
-            "weight": 0.05405
+            "word": "battery",
+            "weight": 0.022989
           },
           {
-            "word": "charge",
-            "weight": 0.045149
-          },
-          {
-            "word": "mah",
-            "weight": 0.043102
-          },
-          {
-            "word": "flipkart",
-            "weight": 0.010034
+            "word": "look",
+            "weight": 0.011686
           },
           {
             "word": "fast",
-            "weight": 6.6e-05
+            "weight": 0.004842
+          },
+          {
+            "word": "design",
+            "weight": 0.000893
+          },
+          {
+            "word": "fast charging",
+            "weight": 3.8e-05
+          },
+          {
+            "word": "money",
+            "weight": 0.0
+          },
+          {
+            "word": "charging",
+            "weight": 0.0
+          },
+          {
+            "word": "charge",
+            "weight": 0.0
+          },
+          {
+            "word": "mah",
+            "weight": 0.0
+          },
+          {
+            "word": "time",
+            "weight": 0.0
           }
         ]
       },
@@ -304,23 +519,43 @@
         "id": 1,
         "top_words": [
           {
-            "word": "flipkart",
-            "weight": 0.994292
+            "word": "fast",
+            "weight": 0.285668
           },
           {
-            "word": "fast",
-            "weight": 0.005708
+            "word": "charging",
+            "weight": 0.226601
+          },
+          {
+            "word": "fast charging",
+            "weight": 0.200825
+          },
+          {
+            "word": "quality",
+            "weight": 0.116432
+          },
+          {
+            "word": "look",
+            "weight": 0.072123
+          },
+          {
+            "word": "charge",
+            "weight": 0.053241
+          },
+          {
+            "word": "design",
+            "weight": 0.036655
           },
           {
             "word": "time",
-            "weight": 0.0
+            "weight": 0.008453
           },
           {
-            "word": "power",
-            "weight": 0.0
+            "word": "battery",
+            "weight": 1e-06
           },
           {
-            "word": "power bank",
+            "word": "powerbank",
             "weight": 0.0
           },
           {
@@ -328,15 +563,19 @@
             "weight": 0.0
           },
           {
-            "word": "charge",
-            "weight": 0.0
-          },
-          {
-            "word": "bank",
+            "word": "money",
             "weight": 0.0
           },
           {
             "word": "backup",
+            "weight": 0.0
+          },
+          {
+            "word": "power bank",
+            "weight": 0.0
+          },
+          {
+            "word": "power",
             "weight": 0.0
           }
         ]
@@ -345,39 +584,63 @@
         "id": 2,
         "top_words": [
           {
-            "word": "fast",
-            "weight": 0.811022
-          },
-          {
-            "word": "power",
-            "weight": 0.107476
-          },
-          {
-            "word": "backup",
-            "weight": 0.042672
+            "word": "charge",
+            "weight": 0.360982
           },
           {
             "word": "time",
-            "weight": 0.03883
+            "weight": 0.216945
+          },
+          {
+            "word": "battery",
+            "weight": 0.136239
+          },
+          {
+            "word": "backup",
+            "weight": 0.120875
+          },
+          {
+            "word": "power",
+            "weight": 0.067354
+          },
+          {
+            "word": "mah",
+            "weight": 0.063716
+          },
+          {
+            "word": "design",
+            "weight": 0.033888
+          },
+          {
+            "word": "powerbank",
+            "weight": 0.0
+          },
+          {
+            "word": "look",
+            "weight": 0.0
+          },
+          {
+            "word": "money",
+            "weight": 0.0
+          },
+          {
+            "word": "quality",
+            "weight": 0.0
           },
           {
             "word": "power bank",
             "weight": 0.0
           },
           {
-            "word": "flipkart",
+            "word": "charging",
             "weight": 0.0
           },
           {
-            "word": "mah",
+            "word": "fast",
             "weight": 0.0
           },
           {
-            "word": "charge",
-            "weight": 0.0
-          },
-          {
-            "word": "bank",
+            "word": "fast charging",
             "weight": 0.0
           }
         ]
@@ -387,14 +650,26 @@
         "top_words": [
           {
             "word": "mah",
-            "weight": 0.965124
+            "weight": 0.929461
           },
           {
-            "word": "backup",
-            "weight": 0.034876
+            "word": "quality",
+            "weight": 0.038599
           },
           {
-            "word": "time",
+            "word": "design",
+            "weight": 0.030361
+          },
+          {
+            "word": "powerbank",
+            "weight": 0.001537
+          },
+          {
+            "word": "money",
+            "weight": 4.1e-05
+          },
+          {
+            "word": "power bank",
             "weight": 0.0
           },
           {
@@ -402,11 +677,15 @@
             "weight": 0.0
           },
           {
-            "word": "power bank",
+            "word": "time",
             "weight": 0.0
           },
           {
-            "word": "flipkart",
+            "word": "look",
+            "weight": 0.0
+          },
+          {
+            "word": "fast charging",
             "weight": 0.0
           },
           {
@@ -414,7 +693,15 @@
             "weight": 0.0
           },
           {
+            "word": "charging",
+            "weight": 0.0
+          },
+          {
             "word": "charge",
+            "weight": 0.0
+          },
+          {
+            "word": "battery",
             "weight": 0.0
           },
           {
@@ -427,121 +714,229 @@
         "id": 4,
         "top_words": [
           {
-            "word": "charge",
-            "weight": 0.547214
+            "word": "powerbank",
+            "weight": 0.407962
+          },
+          {
+            "word": "quality",
+            "weight": 0.19981
+          },
+          {
+            "word": "backup",
+            "weight": 0.129803
+          },
+          {
+            "word": "design",
+            "weight": 0.117019
+          },
+          {
+            "word": "power",
+            "weight": 0.097289
           },
           {
             "word": "time",
-            "weight": 0.425624
+            "weight": 0.048112
           },
           {
-            "word": "mah",
-            "weight": 0.022926
+            "word": "money",
+            "weight": 4e-06
           },
           {
-            "word": "fast",
-            "weight": 0.004236
+            "word": "charge",
+            "weight": 0.0
+          },
+          {
+            "word": "battery",
+            "weight": 0.0
+          },
+          {
+            "word": "look",
+            "weight": 0.0
           },
           {
             "word": "power bank",
             "weight": 0.0
           },
           {
-            "word": "flipkart",
+            "word": "mah",
             "weight": 0.0
           },
           {
-            "word": "power",
+            "word": "charging",
             "weight": 0.0
+          },
+          {
+            "word": "fast",
+            "weight": 0.0
+          },
+          {
+            "word": "fast charging",
+            "weight": 0.0
+          }
+        ]
+      },
+      {
+        "id": 5,
+        "top_words": [
+          {
+            "word": "money",
+            "weight": 0.725292
+          },
+          {
+            "word": "design",
+            "weight": 0.257119
+          },
+          {
+            "word": "charge",
+            "weight": 0.017364
+          },
+          {
+            "word": "fast",
+            "weight": 0.000139
+          },
+          {
+            "word": "power bank",
+            "weight": 3.5e-05
           },
           {
             "word": "bank",
+            "weight": 3.5e-05
+          },
+          {
+            "word": "power",
+            "weight": 1.5e-05
+          },
+          {
+            "word": "time",
             "weight": 0.0
           },
           {
-            "word": "backup",
+            "word": "look",
+            "weight": 0.0
+          },
+          {
+            "word": "mah",
+            "weight": 0.0
+          },
+          {
+            "word": "quality",
+            "weight": 0.0
+          },
+          {
+            "word": "powerbank",
+            "weight": 0.0
+          },
+          {
+            "word": "charging",
+            "weight": 0.0
+          },
+          {
+            "word": "fast charging",
+            "weight": 0.0
+          },
+          {
+            "word": "battery",
             "weight": 0.0
           }
         ]
       }
     ],
     "prevalence": [
-      0.4,
-      0.16,
-      0.2,
-      0.12,
-      0.12
+      0.375,
+      0.175,
+      0.15,
+      0.075,
+      0.125,
+      0.1
     ],
     "representative_reviews": {
       "0": [
-        "iam using this power bank last 2,3 years...then last i bought the lstest vertion ... its so good and amazing power backup , my rdmi note 7 pro more than 3 times charing put in this power bank .one dow... more",
-        "This power bank is so good but I recommend you to buy 30000 mah mi power bank Also battery backup is good It takes 6.5 hrs to charge from 35 watt charger I am happy you should buy this ......",
-        "Best option for 20000 mah power Bank"
+        "Very nice product just go for it and its price is also good if you are thinking to buy a power bank so just go for this.",
+        "Delivery was faster than expected. Nice power bank It desined very well. At first it was qute confusing. After 2days it was easy to use. Thank u flipkard and MI for such a good product. I am really ... more",
+        "This is my second Mi power bank. First one served for almost 3 years. This one is also well built and works perfectly as advertised. Value for \ud83d\udcb0"
       ],
       "1": [
-        "Good product...and awesome Ekart Facility...thanks Flipkart\u2764\ufe0f\u2764\ufe0f",
-        "Flipkart Internet Private Limited, Buildings Alyssa, Begonia & Clove Embassy Tech Village, Outer Ring Road, Devarabeesanahalli Village, Bengaluru, 560103, Karnataka, India",
-        "Flipkart Internet Private Limited,"
+        "Its very effective & good quality Recommended it for good fast charging",
+        "Looks very premium takes 3 to 4 hours to get charged but support fast charging to the devices",
+        "Premium design fast charging very slim"
       ],
       "2": [
-        "Fast charging, long-lasting, and affordable. What more could you ask for ??",
-        "* best battery life * good performance * value for money * nice fast chargering",
-        "Best power and fast charging i love this product as safe delivery"
+        "It takes more time to charge and pb, There are provided normal cable, Not too good, We can charge our mobile 2times(4000 mah) battery, It has quick charge support, They don't provide type-c cable... more",
+        "Thanks flipkart..I got it 630 at Big billion offer.. Power backup is excellent almost 8000mh power it back up..my mi A2 almost 2.5times charge after a single full charge... design wise loking good att... more",
+        "Perfect delivery. Good Product from MI. Metal body feels premium. I'm using galaxy s9 plus with 3500 mah and can charge a 2 full charge and 40% charge. Satisfied with the backup"
       ],
       "3": [
-        "Review for: Capacity 20000 mAh \u2022 Color Blue",
-        "Review for: Capacity 20000 mAh \u2022 Color Sandstone Black",
-        "Technical this powerbank has 15000mAh battery backup.. It can charge 5000mah 3 times once fully charged. It takes alomost 5 to 7 hours with 20watt charger.."
+        "Review for: Capacity 10000 mAh \u2022 Color Midnight Black",
+        "Review for: Capacity 10000 mAh \u2022 Color Metallic Blue",
+        "Review for: Capacity 10000 mAh \u2022 Color Black"
       ],
       "4": [
-        "Pros: 1.Charging time with 18W charger is 7 hours. With 10 watt charger it takes 10.5 hours to charge completely. (If your charger is 15W , it will still take 10.5 hours to charge). 2. It doesn't h... more",
-        "Superb!!! \ud83d\udc4d\ud83d\udc4d\ud83d\udc4d This power bank fully charges my k20 pro 4 and 1/2 times with continuously 18w fast charge. I tested it's performance and it charges at the same speed and takes exactly same time as ... more",
-        "This is a amazing power bank for every you charged by this . This is charge my redmi k20pro 4000 mah battery 4.5 times 4 time fully charged and 5th time half charge not. Bad thank you mi. Tq Flipkart ... more"
+        "One of the best powerbank under budget and also quality wise it is the great product mine old one got stolen by my friend then i got this one it wis so good ports are comparatively enough 2 usb and one c port and also there is led indicator which indicates battry percentage and also it is durable an...",
+        "Best powerbank in this price range it has 12 layer circuit protection,and design and look is also very pretty and also have best power backup. If any one is thinking to buy mi 2i 10000 mah powerbank. ... more",
+        "Nice powerbank with good power backup Fabulous design and just go for it ... Got it for 629/- with supercoins"
+      ],
+      "5": [
+        "Awesome Colour \ud83d\ude0d and value for money product \ud83e\udd19",
+        "More worth for money.... Awesome product and Cute design....",
+        "Good build quality Value for money"
       ]
     },
     "metrics": {
-      "coherence": 0.549,
-      "diversity": 0.2,
-      "reconstruction_error": 1.47
+      "coherence": 0.4409,
+      "diversity": 0.2667,
+      "reconstruction_error": 2.91
     },
-    "training_time": 0.15
+    "training_time": 0.05
   },
   "similarity": {
     "matrix": [
       [
-        0.343,
-        0.876,
-        0.339,
-        0.081,
-        0.18
+        0.914,
+        0.332,
+        0.282,
+        0.138,
+        0.256,
+        0.149
       ],
       [
-        0.414,
-        0.128,
-        0.924,
-        0.125,
-        0.185
+        0.491,
+        0.564,
+        0.517,
+        0.274,
+        0.514,
+        0.319
       ],
       [
-        0.596,
-        0.104,
-        0.192,
-        0.574,
-        0.488
+        0.098,
+        0.234,
+        0.961,
+        0.204,
+        0.162,
+        0.072
       ],
       [
-        0.878,
-        0.071,
-        0.148,
-        0.192,
-        0.584
+        0.108,
+        0.925,
+        0.251,
+        0.051,
+        0.235,
+        0.085
       ],
       [
-        0.454,
-        0.187,
-        0.213,
-        0.875,
-        0.272
+        0.301,
+        0.216,
+        0.308,
+        0.241,
+        0.706,
+        0.514
+      ],
+      [
+        0.564,
+        0.356,
+        0.189,
+        0.449,
+        0.558,
+        0.152
       ]
     ],
     "lda_labels": [
@@ -549,14 +944,16 @@
       "LDA Topic 1",
       "LDA Topic 2",
       "LDA Topic 3",
-      "LDA Topic 4"
+      "LDA Topic 4",
+      "LDA Topic 5"
     ],
     "nmf_labels": [
       "NMF Topic 0",
       "NMF Topic 1",
       "NMF Topic 2",
       "NMF Topic 3",
-      "NMF Topic 4"
+      "NMF Topic 4",
+      "NMF Topic 5"
     ]
   }
 }
