@@ -144,6 +144,48 @@ def preprocess_dataframe(df, text_column='reviews.text', min_length=10):
     return filtered_processed, filtered_original, valid_indices
 
 
+def _fit_vectorizer_safely(vectorizer_cls, processed_texts, max_features=5000, min_df=5, max_df=0.85):
+    """Safely fit CountVectorizer or TfidfVectorizer, adapting df parameters for small corpora."""
+    n_docs = len(processed_texts)
+    
+    # Calculate sensible initial min_df / max_df based on corpus size
+    if n_docs < 15:
+        initial_min_df, initial_max_df = 1, 1.0
+    elif n_docs < 30:
+        initial_min_df, initial_max_df = min(2, min_df), min(0.95, max_df)
+    elif n_docs < 100:
+        initial_min_df, initial_max_df = min(3, min_df), min(0.90, max_df)
+    else:
+        initial_min_df, initial_max_df = min_df, max_df
+
+    candidates = [
+        (initial_min_df, initial_max_df),
+        (2, 0.95),
+        (1, 1.0)
+    ]
+
+    for m_df, mx_df in candidates:
+        try:
+            vec = vectorizer_cls(
+                max_features=max_features,
+                min_df=m_df,
+                max_df=mx_df,
+                ngram_range=(1, 2)
+            )
+            matrix = vec.fit_transform(processed_texts)
+            feature_names = vec.get_feature_names_out()
+            if len(feature_names) > 0:
+                return matrix, vec, feature_names
+        except ValueError:
+            continue
+
+    # Fallback: unigrams without pruning constraints
+    vec = vectorizer_cls(max_features=max_features, min_df=1, max_df=1.0, ngram_range=(1, 1))
+    matrix = vec.fit_transform(processed_texts)
+    feature_names = vec.get_feature_names_out()
+    return matrix, vec, feature_names
+
+
 def create_bow_matrix(processed_texts, max_features=5000, min_df=5, max_df=0.85):
     """
     Create Bag-of-Words (Count) matrix for LDA.
@@ -154,14 +196,9 @@ def create_bow_matrix(processed_texts, max_features=5000, min_df=5, max_df=0.85)
         (bow_matrix, count_vectorizer, feature_names)
     """
     print("  Creating Bag-of-Words matrix...")
-    vectorizer = CountVectorizer(
-        max_features=max_features,
-        min_df=min_df,
-        max_df=max_df,
-        ngram_range=(1, 2)
+    bow_matrix, vectorizer, feature_names = _fit_vectorizer_safely(
+        CountVectorizer, processed_texts, max_features=max_features, min_df=min_df, max_df=max_df
     )
-    bow_matrix = vectorizer.fit_transform(processed_texts)
-    feature_names = vectorizer.get_feature_names_out()
     print(f"  BoW matrix shape: {bow_matrix.shape}, vocabulary size: {len(feature_names)}")
     return bow_matrix, vectorizer, feature_names
 
@@ -176,13 +213,8 @@ def create_tfidf_matrix(processed_texts, max_features=5000, min_df=5, max_df=0.8
         (tfidf_matrix, tfidf_vectorizer, feature_names)
     """
     print("  Creating TF-IDF matrix...")
-    vectorizer = TfidfVectorizer(
-        max_features=max_features,
-        min_df=min_df,
-        max_df=max_df,
-        ngram_range=(1, 2)
+    tfidf_matrix, vectorizer, feature_names = _fit_vectorizer_safely(
+        TfidfVectorizer, processed_texts, max_features=max_features, min_df=min_df, max_df=max_df
     )
-    tfidf_matrix = vectorizer.fit_transform(processed_texts)
-    feature_names = vectorizer.get_feature_names_out()
     print(f"  TF-IDF matrix shape: {tfidf_matrix.shape}, vocabulary size: {len(feature_names)}")
     return tfidf_matrix, vectorizer, feature_names

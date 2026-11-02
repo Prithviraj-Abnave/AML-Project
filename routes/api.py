@@ -158,6 +158,11 @@ def scrape():
 def _run_scrape_pipeline(urls, n_topics, max_pages):
     """Launch scrape + pipeline in a background thread."""
     import threading
+    import importlib
+    import ml.preprocessing
+    import ml.pipeline
+    importlib.reload(ml.preprocessing)
+    importlib.reload(ml.pipeline)
     from ml.pipeline import _update_state, _set_is_custom, _run_pipeline_worker
     from ml.scraper import scrape_reviews
 

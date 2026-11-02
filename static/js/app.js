@@ -2,6 +2,21 @@
    Topic Analysis Dashboard — Frontend Logic (Light Academic Theme)
    ═══════════════════════════════════════════════════════════════ */
 
+// ── API Base Resolution (Supports Streamlit & Flask) ───────────
+const API_BASE = (function() {
+    try {
+        if (window.parent && window.parent.location && window.parent.location.origin && window.parent.location.origin !== 'null') {
+            return window.parent.location.origin;
+        }
+    } catch (e) {}
+    try {
+        if (window.location && window.location.origin && window.location.origin !== 'null') {
+            return window.location.origin;
+        }
+    } catch (e) {}
+    return '';
+})();
+
 // ── Color Palettes ────────────────────────────────────────────
 const COLORS = {
     lda: '#1e293b',       // slate-800
@@ -59,6 +74,14 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Prevent # jump on navbar links
+    document.querySelectorAll('a[data-target]').forEach(a => {
+        a.addEventListener('click', e => {
+            e.preventDefault();
+            navigateTo(a.dataset.target);
+        });
+    });
+
     // Check hash for direct navigation
     const hash = window.location.hash.replace('#', '');
     if (hash) {
@@ -67,7 +90,9 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // ── Navigation (SPA Routing) ──────────────────────────────────
-function navigateTo(pageId) {
+function navigateTo(pageId, ev) {
+    if (ev && ev.preventDefault) ev.preventDefault();
+    if (typeof event !== 'undefined' && event && event.preventDefault) event.preventDefault();
     // Update hash
     window.location.hash = pageId;
 
@@ -194,7 +219,7 @@ function startScrapeAnalysis() {
 
     setStep(3);
 
-    fetch('/api/scrape', {
+    fetch(API_BASE + '/api/scrape', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ urls, n_topics: nTopics, max_pages: maxPages })
@@ -250,7 +275,7 @@ function startPolling() {
 }
 
 function pollStatus() {
-    fetch('/api/status')
+    fetch(API_BASE + '/api/status')
         .then(res => res.json())
         .then(status => {
             isCustomRun = status.is_custom;
@@ -276,7 +301,7 @@ function pollStatus() {
 
 function fetchAndRenderResults() {
     const url = isCustomRun ? '/api/custom_results' : '/api/results';
-    fetch(url)
+    fetch(API_BASE + url)
         .then(res => res.json())
         .then(data => {
             if (data.error) {
@@ -302,7 +327,12 @@ function fetchAndRenderResults() {
 }
 
 function loadCachedResults() {
-    fetch('/api/results')
+    if (window.INITIAL_DATA && !window.INITIAL_DATA.error) {
+        currentData = window.INITIAL_DATA;
+        renderAllPages(window.INITIAL_DATA);
+        return;
+    }
+    fetch(API_BASE + '/api/results')
         .then(res => {
             if (res.ok) return res.json();
             throw new Error('No cached results');

@@ -144,14 +144,19 @@ def _run_pipeline_worker(n_topics, sample_size, data_path, is_custom):
         
         if is_custom:
             text_column = None
-            max_avg_len = -1
-            for col in df.columns:
-                if df[col].dtype == 'object':
-                    # Detect longest text column by average string length
-                    avg_len = df[col].dropna().astype(str).str.len().mean()
-                    if avg_len > max_avg_len:
-                        max_avg_len = avg_len
-                        text_column = col
+            for cand in ['review_text', 'reviews.text', 'text', 'review', 'comment', 'content']:
+                if cand in df.columns:
+                    text_column = cand
+                    break
+
+            if not text_column:
+                max_avg_len = -1
+                for col in df.columns:
+                    if pd.api.types.is_string_dtype(df[col]) or df[col].dtype in ['object', 'str', 'string']:
+                        avg_len = df[col].dropna().astype(str).str.len().mean()
+                        if avg_len > max_avg_len:
+                            max_avg_len = avg_len
+                            text_column = col
             if not text_column:
                 raise ValueError("Could not find a valid text column in the uploaded CSV.")
             text_col_name = text_column
@@ -163,8 +168,12 @@ def _run_pipeline_worker(n_topics, sample_size, data_path, is_custom):
         )
         _update_state(progress=30, step=f'Preprocessed {len(processed_texts)} valid reviews')
 
-        if len(processed_texts) < n_topics:
-            raise ValueError(f"Not enough valid reviews ({len(processed_texts)}) to extract {n_topics} topics. Try reducing the number of topics or scraping more data.")
+        if len(processed_texts) < 2:
+            raise ValueError(f"Not enough valid reviews ({len(processed_texts)}) found to run topic analysis. Scrape more reviews or pages.")
+
+        if n_topics > len(processed_texts):
+            n_topics = max(2, len(processed_texts))
+            _update_state(step=f"Adjusted topics to {n_topics} matching review count...")
 
         # ── Step 3: Create Matrices ─────────────────────────────────────
         _update_state(progress=35, step='Creating document-term matrices...')
