@@ -17,6 +17,14 @@ const API_BASE = (function() {
     return '';
 })();
 
+function resolveApi(path) {
+    const relPath = path.replace(/^\/+/, '');
+    if (typeof API_BASE !== 'undefined' && API_BASE && API_BASE.trim() !== '') {
+        return `${API_BASE.replace(/\/+$/, '')}/${relPath}`;
+    }
+    return relPath;
+}
+
 // ── Color Palettes ────────────────────────────────────────────
 const COLORS = {
     lda: '#1e293b',       // slate-800
@@ -219,7 +227,7 @@ function startScrapeAnalysis() {
 
     setStep(3);
 
-    fetch(API_BASE + '/api/scrape', {
+    fetch(resolveApi('api/scrape'), {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ urls, n_topics: nTopics, max_pages: maxPages })
@@ -275,7 +283,7 @@ function startPolling() {
 }
 
 function pollStatus() {
-    fetch(API_BASE + '/api/status')
+    fetch(resolveApi('api/status'))
         .then(res => res.json())
         .then(status => {
             isCustomRun = status.is_custom;
@@ -300,8 +308,8 @@ function pollStatus() {
 }
 
 function fetchAndRenderResults() {
-    const url = isCustomRun ? '/api/custom_results' : '/api/results';
-    fetch(API_BASE + url)
+    const url = isCustomRun ? 'api/custom_results' : 'api/results';
+    fetch(resolveApi(url))
         .then(res => res.json())
         .then(data => {
             if (data.error) {
@@ -332,7 +340,7 @@ function loadCachedResults() {
         renderAllPages(window.INITIAL_DATA);
         return;
     }
-    fetch(API_BASE + '/api/results')
+    fetch(resolveApi('api/results'))
         .then(res => {
             if (res.ok) return res.json();
             throw new Error('No cached results');

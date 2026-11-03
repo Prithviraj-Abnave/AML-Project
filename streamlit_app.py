@@ -333,6 +333,8 @@ def get_compiled_html():
     # Inline CSS
     css_replacement = f"<style>\n{css_content}\n</style>"
     html_content = html_content.replace(
+        '<link rel="stylesheet" href="static/css/style.css">', css_replacement
+    ).replace(
         '<link rel="stylesheet" href="css/style.css">', css_replacement
     )
 
@@ -342,6 +344,8 @@ def get_compiled_html():
         f"<script>\n{js_content}\n</script>"
     )
     html_content = html_content.replace(
+        '<script src="static/js/app.js"></script>', js_replacement
+    ).replace(
         '<script src="js/app.js"></script>', js_replacement
     )
 
